@@ -1,0 +1,149 @@
+{
+    "fysik1": {
+        "students": [
+            {
+                "first_name": "Hanna",
+                "last_name": "Handersson",
+                "id_num": 0,
+                "active": true,
+                "class": "te22",
+                "email": "anna.a9@utb.hudiksvall.se",
+                "pers_nr": 200101010101,
+                "comments": [],
+                "tests": [
+                    {
+                        "test_name": "rorelse&acc",
+                        "completed": true,
+                        "result": [
+                            8,
+                            6,
+                            4
+                        ],
+                        "grade": "B"
+                    },
+                    {
+                        "test_name": "kafter",
+                        "completed": true,
+                        "result": [
+                            9,
+                            5,
+                            3
+                        ],
+                        "grade": "B"
+                    }
+                ]
+            },
+            {
+                "first_name": "Pelle",
+                "last_name": "Persson",
+                "id_num": 1,
+                "active": true,
+                "class": "te22",
+                "email": "pelle.p5@utb.hudiksvall.se",
+                "pers_nr": 200102020303,
+                "comments": [],
+                "tests": [
+                    {
+                        "test_name": "kafter",
+                        "completed": true,
+                        "result": [
+                            6,
+                            4,
+                            0
+                        ],
+                        "grade": "D",
+                        "comments": "Good understanding of acceleration"
+                    }
+                ]
+            },
+            {
+                "first_name": "Jeppe",
+                "last_name": "Jeppsson",
+                "id_num": 2,
+                "active": true,
+                "class": "te22",
+                "email": "jeppe.j4@utb.hudiksvall.se",
+                "pers_nr": 200103030404,
+                "comments": [],
+                "tests": []
+            },
+            {
+                "first_name": "Anna",
+                "last_name": "Andersson",
+                "id_num": 3,
+                "active": true,
+                "class": "te22",
+                "email": "anna.a5@utb.hudiksvall.se",
+                "pers_nr": 200202070707,
+                "comments": [],
+                "tests": []
+            },
+            {
+                "first_name": "Jeppe",
+                "last_name": "Jeppsson",
+                "id_num": 4,
+                "active": true,
+                "class": "te22",
+                "email": "jeppe.j7@utb.hudiksvall.se",
+                "pers_nr": 200205120505,
+                "comments": [],
+                "tests": []
+            },
+            {
+                "first_name": "Jonas",
+                "last_name": "Jonasson",
+                "id_num": 5,
+                "active": true,
+                "class": "te22",
+                "email": "jonas.j1@utb.hudiksvall.se",
+                "pers_nr": 200009090909,
+                "comments": [],
+                "tests": []
+            }
+        ],
+        "tests": [
+            {
+                "test_name": "rorelse&acc",
+                "test_id": 0,
+                "max_points": [
+                    12,
+                    8,
+                    5
+                ],
+                "grade_limits": {
+                    "E": [
+                        7,
+                        0,
+                        0
+                    ],
+                    "D": [
+                        8,
+                        3,
+                        0
+                    ],
+                    "C": [
+                        9,
+                        5,
+                        0
+                    ],
+                    "B": [
+                        10,
+                        5,
+                        2
+                    ],
+                    "A": [
+                        10,
+                        6,
+                        3
+                    ]
+                }
+            }
+        ],
+        "assignments": []
+    },
+    "fysik2": {
+        "students": [],
+        "tests": [],
+        "assignments": []
+    }
+}

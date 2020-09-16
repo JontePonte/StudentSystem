@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="StudentSystem"
 config/icon="res://icon.png"
 
+[autoload]
+
+VisualVars="*res://autoloads/VisualVars.gd"
+
 [display]
 
 window/size/height=768
