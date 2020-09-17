@@ -21,11 +21,12 @@ func create_subject_buttons():
 		var subject_button = scene.instance()
 
 		subject_button.get_node("Label").set_text(subject)
+		subject_button.name = subject
 
 		$Menu/CenterRow/ScrollSubjects/Subjects.add_child(subject_button)
 
 	# Make the first button selected so the menu can be navigated with arrows
-	# $Menu/CenterRow/ScrollContainer/Buttons/NewGameButton.grab_focus()
+	$Menu/CenterRow/ScrollSubjects/Subjects.get_node(s_data.keys()[0]).grab_focus()
 
 
 func _on_SelectData_pressed():
