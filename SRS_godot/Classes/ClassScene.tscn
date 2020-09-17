@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Classes/ClassScene.gd" type="Script" id=1]
 [ext_resource path="res://assets/FontsDF/Header.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/FontsDF/Header2.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/FontsDF/SmallText.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=5]
 
 [node name="ClassScene" type="Control"]
 anchor_right = 1.0
@@ -39,46 +40,64 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="StundetsCont" type="VBoxContainer" parent="Menu/RowsCont"]
-margin_right = 344.0
+margin_right = 338.0
 margin_bottom = 444.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="StudentsLabel" type="Label" parent="Menu/RowsCont/StundetsCont"]
-margin_right = 344.0
+[node name="TopLable" type="HBoxContainer" parent="Menu/RowsCont/StundetsCont"]
+margin_right = 338.0
 margin_bottom = 48.0
+
+[node name="StudentsLabel" type="Label" parent="Menu/RowsCont/StundetsCont/TopLable"]
+margin_right = 233.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0.196078, 0.25098, 0.2, 1 )
 custom_constants/shadow_offset_x = 2
 text = "Students"
 
+[node name="AddStudent" type="Button" parent="Menu/RowsCont/StundetsCont/TopLable"]
+margin_left = 237.0
+margin_right = 338.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 5 )
+text = "Add Student"
+flat = true
+
 [node name="HSeparator" type="HSeparator" parent="Menu/RowsCont/StundetsCont"]
 margin_top = 52.0
-margin_right = 344.0
+margin_right = 338.0
 margin_bottom = 56.0
 
 [node name="StudentsScroll" type="ScrollContainer" parent="Menu/RowsCont/StundetsCont"]
 margin_top = 60.0
-margin_right = 344.0
+margin_right = 338.0
 margin_bottom = 444.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Students" type="VBoxContainer" parent="Menu/RowsCont/StundetsCont/StudentsScroll"]
-margin_right = 344.0
+margin_right = 338.0
 margin_bottom = 384.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="VSeparator" type="VSeparator" parent="Menu/RowsCont"]
+margin_left = 342.0
+margin_right = 346.0
+margin_bottom = 444.0
+
 [node name="TestsCont" type="VBoxContainer" parent="Menu/RowsCont"]
-margin_left = 348.0
-margin_right = 692.0
+margin_left = 350.0
+margin_right = 688.0
 margin_bottom = 444.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TestsLabel" type="Label" parent="Menu/RowsCont/TestsCont"]
-margin_right = 344.0
+margin_right = 338.0
 margin_bottom = 48.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0.196078, 0.25098, 0.2, 1 )
@@ -87,31 +106,36 @@ text = "Tests"
 
 [node name="HSeparator2" type="HSeparator" parent="Menu/RowsCont/TestsCont"]
 margin_top = 52.0
-margin_right = 344.0
+margin_right = 338.0
 margin_bottom = 56.0
 
 [node name="TestsScroll" type="ScrollContainer" parent="Menu/RowsCont/TestsCont"]
 margin_top = 60.0
-margin_right = 344.0
+margin_right = 338.0
 margin_bottom = 444.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Tests" type="VBoxContainer" parent="Menu/RowsCont/TestsCont/TestsScroll"]
-margin_right = 344.0
+margin_right = 338.0
 margin_bottom = 384.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="VSeparator2" type="VSeparator" parent="Menu/RowsCont"]
+margin_left = 692.0
+margin_right = 696.0
+margin_bottom = 444.0
+
 [node name="AssignmentsCont" type="VBoxContainer" parent="Menu/RowsCont"]
-margin_left = 696.0
+margin_left = 700.0
 margin_right = 1040.0
 margin_bottom = 444.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AssignmentsLabel" type="Label" parent="Menu/RowsCont/AssignmentsCont"]
-margin_right = 344.0
+margin_right = 340.0
 margin_bottom = 48.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0.196078, 0.25098, 0.2, 1 )
@@ -120,18 +144,18 @@ text = "Assignments"
 
 [node name="HSeparator3" type="HSeparator" parent="Menu/RowsCont/AssignmentsCont"]
 margin_top = 52.0
-margin_right = 344.0
+margin_right = 340.0
 margin_bottom = 56.0
 
 [node name="AssignmentsScroll" type="ScrollContainer" parent="Menu/RowsCont/AssignmentsCont"]
 margin_top = 60.0
-margin_right = 344.0
+margin_right = 340.0
 margin_bottom = 444.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Assignments" type="VBoxContainer" parent="Menu/RowsCont/AssignmentsCont/AssignmentsScroll"]
-margin_right = 344.0
+margin_right = 340.0
 margin_bottom = 384.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
