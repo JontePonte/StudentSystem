@@ -2,7 +2,8 @@ extends Control
 
 
 func _ready():
-	pass # Replace with function body.
+	$Menu/CenterRow/ScrollContainer/Buttons/NewGameButton.grab_focus()
+
 
 func _process(_delta):
 	pass
