@@ -145,6 +145,50 @@
                 "tests": []
             },
             {
+                "first_name": "Anna",
+                "last_name": "Andersson",
+                "id_num": 3,
+                "active": true,
+                "class": "te22",
+                "email": "anna.a5@utb.hudiksvall.se",
+                "pers_nr": 200202070707,
+                "comments": [],
+                "tests": []
+            },
+            {
+                "first_name": "Anna",
+                "last_name": "Andersson",
+                "id_num": 3,
+                "active": true,
+                "class": "te22",
+                "email": "anna.a5@utb.hudiksvall.se",
+                "pers_nr": 200202070707,
+                "comments": [],
+                "tests": []
+            },
+            {
+                "first_name": "Anna",
+                "last_name": "Andersson",
+                "id_num": 3,
+                "active": true,
+                "class": "te22",
+                "email": "anna.a5@utb.hudiksvall.se",
+                "pers_nr": 200202070707,
+                "comments": [],
+                "tests": []
+            },
+            {
+                "first_name": "Anna",
+                "last_name": "Andersson",
+                "id_num": 3,
+                "active": true,
+                "class": "te22",
+                "email": "anna.a5@utb.hudiksvall.se",
+                "pers_nr": 200202070707,
+                "comments": [],
+                "tests": []
+            },
+            {
                 "first_name": "Jeppe",
                 "last_name": "Jeppsson",
                 "id_num": 4,
@@ -208,7 +252,41 @@
         "assignments": []
     },
     "fysik2 na12": {
-        "students": [],
+        "students": [
+            {
+                "first_name": "Anna",
+                "last_name": "Andersson",
+                "id_num": 3,
+                "active": true,
+                "class": "te22",
+                "email": "anna.a5@utb.hudiksvall.se",
+                "pers_nr": 200202070707,
+                "comments": [],
+                "tests": []
+            },
+            {
+                "first_name": "Anna",
+                "last_name": "Andersson",
+                "id_num": 3,
+                "active": true,
+                "class": "te22",
+                "email": "anna.a5@utb.hudiksvall.se",
+                "pers_nr": 200202070707,
+                "comments": [],
+                "tests": []
+            },
+            {
+                "first_name": "Anna",
+                "last_name": "Andersson",
+                "id_num": 3,
+                "active": true,
+                "class": "te22",
+                "email": "anna.a5@utb.hudiksvall.se",
+                "pers_nr": 200202070707,
+                "comments": [],
+                "tests": []
+            }
+        ],
         "tests": [],
         "assignments": []
     }

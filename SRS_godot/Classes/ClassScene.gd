@@ -15,13 +15,13 @@ func create_student_buttons():
 
 	# Instance menu buttons and make them childs of scroll menu
 	for student in student_list:
-		var scene = load("res://Buttons/ClassButton.tscn")
-		var class_button = scene.instance()
+		var scene = load("res://Buttons/StudentButton.tscn")
+		var student_button = scene.instance()
 
-		class_button.get_node("Label").set_text(student.first_name)
-		class_button.name = student.first_name
+		student_button.get_node("Label").set_text(student.first_name)
+		student_button.name = student.first_name
 
-		$Menu/HBoxContainer/ScrollStudents/Students.add_child(class_button)
+		$Menu/HBoxContainer/ScrollStudents/Students.add_child(student_button)
 
 
 func _on_BackButton_pressed():
