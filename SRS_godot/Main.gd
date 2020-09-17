@@ -16,6 +16,7 @@ func create_subject_buttons():
 	var s_data = FileSys.student_data_load()
 	print(s_data.keys())
 
+	# Instance menu buttons and make them childs of scroll menu
 	for subject in s_data.keys():
 		var scene = load("res://Buttons/MenuButton.tscn")
 		var subject_button = scene.instance()
