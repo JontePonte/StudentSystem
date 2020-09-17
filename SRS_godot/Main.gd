@@ -15,7 +15,15 @@ func _ready():
 func create_subject_buttons(): 
 	var s_data = FileSys.student_data_load()
 	print(s_data.keys())
-	
+
+	for subject in s_data.keys():
+		var scene = load("res://Buttons/MenuButton.tscn")
+		var subject_button = scene.instance()
+
+		subject_button.get_node("Label").set_text(subject)
+
+		$Menu/CenterRow/ScrollSubjects/Subjects.add_child(subject_button)
+
 	# Make the first button selected so the menu can be navigated with arrows
 	# $Menu/CenterRow/ScrollContainer/Buttons/NewGameButton.grab_focus()
 
