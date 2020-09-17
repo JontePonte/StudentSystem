@@ -1,7 +1,7 @@
 extends Node
 # All global variables
 
-var ActiveDataFile = ""
+var activeDataFile = ""
 
 
 func _ready():
@@ -27,6 +27,6 @@ func load_data_file_variables():
     # ---------- All variables are loaded here ------------
     # -----------------------------------------------------
     
-    ActiveDataFile = data.active_data_file
+    activeDataFile = data.active_data_file
 
     # -----------------------------------------------------

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://assets/FontsDF/Header.tres" type="DynamicFont" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Buttons/OptionsButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=6]
 [ext_resource path="res://assets/FontsDF/SmallText.tres" type="DynamicFont" id=7]
+[ext_resource path="res://SelectDataButton.gd" type="Script" id=8]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -42,15 +43,14 @@ __meta__ = {
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 margin_top = 85.0
 margin_right = 1040.0
-margin_bottom = 555.0
+margin_bottom = 546.0
 rect_min_size = Vector2( 60, 20 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Menu/CenterRow"]
-margin_top = 50.0
 margin_right = 518.0
-margin_bottom = 450.0
+margin_bottom = 461.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -59,84 +59,77 @@ __meta__ = {
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow/ScrollContainer"]
 margin_right = 518.0
-margin_bottom = 400.0
+margin_bottom = 461.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
 alignment = 1
 
 [node name="NewGameButton" parent="Menu/CenterRow/ScrollContainer/Buttons" instance=ExtResource( 4 )]
-margin_top = 90.0
+margin_top = 120.0
 margin_right = 518.0
-margin_bottom = 150.0
+margin_bottom = 180.0
 
 [node name="OptionsButton" parent="Menu/CenterRow/ScrollContainer/Buttons" instance=ExtResource( 5 )]
-margin_top = 170.0
+margin_top = 200.0
 margin_right = 518.0
-margin_bottom = 230.0
+margin_bottom = 260.0
 
 [node name="ContinueButton" parent="Menu/CenterRow/ScrollContainer/Buttons" instance=ExtResource( 3 )]
-margin_top = 250.0
+margin_top = 280.0
 margin_right = 518.0
-margin_bottom = 310.0
+margin_bottom = 340.0
 
 [node name="IconCont" type="CenterContainer" parent="Menu/CenterRow"]
 margin_left = 522.0
 margin_right = 1040.0
-margin_bottom = 470.0
+margin_bottom = 461.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Icons" type="TextureRect" parent="Menu/CenterRow/IconCont"]
 margin_left = 227.0
-margin_top = 203.0
+margin_top = 198.0
 margin_right = 291.0
-margin_bottom = 267.0
+margin_bottom = 262.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 6 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Menu"]
-margin_top = 559.0
+margin_top = 550.0
 margin_right = 1040.0
 margin_bottom = 620.0
 size_flags_horizontal = 3
 
 [node name="VersionLabel" type="Label" parent="Menu/HBoxContainer"]
-margin_right = 857.0
-margin_bottom = 61.0
+margin_right = 518.0
+margin_bottom = 70.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 7 )
 text = "Version 0.1
 John Nordstrand"
 
-[node name="SelectData" type="MenuButton" parent="Menu/HBoxContainer"]
-margin_left = 861.0
+[node name="LoadDataCont" type="VBoxContainer" parent="Menu/HBoxContainer"]
+margin_left = 522.0
 margin_right = 1040.0
-margin_bottom = 61.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Menu/HBoxContainer/LoadDataCont"]
+margin_right = 518.0
+margin_bottom = 29.0
 custom_fonts/font = ExtResource( 7 )
-text = "Select Data File"
-flat = false
+text = "Active Data file:"
 align = 2
-switch_on_hover = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="PopupMenu2" type="PopupMenu" parent="Menu/HBoxContainer/SelectData"]
-margin_right = 20.0
-margin_bottom = 20.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Menu/HBoxContainer/SelectData/PopupMenu2"]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="OptionsButton" parent="Menu/HBoxContainer/SelectData/PopupMenu2/VBoxContainer" instance=ExtResource( 5 )]
-margin_right = 360.0
-margin_bottom = 60.0
-
-[node name="ContinueButton" parent="Menu/HBoxContainer/SelectData/PopupMenu2/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 64.0
-margin_right = 360.0
-margin_bottom = 124.0
+[node name="SelectData" type="ToolButton" parent="Menu/HBoxContainer/LoadDataCont"]
+margin_top = 33.0
+margin_right = 518.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 7 )
+text = "placeholder"
+align = 2
+script = ExtResource( 8 )
