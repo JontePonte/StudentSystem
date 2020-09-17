@@ -22,5 +22,11 @@ func load_data_file_variables():
     # Unpack information to dict data
     var data = parse_json(text)
 
+
+    # -----------------------------------------------------
+    # ---------- All variables are loaded here ------------
+    # -----------------------------------------------------
+    
     ActiveDataFile = data.active_data_file
-    print(ActiveDataFile)
+
+    # -----------------------------------------------------
