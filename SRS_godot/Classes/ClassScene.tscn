@@ -40,123 +40,149 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="StundetsCont" type="VBoxContainer" parent="Menu/RowsCont"]
-margin_right = 338.0
+margin_right = 332.0
 margin_bottom = 444.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TopLable" type="HBoxContainer" parent="Menu/RowsCont/StundetsCont"]
-margin_right = 338.0
-margin_bottom = 48.0
+[node name="StudentsTop" type="HBoxContainer" parent="Menu/RowsCont/StundetsCont"]
+margin_right = 332.0
+margin_bottom = 43.0
 
-[node name="StudentsLabel" type="Label" parent="Menu/RowsCont/StundetsCont/TopLable"]
-margin_right = 233.0
-margin_bottom = 48.0
+[node name="StudentsLabel" type="Label" parent="Menu/RowsCont/StundetsCont/StudentsTop"]
+margin_right = 227.0
+margin_bottom = 43.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0.196078, 0.25098, 0.2, 1 )
 custom_constants/shadow_offset_x = 2
 text = "Students"
 
-[node name="AddStudent" type="Button" parent="Menu/RowsCont/StundetsCont/TopLable"]
-margin_left = 237.0
-margin_right = 338.0
-margin_bottom = 48.0
+[node name="AddStudent" type="Button" parent="Menu/RowsCont/StundetsCont/StudentsTop"]
+margin_left = 231.0
+margin_right = 332.0
+margin_bottom = 43.0
 custom_fonts/font = ExtResource( 5 )
 text = "Add Student"
 flat = true
 
 [node name="HSeparator" type="HSeparator" parent="Menu/RowsCont/StundetsCont"]
-margin_top = 52.0
-margin_right = 338.0
-margin_bottom = 56.0
+margin_top = 47.0
+margin_right = 332.0
+margin_bottom = 51.0
 
 [node name="StudentsScroll" type="ScrollContainer" parent="Menu/RowsCont/StundetsCont"]
-margin_top = 60.0
-margin_right = 338.0
+margin_top = 55.0
+margin_right = 332.0
 margin_bottom = 444.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Students" type="VBoxContainer" parent="Menu/RowsCont/StundetsCont/StudentsScroll"]
-margin_right = 338.0
-margin_bottom = 384.0
+margin_right = 332.0
+margin_bottom = 389.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VSeparator" type="VSeparator" parent="Menu/RowsCont"]
-margin_left = 342.0
-margin_right = 346.0
+margin_left = 336.0
+margin_right = 340.0
 margin_bottom = 444.0
 
 [node name="TestsCont" type="VBoxContainer" parent="Menu/RowsCont"]
-margin_left = 350.0
-margin_right = 688.0
+margin_left = 344.0
+margin_right = 676.0
 margin_bottom = 444.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TestsLabel" type="Label" parent="Menu/RowsCont/TestsCont"]
-margin_right = 338.0
-margin_bottom = 48.0
+[node name="TestsTop" type="HBoxContainer" parent="Menu/RowsCont/TestsCont"]
+margin_right = 332.0
+margin_bottom = 43.0
+
+[node name="TestsLabel" type="Label" parent="Menu/RowsCont/TestsCont/TestsTop"]
+margin_right = 251.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0.196078, 0.25098, 0.2, 1 )
 custom_constants/shadow_offset_x = 2
 text = "Tests"
 
+[node name="AddTests" type="Button" parent="Menu/RowsCont/TestsCont/TestsTop"]
+margin_left = 255.0
+margin_right = 332.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 5 )
+text = "Add Test"
+flat = true
+
 [node name="HSeparator2" type="HSeparator" parent="Menu/RowsCont/TestsCont"]
-margin_top = 52.0
-margin_right = 338.0
-margin_bottom = 56.0
+margin_top = 47.0
+margin_right = 332.0
+margin_bottom = 51.0
 
 [node name="TestsScroll" type="ScrollContainer" parent="Menu/RowsCont/TestsCont"]
-margin_top = 60.0
-margin_right = 338.0
+margin_top = 55.0
+margin_right = 332.0
 margin_bottom = 444.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Tests" type="VBoxContainer" parent="Menu/RowsCont/TestsCont/TestsScroll"]
-margin_right = 338.0
-margin_bottom = 384.0
+margin_right = 332.0
+margin_bottom = 389.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VSeparator2" type="VSeparator" parent="Menu/RowsCont"]
-margin_left = 692.0
-margin_right = 696.0
+margin_left = 680.0
+margin_right = 684.0
 margin_bottom = 444.0
 
 [node name="AssignmentsCont" type="VBoxContainer" parent="Menu/RowsCont"]
-margin_left = 700.0
-margin_right = 1040.0
+margin_left = 688.0
+margin_right = 1039.0
 margin_bottom = 444.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="AssignmentsLabel" type="Label" parent="Menu/RowsCont/AssignmentsCont"]
-margin_right = 340.0
-margin_bottom = 48.0
+[node name="AssignmentsTopntainer" type="HBoxContainer" parent="Menu/RowsCont/AssignmentsCont"]
+margin_right = 351.0
+margin_bottom = 43.0
+
+[node name="AssignmentsLabel" type="Label" parent="Menu/RowsCont/AssignmentsCont/AssignmentsTopntainer"]
+margin_right = 209.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0.196078, 0.25098, 0.2, 1 )
 custom_constants/shadow_offset_x = 2
 text = "Assignments"
 
+[node name="Add Assignments" type="Button" parent="Menu/RowsCont/AssignmentsCont/AssignmentsTopntainer"]
+margin_left = 213.0
+margin_right = 351.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 5 )
+text = "Add Assignments"
+flat = true
+
 [node name="HSeparator3" type="HSeparator" parent="Menu/RowsCont/AssignmentsCont"]
-margin_top = 52.0
-margin_right = 340.0
-margin_bottom = 56.0
+margin_top = 47.0
+margin_right = 351.0
+margin_bottom = 51.0
 
 [node name="AssignmentsScroll" type="ScrollContainer" parent="Menu/RowsCont/AssignmentsCont"]
-margin_top = 60.0
-margin_right = 340.0
+margin_top = 55.0
+margin_right = 351.0
 margin_bottom = 444.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Assignments" type="VBoxContainer" parent="Menu/RowsCont/AssignmentsCont/AssignmentsScroll"]
-margin_right = 340.0
-margin_bottom = 384.0
+margin_right = 351.0
+margin_bottom = 389.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
