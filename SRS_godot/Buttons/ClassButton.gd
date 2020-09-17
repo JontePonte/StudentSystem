@@ -11,5 +11,8 @@ func _process(_delta):
 
 
 func button_pressed():
+	# Set active class to the buttons name so the class scene knows
+	GlobalVars.activeClass = self.name
+
 	var path = "res://Classes/ClassScene.tscn"
 	var _is_change_ok = get_tree().change_scene(path)

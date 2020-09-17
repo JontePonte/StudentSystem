@@ -2,6 +2,7 @@ extends Node
 # All global variables
 
 var activeDataFile = ""
+var activeClass = ""
 
 
 func _ready():
