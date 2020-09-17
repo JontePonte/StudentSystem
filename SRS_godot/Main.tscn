@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://assets/FontsDF/Header.tres" type="DynamicFont" id=2]
-[ext_resource path="res://assets/FontsDF/Buttons.tres" type="DynamicFont" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://Buttons/ContinueButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Buttons/NewGameButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Buttons/OptionsButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://assets/FontsDF/SmallText.tres" type="DynamicFont" id=7]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -13,20 +16,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Menu" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 69.0
-margin_top = 69.0
-margin_right = -69.0
-margin_bottom = -69.0
+margin_left = 120.0
+margin_top = 50.0
+margin_right = -120.0
+margin_bottom = -50.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 886.0
-margin_bottom = 65.0
+[node name="Header" type="Label" parent="Menu"]
+margin_right = 1040.0
+margin_bottom = 81.0
 custom_fonts/font = ExtResource( 2 )
 text = "Student Result Saver"
 align = 1
@@ -34,33 +37,58 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 69.0
-margin_right = 886.0
-margin_bottom = 157.0
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 85.0
+margin_right = 1040.0
+margin_bottom = 555.0
 rect_min_size = Vector2( 60, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_right = 130.0
-margin_bottom = 88.0
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 518.0
+margin_bottom = 470.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_right = 130.0
-margin_bottom = 42.0
-custom_fonts/font = ExtResource( 3 )
-text = "Subjects"
-flat = true
+[node name="NewGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
+margin_top = 125.0
+margin_right = 518.0
+margin_bottom = 185.0
 
-[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 46.0
-margin_right = 130.0
-margin_bottom = 88.0
-custom_fonts/font = ExtResource( 3 )
-text = "Classes"
-flat = true
+[node name="ContinueButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
+margin_top = 205.0
+margin_right = 518.0
+margin_bottom = 265.0
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
-margin_left = 134.0
-margin_right = 198.0
-margin_bottom = 88.0
-texture = ExtResource( 4 )
+[node name="OptionsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
+margin_top = 285.0
+margin_right = 518.0
+margin_bottom = 345.0
+
+[node name="IconCont" type="CenterContainer" parent="Menu/CenterRow"]
+margin_left = 522.0
+margin_right = 1040.0
+margin_bottom = 470.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Icons" type="TextureRect" parent="Menu/CenterRow/IconCont"]
+margin_left = 227.0
+margin_top = 203.0
+margin_right = 291.0
+margin_bottom = 267.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 6 )
+
+[node name="VersionLabel" type="Label" parent="Menu"]
+margin_top = 559.0
+margin_right = 1040.0
+margin_bottom = 620.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 7 )
+text = "Version 0.1
+John Nordstrand"

@@ -25,9 +25,10 @@ VisualVars="*res://autoloads/VisualVars.gd"
 
 [display]
 
-window/size/height=768
+window/size/width=1280
+window/size/height=720
 
 [rendering]
 
-environment/default_clear_color=Color( 0.160784, 0.278431, 0.145098, 1 )
+environment/default_clear_color=Color( 0.164706, 0.235294, 0.156863, 1 )
 environment/default_environment="res://default_env.tres"
