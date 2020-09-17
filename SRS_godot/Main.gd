@@ -7,3 +7,7 @@ func _ready():
 
 func _process(_delta):
 	pass
+
+
+func _on_SelectData_pressed():
+	$LoadDataPopup.popup_centered()

@@ -133,3 +133,17 @@ custom_fonts/font = ExtResource( 7 )
 text = "placeholder"
 align = 2
 script = ExtResource( 8 )
+
+[node name="LoadDataPopup" type="FileDialog" parent="."]
+visible = true
+margin_left = 1384.0
+margin_top = 324.0
+margin_right = 1877.0
+margin_bottom = 657.0
+window_title = "Select data file (.json)"
+resizable = true
+mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Menu/HBoxContainer/LoadDataCont/SelectData" to="." method="_on_SelectData_pressed"]
