@@ -18,10 +18,10 @@ func create_student_buttons():
 		var scene = load("res://Buttons/StudentButton.tscn")
 		var student_button = scene.instance()
 
-		student_button.get_node("Label").set_text(student.first_name)
-		student_button.name = student.first_name
+		student_button.get_node("Label").set_text(student.first_name + " " + student.last_name)
+		student_button.name = str(student.id_num)
 
-		$Menu/HBoxContainer/ScrollStudents/Students.add_child(student_button)
+		$Menu/RowsCont/StundetsCont/StudentsScroll/Students.add_child(student_button)
 
 
 func _on_BackButton_pressed():

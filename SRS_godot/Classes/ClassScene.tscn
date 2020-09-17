@@ -20,6 +20,7 @@ margin_left = 120.0
 margin_top = 50.0
 margin_right = -120.0
 margin_bottom = -50.0
+custom_constants/separation = 30
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -30,26 +31,20 @@ margin_bottom = 81.0
 custom_fonts/font = ExtResource( 2 )
 text = "Label"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Menu"]
-margin_top = 85.0
+[node name="RowsCont" type="HBoxContainer" parent="Menu"]
+margin_top = 111.0
 margin_right = 1040.0
-margin_bottom = 581.0
+margin_bottom = 555.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ScrollStudents" type="ScrollContainer" parent="Menu/HBoxContainer"]
+[node name="StundetsCont" type="VBoxContainer" parent="Menu/RowsCont"]
 margin_right = 344.0
-margin_bottom = 496.0
+margin_bottom = 444.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Students" type="VBoxContainer" parent="Menu/HBoxContainer/ScrollStudents"]
-margin_right = 344.0
-margin_bottom = 496.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="StudentsLabel" type="Label" parent="Menu/HBoxContainer/ScrollStudents/Students"]
+[node name="StudentsLabel" type="Label" parent="Menu/RowsCont/StundetsCont"]
 margin_right = 344.0
 margin_bottom = 48.0
 custom_fonts/font = ExtResource( 3 )
@@ -57,20 +52,32 @@ custom_colors/font_color_shadow = Color( 0.196078, 0.25098, 0.2, 1 )
 custom_constants/shadow_offset_x = 2
 text = "Students"
 
-[node name="ScrollTests" type="ScrollContainer" parent="Menu/HBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="Menu/RowsCont/StundetsCont"]
+margin_top = 52.0
+margin_right = 344.0
+margin_bottom = 56.0
+
+[node name="StudentsScroll" type="ScrollContainer" parent="Menu/RowsCont/StundetsCont"]
+margin_top = 60.0
+margin_right = 344.0
+margin_bottom = 444.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Students" type="VBoxContainer" parent="Menu/RowsCont/StundetsCont/StudentsScroll"]
+margin_right = 344.0
+margin_bottom = 384.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TestsCont" type="VBoxContainer" parent="Menu/RowsCont"]
 margin_left = 348.0
 margin_right = 692.0
-margin_bottom = 496.0
+margin_bottom = 444.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Tests" type="VBoxContainer" parent="Menu/HBoxContainer/ScrollTests"]
-margin_right = 344.0
-margin_bottom = 496.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TestsLabel" type="Label" parent="Menu/HBoxContainer/ScrollTests/Tests"]
+[node name="TestsLabel" type="Label" parent="Menu/RowsCont/TestsCont"]
 margin_right = 344.0
 margin_bottom = 48.0
 custom_fonts/font = ExtResource( 3 )
@@ -78,26 +85,56 @@ custom_colors/font_color_shadow = Color( 0.196078, 0.25098, 0.2, 1 )
 custom_constants/shadow_offset_x = 2
 text = "Tests"
 
-[node name="ScrollAssignments" type="ScrollContainer" parent="Menu/HBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="Menu/RowsCont/TestsCont"]
+margin_top = 52.0
+margin_right = 344.0
+margin_bottom = 56.0
+
+[node name="TestsScroll" type="ScrollContainer" parent="Menu/RowsCont/TestsCont"]
+margin_top = 60.0
+margin_right = 344.0
+margin_bottom = 444.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Tests" type="VBoxContainer" parent="Menu/RowsCont/TestsCont/TestsScroll"]
+margin_right = 344.0
+margin_bottom = 384.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AssignmentsCont" type="VBoxContainer" parent="Menu/RowsCont"]
 margin_left = 696.0
 margin_right = 1040.0
-margin_bottom = 496.0
+margin_bottom = 444.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Assignments" type="VBoxContainer" parent="Menu/HBoxContainer/ScrollAssignments"]
-margin_right = 344.0
-margin_bottom = 496.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="AssignmentsLabel" type="Label" parent="Menu/HBoxContainer/ScrollAssignments/Assignments"]
+[node name="AssignmentsLabel" type="Label" parent="Menu/RowsCont/AssignmentsCont"]
 margin_right = 344.0
 margin_bottom = 48.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0.196078, 0.25098, 0.2, 1 )
 custom_constants/shadow_offset_x = 2
 text = "Assignments"
+
+[node name="HSeparator3" type="HSeparator" parent="Menu/RowsCont/AssignmentsCont"]
+margin_top = 52.0
+margin_right = 344.0
+margin_bottom = 56.0
+
+[node name="AssignmentsScroll" type="ScrollContainer" parent="Menu/RowsCont/AssignmentsCont"]
+margin_top = 60.0
+margin_right = 344.0
+margin_bottom = 444.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Assignments" type="VBoxContainer" parent="Menu/RowsCont/AssignmentsCont/AssignmentsScroll"]
+margin_right = 344.0
+margin_bottom = 384.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="BackButton" type="Button" parent="Menu"]
 margin_top = 585.0
