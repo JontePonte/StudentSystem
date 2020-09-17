@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 
 VisualVars="*res://autoloads/VisualVars.gd"
 GlobalVars="*res://autoloads/GlobalVars.gd"
+FileSys="*res://autoloads/FileSys.gd"
 
 [display]
 

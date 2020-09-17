@@ -17,3 +17,7 @@ func _process(_delta):
 
 func _on_SelectData_pressed():
 	$LoadDataPopup.popup_centered()
+
+
+func _on_LoadDataPopup_file_selected(path):
+	FileSys.change_active_data_file(path)
