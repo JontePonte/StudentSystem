@@ -140,8 +140,10 @@ margin_left = 1384.0
 margin_top = 324.0
 margin_right = 1877.0
 margin_bottom = 657.0
-window_title = "Select data file (.json)"
+window_title = "Select json"
 resizable = true
+dialog_text = "Change current  .json file containing student data
+"
 mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
