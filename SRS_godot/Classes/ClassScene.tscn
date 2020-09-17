@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Classes/ClassScene.gd" type="Script" id=1]
 [ext_resource path="res://assets/FontsDF/Header.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/FontsDF/Header2.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/FontsDF/SmallText.tres" type="DynamicFont" id=4]
 
 [node name="ClassScene" type="Control"]
 anchor_right = 1.0
@@ -27,3 +29,63 @@ margin_right = 1040.0
 margin_bottom = 81.0
 custom_fonts/font = ExtResource( 2 )
 text = "Label"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu"]
+margin_top = 85.0
+margin_right = 1040.0
+margin_bottom = 581.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Students" type="VBoxContainer" parent="Menu/HBoxContainer"]
+margin_right = 344.0
+margin_bottom = 496.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StudentsLabel" type="Label" parent="Menu/HBoxContainer/Students"]
+margin_right = 344.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0.196078, 0.25098, 0.2, 1 )
+custom_constants/shadow_offset_x = 2
+text = "Students"
+
+[node name="Tests" type="VBoxContainer" parent="Menu/HBoxContainer"]
+margin_left = 348.0
+margin_right = 692.0
+margin_bottom = 496.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TestsLabel" type="Label" parent="Menu/HBoxContainer/Tests"]
+margin_right = 344.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0.196078, 0.25098, 0.2, 1 )
+custom_constants/shadow_offset_x = 2
+text = "Tests"
+
+[node name="Assignments" type="VBoxContainer" parent="Menu/HBoxContainer"]
+margin_left = 696.0
+margin_right = 1040.0
+margin_bottom = 496.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AssignmentsLabel" type="Label" parent="Menu/HBoxContainer/Assignments"]
+margin_right = 344.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0.196078, 0.25098, 0.2, 1 )
+custom_constants/shadow_offset_x = 2
+text = "Assignments"
+
+[node name="BackButton" type="Button" parent="Menu"]
+margin_top = 585.0
+margin_right = 105.0
+margin_bottom = 620.0
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 4 )
+text = "Go Back "
+[connection signal="pressed" from="Menu/BackButton" to="." method="_on_BackButton_pressed"]

@@ -15,4 +15,4 @@ func button_pressed():
 	GlobalVars.activeClass = self.name
 
 	var path = "res://Classes/ClassScene.tscn"
-	var _is_change_ok = get_tree().change_scene(path)
+	var _is_class_scene = get_tree().change_scene(path)
