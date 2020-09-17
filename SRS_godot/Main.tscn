@@ -120,3 +120,23 @@ text = "Select Data File"
 flat = false
 align = 2
 switch_on_hover = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopupMenu2" type="PopupMenu" parent="Menu/HBoxContainer/SelectData"]
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/HBoxContainer/SelectData/PopupMenu2"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="OptionsButton" parent="Menu/HBoxContainer/SelectData/PopupMenu2/VBoxContainer" instance=ExtResource( 5 )]
+margin_right = 360.0
+margin_bottom = 60.0
+
+[node name="ContinueButton" parent="Menu/HBoxContainer/SelectData/PopupMenu2/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 64.0
+margin_right = 360.0
+margin_bottom = 124.0
