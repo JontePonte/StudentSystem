@@ -14,7 +14,6 @@ func _ready():
 
 func create_classes_buttons(): 
 	var s_data = FileSys.student_data_load()
-	print(s_data.keys())
 
 	# Instance menu buttons and make them childs of scroll menu
 	for subject in s_data.keys():
