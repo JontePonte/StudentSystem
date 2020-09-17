@@ -3,7 +3,7 @@
 [ext_resource path="res://Subject/Subject.gd" type="Script" id=1]
 [ext_resource path="res://assets/FontsDF/Header.tres" type="DynamicFont" id=2]
 
-[node name="Class" type="Control"]
+[node name="ClassScene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
