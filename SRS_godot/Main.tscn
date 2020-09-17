@@ -1,10 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://assets/FontsDF/Header.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Buttons/ContinueButton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Buttons/NewGameButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Buttons/OptionsButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=6]
 [ext_resource path="res://assets/FontsDF/SmallText.tres" type="DynamicFont" id=7]
 [ext_resource path="res://SelectDataButton.gd" type="Script" id=8]
@@ -48,7 +45,7 @@ rect_min_size = Vector2( 60, 20 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Menu/CenterRow"]
+[node name="ScrollSubjects" type="ScrollContainer" parent="Menu/CenterRow"]
 margin_right = 518.0
 margin_bottom = 461.0
 size_flags_horizontal = 3
@@ -57,28 +54,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow/ScrollContainer"]
+[node name="Subjects" type="VBoxContainer" parent="Menu/CenterRow/ScrollSubjects"]
 margin_right = 518.0
 margin_bottom = 461.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
 alignment = 1
-
-[node name="NewGameButton" parent="Menu/CenterRow/ScrollContainer/Buttons" instance=ExtResource( 4 )]
-margin_top = 120.0
-margin_right = 518.0
-margin_bottom = 180.0
-
-[node name="OptionsButton" parent="Menu/CenterRow/ScrollContainer/Buttons" instance=ExtResource( 5 )]
-margin_top = 200.0
-margin_right = 518.0
-margin_bottom = 260.0
-
-[node name="ContinueButton" parent="Menu/CenterRow/ScrollContainer/Buttons" instance=ExtResource( 3 )]
-margin_top = 280.0
-margin_right = 518.0
-margin_bottom = 340.0
 
 [node name="IconCont" type="CenterContainer" parent="Menu/CenterRow"]
 margin_left = 522.0

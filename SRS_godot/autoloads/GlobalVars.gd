@@ -9,7 +9,7 @@ func _ready():
 
 
 func load_data_file_variables():
-    var data = FileSys.save_data_load()
+    var data = FileSys.app_data_load()
 
 
     # -----------------------------------------------------
