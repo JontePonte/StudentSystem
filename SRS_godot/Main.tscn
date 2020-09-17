@@ -45,7 +45,7 @@ rect_min_size = Vector2( 60, 20 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ScrollSubjects" type="ScrollContainer" parent="Menu/CenterRow"]
+[node name="ScrollClass" type="ScrollContainer" parent="Menu/CenterRow"]
 margin_right = 518.0
 margin_bottom = 461.0
 size_flags_horizontal = 3
@@ -54,7 +54,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Subjects" type="VBoxContainer" parent="Menu/CenterRow/ScrollSubjects"]
+[node name="Classes" type="VBoxContainer" parent="Menu/CenterRow/ScrollClass"]
 margin_right = 518.0
 margin_bottom = 461.0
 size_flags_horizontal = 3
