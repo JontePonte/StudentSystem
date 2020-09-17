@@ -1,17 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Subject/Subject.gd" type="Script" id=1]
 [ext_resource path="res://assets/FontsDF/Header.tres" type="DynamicFont" id=2]
 
 [node name="ClassScene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Menu" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 120.0
@@ -22,8 +20,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Header" type="Label" parent="Menu"]
+[node name="Label" type="Label" parent="VBoxContainer"]
 margin_right = 1040.0
 margin_bottom = 81.0
 custom_fonts/font = ExtResource( 2 )
-text = "Header"
+text = "Label"

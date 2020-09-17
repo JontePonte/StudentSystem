@@ -12,12 +12,6 @@ func _ready():
 	create_classes_buttons()
 
 
-func go_to_class():
-	var path = "res://Classes/ClassScene.tscn"
-	get_tree().change_scene(path)
-	print("p!")
-
-
 func create_classes_buttons(): 
 	var s_data = FileSys.student_data_load()
 	print(s_data.keys())

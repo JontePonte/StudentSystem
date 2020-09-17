@@ -11,4 +11,5 @@ func _process(_delta):
 
 
 func button_pressed():
-	get_parent().get_parent().get_parent().get_parent().get_parent().go_to_class()
+	var path = "res://Classes/ClassScene.tscn"
+	var _is_change_ok = get_tree().change_scene(path)
