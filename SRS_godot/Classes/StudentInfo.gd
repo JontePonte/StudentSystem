@@ -45,7 +45,7 @@ func print_student_info(student_dict):
 
 	# print the info
 	for info_var in info_variable_list:
-		var scene = load("res://InfoTexts/StudentInfoText.tscn")
+		var scene = load("res://InfoTexts/StudentInfoTextEdit.tscn")
 		var info_text = scene.instance()
 
 		info_text.get_node("Label").set_text(info_var)
