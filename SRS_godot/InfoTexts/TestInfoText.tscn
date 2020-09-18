@@ -4,7 +4,6 @@
 
 [node name="Test" type="HBoxContainer"]
 margin_right = 480.0
-margin_bottom = 33.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -12,45 +11,157 @@ __meta__ = {
 
 [node name="Name" type="Label" parent="."]
 margin_right = 92.0
-margin_bottom = 33.0
+margin_bottom = 15.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 1 )
 text = "Name"
 
-[node name="Max" type="Label" parent="."]
+[node name="Max" type="HBoxContainer" parent="."]
 margin_left = 96.0
 margin_right = 188.0
-margin_bottom = 33.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+
+[node name="MaxLabel" type="Label" parent="Max"]
+margin_right = 23.0
+margin_bottom = 15.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 1 )
 text = "Max"
 
-[node name="Result" type="Label" parent="."]
+[node name="MaxE" type="Label" parent="Max"]
+margin_left = 27.0
+margin_right = 46.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "1"
+
+[node name="MaxC" type="Label" parent="Max"]
+margin_left = 50.0
+margin_right = 69.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "2"
+
+[node name="MaxA" type="Label" parent="Max"]
+margin_left = 73.0
+margin_right = 92.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "2"
+
+[node name="Result" type="HBoxContainer" parent="."]
 margin_left = 192.0
 margin_right = 284.0
-margin_bottom = 33.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+
+[node name="ResultLabel" type="Label" parent="Result"]
+margin_right = 35.0
+margin_bottom = 15.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 1 )
 text = "Result"
 
-[node name="Percent" type="Label" parent="."]
+[node name="ResultE" type="Label" parent="Result"]
+margin_left = 39.0
+margin_right = 54.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResultC" type="Label" parent="Result"]
+margin_left = 58.0
+margin_right = 73.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "2"
+
+[node name="ResultA" type="Label" parent="Result"]
+margin_left = 77.0
+margin_right = 92.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "2"
+
+[node name="Percent" type="HBoxContainer" parent="."]
 margin_left = 288.0
 margin_right = 380.0
-margin_bottom = 33.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+
+[node name="PercentLabel" type="Label" parent="Percent"]
+margin_right = 44.0
+margin_bottom = 15.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 1 )
 text = "Percent"
 
-[node name="Grade" type="Label" parent="."]
-margin_left = 384.0
-margin_right = 480.0
-margin_bottom = 33.0
+[node name="PercentE" type="Label" parent="Percent"]
+margin_left = 48.0
+margin_right = 60.0
+margin_bottom = 15.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 1 )
-text = "Grade
-"
+text = "1"
+
+[node name="PercentC" type="Label" parent="Percent"]
+margin_left = 64.0
+margin_right = 76.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "2"
+
+[node name="PercentA" type="Label" parent="Percent"]
+margin_left = 80.0
+margin_right = 92.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "2"
+
+[node name="Grade" type="HBoxContainer" parent="."]
+margin_left = 384.0
+margin_right = 480.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+
+[node name="GradeLabel" type="Label" parent="Grade"]
+margin_right = 46.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Grade"
+
+[node name="GradeLetter" type="Label" parent="Grade"]
+margin_left = 50.0
+margin_right = 96.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "1"
