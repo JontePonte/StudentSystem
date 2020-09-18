@@ -5,9 +5,10 @@ func show_info():
 	var student_dict = collect_info()
 
 	# set popup menu header to student name
-	$StudentInfoMenu/StudentInfoName.set_text(student_dict.first_name + " " + student_dict.last_name)
+	$Menu/StudentName.set_text(student_dict.first_name + " " + student_dict.last_name)
 
 	print_student_info(student_dict)
+	print_test_info(student_dict)
 
 
 func collect_info():
@@ -23,9 +24,9 @@ func collect_info():
 
 func print_student_info(student_dict):
 	# Clear any old info
-	for child in $StudentInfoMenu/StudentInfoHBox/StudentInfoKeys.get_children():
+	for child in $Menu/InfoHBox/InfoKeys.get_children():
 		child.queue_free()
-	for child in $StudentInfoMenu/StudentInfoHBox/StudentInfoVariables.get_children():
+	for child in $Menu/InfoHBox/InfoVariables.get_children():
 		child.queue_free()
 
 	# Print class, email and personal number
@@ -34,7 +35,7 @@ func print_student_info(student_dict):
 		var info_text = scene.instance()
 
 		info_text.get_node("Label").set_text(info_key)
-		$StudentInfoMenu/StudentInfoHBox/StudentInfoKeys.add_child(info_text)
+		$Menu/InfoHBox/InfoKeys.add_child(info_text)
 	
 	# Collect info to print right of class, email and personal number
 	var info_variable_list = [
@@ -48,5 +49,8 @@ func print_student_info(student_dict):
 		var info_text = scene.instance()
 
 		info_text.get_node("Label").set_text(info_var)
-		$StudentInfoMenu/StudentInfoHBox/StudentInfoVariables.add_child(info_text)
+		$Menu/InfoHBox/InfoVariables.add_child(info_text)
 	
+
+func print_test_info(student_dict):
+	print(student_dict)

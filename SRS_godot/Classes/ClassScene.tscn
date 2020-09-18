@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/FontsDF/Header2.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/FontsDF/SmallText.tres" type="DynamicFont" id=4]
 [ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Classes/StudentInfo.gd" type="Script" id=6]
+[ext_resource path="res://Classes/StudentInfo.tscn" type="PackedScene" id=6]
 
 [node name="ClassScene" type="Control"]
 anchor_right = 1.0
@@ -195,55 +195,5 @@ size_flags_horizontal = 0
 custom_fonts/font = ExtResource( 4 )
 text = "Go Back "
 
-[node name="StudentInfo" type="WindowDialog" parent="."]
-visible = true
-margin_left = -500.0
-margin_top = 194.468
-margin_bottom = 594.468
-rect_min_size = Vector2( 500, 500 )
-window_title = "Student Info"
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="StudentInfoMenu" type="VBoxContainer" parent="StudentInfo"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-custom_constants/separation = 10
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="StudentInfoName" type="Label" parent="StudentInfo/StudentInfoMenu"]
-margin_right = 480.0
-margin_bottom = 29.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 4 )
-text = "Student name"
-align = 1
-
-[node name="StudentInfoHBox" type="HBoxContainer" parent="StudentInfo/StudentInfoMenu"]
-margin_top = 39.0
-margin_right = 480.0
-margin_bottom = 480.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="StudentInfoKeys" type="VBoxContainer" parent="StudentInfo/StudentInfoMenu/StudentInfoHBox"]
-margin_right = 238.0
-margin_bottom = 441.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="StudentInfoVariables" type="VBoxContainer" parent="StudentInfo/StudentInfoMenu/StudentInfoHBox"]
-margin_left = 242.0
-margin_right = 480.0
-margin_bottom = 441.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="StudentInfo" parent="." instance=ExtResource( 6 )]
 [connection signal="pressed" from="Menu/BackButton" to="." method="_on_BackButton_pressed"]
