@@ -62,15 +62,34 @@ func print_test_info(student_dict):
 	for test in tests_list:
 		var scene = load("res://InfoTexts/TestInfoText.tscn")
 		var test_text_row = scene.instance()
-
+		
+		# Extract max points from data file
+		var max_points = []
+		var data_dict = FileSys.student_data_load()
+		for test_base in data_dict.get(GlobalVars.activeClass).get("tests"):
+			if test.test_name == test_base.test_name:
+				max_points = test_base.get("max_points")
+		
+		var percents = calculate_percents(test.result, max_points)
+		
 		# Add all texts to text_text row
 		test_text_row.get_node("Name").set_text(test.test_name)
-		test_text_row.get_node("Max").set_text("-Max points here-")
+		test_text_row.get_node("Max").set_text(str(max_points))
 		test_text_row.get_node("Result").set_text(str(test.result))
-		test_text_row.get_node("Percent").set_text("-Percents here-")
+		test_text_row.get_node("Percent").set_text(percents)
 		test_text_row.get_node("Grade").set_text(test.grade)
 
 		$Menu/Tests.add_child(test_text_row)
 
+func calculate_percents(res_points, max_points):
+	var e = stepify((res_points[0] / max_points[0]) * 100, 0.01)
+	var c = stepify((res_points[1] / max_points[1]) * 100, 0.01)
+	var a = stepify((res_points[2] / max_points[2]) * 100, 0.01)
+	
+	var e_string = str(e) + "% "
+	var c_string = str(c) + "% "
+	var a_string = str(a) + "% "
+
+	return e_string + c_string + a_string
 
 

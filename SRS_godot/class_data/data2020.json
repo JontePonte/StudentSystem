@@ -22,7 +22,7 @@
                         "grade": "B"
                     },
                     {
-                        "test_name": "kafter",
+                        "test_name": "krafter",
                         "completed": true,
                         "result": [
                             9,
@@ -54,7 +54,7 @@
                         "grade": "B"
                     },
                     {
-                        "test_name": "kafter",
+                        "test_name": "krafter",
                         "completed": true,
                         "result": [
                             9,
@@ -86,7 +86,7 @@
                         "grade": "B"
                     },
                     {
-                        "test_name": "kafter",
+                        "test_name": "krafter",
                         "completed": true,
                         "result": [
                             9,
@@ -100,7 +100,7 @@
             {
                 "first_name": "Jeppe",
                 "last_name": "Jeppsson",
-                "id_num": 2,
+                "id_num": 3,
                 "active": true,
                 "class": "te22",
                 "email": "jeppe.j4@utb.hudiksvall.se",
@@ -118,7 +118,7 @@
                         "grade": "B"
                     },
                     {
-                        "test_name": "kafter",
+                        "test_name": "krafter",
                         "completed": true,
                         "result": [
                             9,
@@ -132,7 +132,7 @@
             {
                 "first_name": "Jeppe",
                 "last_name": "Jeppsson",
-                "id_num": 2,
+                "id_num": 4,
                 "active": true,
                 "class": "te22",
                 "email": "jeppe.j4@utb.hudiksvall.se",
@@ -150,7 +150,7 @@
                         "grade": "B"
                     },
                     {
-                        "test_name": "kafter",
+                        "test_name": "krafter",
                         "completed": true,
                         "result": [
                             9,
@@ -164,7 +164,7 @@
             {
                 "first_name": "Jeppe",
                 "last_name": "Jeppsson",
-                "id_num": 2,
+                "id_num": 5,
                 "active": true,
                 "class": "te22",
                 "email": "jeppe.j4@utb.hudiksvall.se",
@@ -182,7 +182,7 @@
                         "grade": "B"
                     },
                     {
-                        "test_name": "kafter",
+                        "test_name": "krafter",
                         "completed": true,
                         "result": [
                             9,
@@ -196,7 +196,7 @@
             {
                 "first_name": "Jeppe",
                 "last_name": "Jeppsson",
-                "id_num": 2,
+                "id_num": 6,
                 "active": true,
                 "class": "te22",
                 "email": "jeppe.j4@utb.hudiksvall.se",
@@ -214,7 +214,7 @@
                         "grade": "B"
                     },
                     {
-                        "test_name": "kafter",
+                        "test_name": "krafter",
                         "completed": true,
                         "result": [
                             9,
@@ -228,7 +228,7 @@
             {
                 "first_name": "Jeppe",
                 "last_name": "Jeppsson",
-                "id_num": 2,
+                "id_num": 7,
                 "active": true,
                 "class": "te22",
                 "email": "jeppe.j4@utb.hudiksvall.se",
@@ -246,7 +246,7 @@
                         "grade": "B"
                     },
                     {
-                        "test_name": "kafter",
+                        "test_name": "krafter",
                         "completed": true,
                         "result": [
                             9,
@@ -260,7 +260,7 @@
             {
                 "first_name": "Jeppe",
                 "last_name": "Jeppsson",
-                "id_num": 2,
+                "id_num": 8,
                 "active": true,
                 "class": "te22",
                 "email": "jeppe.j4@utb.hudiksvall.se",
@@ -278,7 +278,7 @@
                         "grade": "B"
                     },
                     {
-                        "test_name": "kafter",
+                        "test_name": "krafter",
                         "completed": true,
                         "result": [
                             9,
@@ -292,7 +292,7 @@
             {
                 "first_name": "Anna",
                 "last_name": "Andersson",
-                "id_num": 3,
+                "id_num": 9,
                 "active": true,
                 "class": "te22",
                 "email": "anna.a5@utb.hudiksvall.se",
@@ -310,7 +310,7 @@
                         "grade": "B"
                     },
                     {
-                        "test_name": "kafter",
+                        "test_name": "krafter",
                         "completed": true,
                         "result": [
                             9,
@@ -324,7 +324,7 @@
             {
                 "first_name": "Anna",
                 "last_name": "Andersson",
-                "id_num": 3,
+                "id_num": 10,
                 "active": true,
                 "class": "te22",
                 "email": "anna.a5@utb.hudiksvall.se",
@@ -342,7 +342,7 @@
                         "grade": "B"
                     },
                     {
-                        "test_name": "kafter",
+                        "test_name": "krafter",
                         "completed": true,
                         "result": [
                             9,
@@ -356,7 +356,7 @@
             {
                 "first_name": "Anna",
                 "last_name": "Andersson",
-                "id_num": 3,
+                "id_num": 11,
                 "active": true,
                 "class": "te22",
                 "email": "anna.a5@utb.hudiksvall.se",
@@ -367,7 +367,7 @@
             {
                 "first_name": "Anna",
                 "last_name": "Andersson",
-                "id_num": 3,
+                "id_num": 12,
                 "active": true,
                 "class": "te22",
                 "email": "anna.a5@utb.hudiksvall.se",
@@ -378,7 +378,7 @@
             {
                 "first_name": "Anna",
                 "last_name": "Andersson",
-                "id_num": 3,
+                "id_num": 13,
                 "active": true,
                 "class": "te22",
                 "email": "anna.a5@utb.hudiksvall.se",
@@ -389,7 +389,7 @@
             {
                 "first_name": "Jeppe",
                 "last_name": "Jeppsson",
-                "id_num": 4,
+                "id_num": 14,
                 "active": true,
                 "class": "te22",
                 "email": "jeppe.j7@utb.hudiksvall.se",
@@ -400,7 +400,7 @@
             {
                 "first_name": "Jonas",
                 "last_name": "Jonasson",
-                "id_num": 5,
+                "id_num": 15,
                 "active": true,
                 "class": "te22",
                 "email": "jonas.j1@utb.hudiksvall.se",
@@ -413,6 +413,42 @@
             {
                 "test_name": "rorelse&acc",
                 "test_id": 0,
+                "max_points": [
+                    12,
+                    8,
+                    5
+                ],
+                "grade_limits": {
+                    "E": [
+                        7,
+                        0,
+                        0
+                    ],
+                    "D": [
+                        8,
+                        3,
+                        0
+                    ],
+                    "C": [
+                        9,
+                        5,
+                        0
+                    ],
+                    "B": [
+                        10,
+                        5,
+                        2
+                    ],
+                    "A": [
+                        10,
+                        6,
+                        3
+                    ]
+                }
+            },
+            {
+                "test_name": "krafter",
+                "test_id": 1,
                 "max_points": [
                     12,
                     8,
