@@ -22,25 +22,31 @@ func collect_info():
 
 
 func print_student_info(student_dict):
+	# Clear any old info
+	for child in $StudentInfoMenu/StudentInfoHBox/StudentInfoKeys.get_children():
+		child.queue_free()
+	for child in $StudentInfoMenu/StudentInfoHBox/StudentInfoVariables.get_children():
+		child.queue_free()
+
+	# Print class, email and personal number
 	for info_key in ["Class", "Email", "Pers Nr"]:
 		var scene = load("res://InfoTexts/StudentInfoText.tscn")
 		var info_text = scene.instance()
 
 		info_text.get_node("Label").set_text(info_key)
-
 		$StudentInfoMenu/StudentInfoHBox/StudentInfoKeys.add_child(info_text)
 	
-	
+	# Collect info to print right of class, email and personal number
 	var info_variable_list = [
 		str(student_dict.get("class")),
 		str(student_dict.get("email")),
 		str(student_dict.get("pers_nr"))]
 
+	# print the info
 	for info_var in info_variable_list:
 		var scene = load("res://InfoTexts/StudentInfoText.tscn")
 		var info_text = scene.instance()
 
 		info_text.get_node("Label").set_text(info_var)
-
 		$StudentInfoMenu/StudentInfoHBox/StudentInfoVariables.add_child(info_text)
 	
