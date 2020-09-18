@@ -7,7 +7,7 @@ func show_info():
 	# set popup menu header to student name
 	$StudentInfoMenu/StudentInfoName.set_text(student_dict.first_name + " " + student_dict.last_name)
 
-	print_info_keys(student_dict)
+	print_student_info()
 
 
 func collect_info():
@@ -21,16 +21,8 @@ func collect_info():
 			return student
 
 
-func print_info_keys(student_dict):
-	for info_key in student_dict.keys():
-		# Don't display tests, comments and assignments in the same list as other info
-		if info_key == "tests":
-			continue
-		elif info_key == "comments":
-			continue
-		elif info_key == "assignemnts":
-			continue
-
+func print_student_info():
+	for info_key in ["Class", "Email", "Pers Nr"]:
 		var scene = load("res://InfoTexts/StudentInfoText.tscn")
 		var info_text = scene.instance()
 
