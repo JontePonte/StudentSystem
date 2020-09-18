@@ -20,6 +20,7 @@ func create_student_buttons():
 
 		student_button.get_node("Label").set_text(student.first_name + " " + student.last_name)
 		student_button.name = str(student.id_num)
+		student_button.student_id = student.id_num
 
 		$Menu/RowsCont/StundetsCont/StudentsScroll/Students.add_child(student_button)
 
