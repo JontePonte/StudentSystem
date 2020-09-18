@@ -53,4 +53,6 @@ func print_student_info(student_dict):
 	
 
 func print_test_info(student_dict):
-	print(student_dict)
+	var tests_list = student_dict.get("tests")
+	print(tests_list)
+	

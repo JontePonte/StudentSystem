@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/FontsDF/TestTextSmall.tres" type="DynamicFont" id=1]
+
+[node name="Test" type="HBoxContainer"]
+margin_right = 480.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="."]
+margin_right = 92.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Name"
+
+[node name="Max" type="Label" parent="."]
+margin_left = 96.0
+margin_right = 188.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Max"
+
+[node name="Result" type="Label" parent="."]
+margin_left = 192.0
+margin_right = 284.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Result"
+
+[node name="Percent" type="Label" parent="."]
+margin_left = 288.0
+margin_right = 380.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Percent"
+
+[node name="Grade" type="Label" parent="."]
+margin_left = 384.0
+margin_right = 480.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Grade
+"

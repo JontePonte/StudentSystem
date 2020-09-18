@@ -38,19 +38,27 @@ align = 1
 [node name="InfoHBox" type="HBoxContainer" parent="Menu"]
 margin_top = 39.0
 margin_right = 480.0
-margin_bottom = 480.0
+margin_bottom = 254.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="InfoKeys" type="VBoxContainer" parent="Menu/InfoHBox"]
 margin_right = 238.0
-margin_bottom = 441.0
+margin_bottom = 215.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="InfoVariables" type="VBoxContainer" parent="Menu/InfoHBox"]
 margin_left = 242.0
 margin_right = 480.0
-margin_bottom = 441.0
+margin_bottom = 215.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Tests" type="VBoxContainer" parent="Menu"]
+margin_top = 264.0
+margin_right = 480.0
+margin_bottom = 480.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
