@@ -63,14 +63,22 @@ func print_test_info(student_dict):
 		var scene = load("res://InfoTexts/TestInfoText.tscn")
 		var test_text_row = scene.instance()
 		
-		# Extract max points from data file
+		# Extract max points and grade limits from data file
 		var max_points = []
+		var grade_limits = {}
 		var data_dict = FileSys.student_data_load()
 		for test_base in data_dict.get(GlobalVars.activeClass).get("tests"):
 			if test.test_name == test_base.test_name:
 				max_points = test_base.get("max_points")
+				grade_limits.E = test_base.get("grade_limits").get("E")
+				grade_limits.D = test_base.get("grade_limits").get("D")
+				grade_limits.C = test_base.get("grade_limits").get("C")
+				grade_limits.B = test_base.get("grade_limits").get("B")
+				grade_limits.A = test_base.get("grade_limits").get("A")
+		
 		
 		var percents = calculate_percents(test.result, max_points)
+		var grade = calculate_grade(test.result, grade_limits)
 		
 		# Add all texts to text_text row
 		test_text_row.get_node("Name").set_text(test.test_name)
@@ -87,14 +95,14 @@ func print_test_info(student_dict):
 		test_text_row.get_node("Percent/PercentC").set_text(percents[1])
 		test_text_row.get_node("Percent/PercentA").set_text(percents[2])
 
-		test_text_row.get_node("Grade/GradeLetter").set_text(test.grade)
+		test_text_row.get_node("Grade/GradeLetter").set_text(grade)
 
 		$Menu/TestsCont/TestsScroll/Tests.add_child(test_text_row)
 
 func calculate_percents(res_points, max_points):
-	var e = stepify((res_points[0] / max_points[0]) * 100, 0.01)
-	var c = stepify((res_points[1] / max_points[1]) * 100, 0.01)
-	var a = stepify((res_points[2] / max_points[2]) * 100, 0.01)
+	var e = stepify((res_points[0] / max_points[0]) * 100, 1.0)
+	var c = stepify((res_points[1] / max_points[1]) * 100, 1.0)
+	var a = stepify((res_points[2] / max_points[2]) * 100, 1.0)
 	
 	var e_string = str(e) + "% "
 	var c_string = str(c) + "% "
@@ -103,3 +111,6 @@ func calculate_percents(res_points, max_points):
 	return [e_string, c_string, a_string]
 
 
+func calculate_grade(res_points, limits):
+	print(limits.E[0])
+	return "F"
