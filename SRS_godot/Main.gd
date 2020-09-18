@@ -12,7 +12,11 @@ func _ready():
 	create_classes_buttons()
 
 
-func create_classes_buttons(): 
+func create_classes_buttons():
+	# Clear any old buttons
+	for child in $Menu/CenterRow/ScrollClass/Classes.get_children():
+		child.queue_free()
+	
 	var s_data = FileSys.student_data_load()
 
 	# Instance menu buttons and make them childs of scroll menu
@@ -36,3 +40,4 @@ func _on_SelectData_pressed():
 func _on_LoadDataPopup_file_selected(path):
 	FileSys.change_active_data_file(path)
 	$Menu/HBoxContainer/LoadDataCont/SelectData.update_text()
+	create_classes_buttons()
