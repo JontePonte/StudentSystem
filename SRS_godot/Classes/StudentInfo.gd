@@ -7,7 +7,7 @@ func show_info():
 	# set popup menu header to student name
 	$StudentInfoMenu/StudentInfoName.set_text(student_dict.first_name + " " + student_dict.last_name)
 
-	print_student_info()
+	print_student_info(student_dict)
 
 
 func collect_info():
@@ -21,7 +21,7 @@ func collect_info():
 			return student
 
 
-func print_student_info():
+func print_student_info(student_dict):
 	for info_key in ["Class", "Email", "Pers Nr"]:
 		var scene = load("res://InfoTexts/StudentInfoText.tscn")
 		var info_text = scene.instance()
@@ -29,3 +29,18 @@ func print_student_info():
 		info_text.get_node("Label").set_text(info_key)
 
 		$StudentInfoMenu/StudentInfoHBox/StudentInfoKeys.add_child(info_text)
+	
+	
+	var info_variable_list = [
+		str(student_dict.get("class")),
+		str(student_dict.get("email")),
+		str(student_dict.get("pers_nr"))]
+
+	for info_var in info_variable_list:
+		var scene = load("res://InfoTexts/StudentInfoText.tscn")
+		var info_text = scene.instance()
+
+		info_text.get_node("Label").set_text(info_var)
+
+		$StudentInfoMenu/StudentInfoHBox/StudentInfoVariables.add_child(info_text)
+	

@@ -240,7 +240,7 @@ margin_bottom = 441.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="StudentinfoVariables" type="VBoxContainer" parent="StudentInfo/StudentInfoMenu/StudentInfoHBox"]
+[node name="StudentInfoVariables" type="VBoxContainer" parent="StudentInfo/StudentInfoMenu/StudentInfoHBox"]
 margin_left = 242.0
 margin_right = 480.0
 margin_bottom = 441.0
