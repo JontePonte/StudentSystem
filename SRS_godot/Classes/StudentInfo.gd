@@ -54,7 +54,7 @@ func print_student_info(student_dict):
 
 func print_test_info(student_dict):
 	# Clear old tests in pop up box
-	for child in $Menu/Tests.get_children():
+	for child in $Menu/TestsCont/TestsScroll/Tests.get_children():
 		child.queue_free()
 
 	var tests_list = student_dict.get("tests")
@@ -79,7 +79,7 @@ func print_test_info(student_dict):
 		test_text_row.get_node("Percent").set_text(percents)
 		test_text_row.get_node("Grade").set_text(test.grade)
 
-		$Menu/Tests.add_child(test_text_row)
+		$Menu/TestsCont/TestsScroll/Tests.add_child(test_text_row)
 
 func calculate_percents(res_points, max_points):
 	var e = stepify((res_points[0] / max_points[0]) * 100, 0.01)
