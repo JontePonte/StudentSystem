@@ -4,7 +4,6 @@
 [ext_resource path="res://Classes/StudentInfo.gd" type="Script" id=2]
 
 [node name="StudentInfo" type="WindowDialog"]
-visible = true
 margin_top = 30.0
 margin_right = 500.0
 margin_bottom = 530.0

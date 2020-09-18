@@ -53,6 +53,24 @@ func print_student_info(student_dict):
 	
 
 func print_test_info(student_dict):
+	# Clear old tests in pop up box
+	for child in $Menu/Tests.get_children():
+		child.queue_free()
+
 	var tests_list = student_dict.get("tests")
-	print(tests_list)
 	
+	for test in tests_list:
+		var scene = load("res://InfoTexts/TestInfoText.tscn")
+		var test_text_row = scene.instance()
+
+		# Add all texts to text_text row
+		test_text_row.get_node("Name").set_text(test.test_name)
+		test_text_row.get_node("Max").set_text("-Max points here-")
+		test_text_row.get_node("Result").set_text(str(test.result))
+		test_text_row.get_node("Percent").set_text("-Percents here-")
+		test_text_row.get_node("Grade").set_text(test.grade)
+
+		$Menu/Tests.add_child(test_text_row)
+
+
+
