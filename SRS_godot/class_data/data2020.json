@@ -15,7 +15,7 @@
                         "test_name": "rorelse&acc",
                         "completed": true,
                         "result": [
-                            8,
+                            1,
                             6,
                             4
                         ],
@@ -44,15 +44,24 @@
                 "comments": [],
                 "tests": [
                     {
+                        "test_name": "rorelse&acc",
+                        "completed": true,
+                        "result": [
+                            2,
+                            6,
+                            4
+                        ],
+                        "grade": "B"
+                    },
+                    {
                         "test_name": "kafter",
                         "completed": true,
                         "result": [
-                            6,
-                            4,
-                            0
+                            9,
+                            5,
+                            3
                         ],
-                        "grade": "D",
-                        "comments": "Good understanding of acceleration"
+                        "grade": "B"
                     }
                 ]
             },
@@ -65,7 +74,28 @@
                 "email": "jeppe.j4@utb.hudiksvall.se",
                 "pers_nr": 200103030404,
                 "comments": [],
-                "tests": []
+                "tests": [
+                    {
+                        "test_name": "rorelse&acc",
+                        "completed": true,
+                        "result": [
+                            3,
+                            6,
+                            4
+                        ],
+                        "grade": "B"
+                    },
+                    {
+                        "test_name": "kafter",
+                        "completed": true,
+                        "result": [
+                            9,
+                            5,
+                            3
+                        ],
+                        "grade": "B"
+                    }
+                ]
             },
             {
                 "first_name": "Jeppe",
@@ -76,7 +106,28 @@
                 "email": "jeppe.j4@utb.hudiksvall.se",
                 "pers_nr": 200103030404,
                 "comments": [],
-                "tests": []
+                "tests": [
+                    {
+                        "test_name": "rorelse&acc",
+                        "completed": true,
+                        "result": [
+                            4,
+                            6,
+                            4
+                        ],
+                        "grade": "B"
+                    },
+                    {
+                        "test_name": "kafter",
+                        "completed": true,
+                        "result": [
+                            9,
+                            5,
+                            3
+                        ],
+                        "grade": "B"
+                    }
+                ]
             },
             {
                 "first_name": "Jeppe",
@@ -87,7 +138,28 @@
                 "email": "jeppe.j4@utb.hudiksvall.se",
                 "pers_nr": 200103030404,
                 "comments": [],
-                "tests": []
+                "tests": [
+                    {
+                        "test_name": "rorelse&acc",
+                        "completed": true,
+                        "result": [
+                            5,
+                            6,
+                            4
+                        ],
+                        "grade": "B"
+                    },
+                    {
+                        "test_name": "kafter",
+                        "completed": true,
+                        "result": [
+                            9,
+                            5,
+                            3
+                        ],
+                        "grade": "B"
+                    }
+                ]
             },
             {
                 "first_name": "Jeppe",
@@ -98,7 +170,28 @@
                 "email": "jeppe.j4@utb.hudiksvall.se",
                 "pers_nr": 200103030404,
                 "comments": [],
-                "tests": []
+                "tests": [
+                    {
+                        "test_name": "rorelse&acc",
+                        "completed": true,
+                        "result": [
+                            6,
+                            6,
+                            4
+                        ],
+                        "grade": "B"
+                    },
+                    {
+                        "test_name": "kafter",
+                        "completed": true,
+                        "result": [
+                            9,
+                            5,
+                            3
+                        ],
+                        "grade": "B"
+                    }
+                ]
             },
             {
                 "first_name": "Jeppe",
@@ -109,7 +202,28 @@
                 "email": "jeppe.j4@utb.hudiksvall.se",
                 "pers_nr": 200103030404,
                 "comments": [],
-                "tests": []
+                "tests": [
+                    {
+                        "test_name": "rorelse&acc",
+                        "completed": true,
+                        "result": [
+                            7,
+                            6,
+                            4
+                        ],
+                        "grade": "B"
+                    },
+                    {
+                        "test_name": "kafter",
+                        "completed": true,
+                        "result": [
+                            9,
+                            5,
+                            3
+                        ],
+                        "grade": "B"
+                    }
+                ]
             },
             {
                 "first_name": "Jeppe",
@@ -120,7 +234,28 @@
                 "email": "jeppe.j4@utb.hudiksvall.se",
                 "pers_nr": 200103030404,
                 "comments": [],
-                "tests": []
+                "tests": [
+                    {
+                        "test_name": "rorelse&acc",
+                        "completed": true,
+                        "result": [
+                            8,
+                            6,
+                            4
+                        ],
+                        "grade": "B"
+                    },
+                    {
+                        "test_name": "kafter",
+                        "completed": true,
+                        "result": [
+                            9,
+                            5,
+                            3
+                        ],
+                        "grade": "B"
+                    }
+                ]
             },
             {
                 "first_name": "Jeppe",
@@ -131,7 +266,28 @@
                 "email": "jeppe.j4@utb.hudiksvall.se",
                 "pers_nr": 200103030404,
                 "comments": [],
-                "tests": []
+                "tests": [
+                    {
+                        "test_name": "rorelse&acc",
+                        "completed": true,
+                        "result": [
+                            9,
+                            6,
+                            4
+                        ],
+                        "grade": "B"
+                    },
+                    {
+                        "test_name": "kafter",
+                        "completed": true,
+                        "result": [
+                            9,
+                            5,
+                            3
+                        ],
+                        "grade": "B"
+                    }
+                ]
             },
             {
                 "first_name": "Anna",
@@ -142,7 +298,28 @@
                 "email": "anna.a5@utb.hudiksvall.se",
                 "pers_nr": 200202070707,
                 "comments": [],
-                "tests": []
+                "tests": [
+                    {
+                        "test_name": "rorelse&acc",
+                        "completed": true,
+                        "result": [
+                            10,
+                            6,
+                            4
+                        ],
+                        "grade": "B"
+                    },
+                    {
+                        "test_name": "kafter",
+                        "completed": true,
+                        "result": [
+                            9,
+                            5,
+                            3
+                        ],
+                        "grade": "B"
+                    }
+                ]
             },
             {
                 "first_name": "Anna",
@@ -153,7 +330,28 @@
                 "email": "anna.a5@utb.hudiksvall.se",
                 "pers_nr": 200202070707,
                 "comments": [],
-                "tests": []
+                "tests": [
+                    {
+                        "test_name": "rorelse&acc",
+                        "completed": true,
+                        "result": [
+                            11,
+                            6,
+                            4
+                        ],
+                        "grade": "B"
+                    },
+                    {
+                        "test_name": "kafter",
+                        "completed": true,
+                        "result": [
+                            9,
+                            5,
+                            3
+                        ],
+                        "grade": "B"
+                    }
+                ]
             },
             {
                 "first_name": "Anna",
