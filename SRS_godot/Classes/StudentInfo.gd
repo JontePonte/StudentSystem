@@ -19,3 +19,7 @@ func collect_info():
 	for student in students_list:
 		if student.id_num == GlobalVars.activeStudentId:
 			return student
+
+
+func print_keys():
+	pass
