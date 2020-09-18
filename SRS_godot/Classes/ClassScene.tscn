@@ -200,7 +200,7 @@ visible = true
 margin_left = -500.0
 margin_top = 194.468
 margin_bottom = 594.468
-rect_min_size = Vector2( 400, 400 )
+rect_min_size = Vector2( 500, 500 )
 window_title = "Student Info"
 script = ExtResource( 6 )
 __meta__ = {
@@ -210,12 +210,17 @@ __meta__ = {
 [node name="StudentInfoMenu" type="VBoxContainer" parent="StudentInfo"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+custom_constants/separation = 10
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="StudentInfoName" type="Label" parent="StudentInfo/StudentInfoMenu"]
-margin_right = 500.0
+margin_right = 480.0
 margin_bottom = 29.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 4 )
@@ -223,22 +228,22 @@ text = "Student name"
 align = 1
 
 [node name="StudentInfoHBox" type="HBoxContainer" parent="StudentInfo/StudentInfoMenu"]
-margin_top = 33.0
-margin_right = 500.0
-margin_bottom = 400.0
+margin_top = 39.0
+margin_right = 480.0
+margin_bottom = 480.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="StudentInfoKeys" type="VBoxContainer" parent="StudentInfo/StudentInfoMenu/StudentInfoHBox"]
-margin_right = 248.0
-margin_bottom = 367.0
+margin_right = 238.0
+margin_bottom = 441.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="StudentinfoVariables" type="VBoxContainer" parent="StudentInfo/StudentInfoMenu/StudentInfoHBox"]
-margin_left = 252.0
-margin_right = 500.0
-margin_bottom = 367.0
+margin_left = 242.0
+margin_right = 480.0
+margin_bottom = 441.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 [connection signal="pressed" from="Menu/BackButton" to="." method="_on_BackButton_pressed"]
