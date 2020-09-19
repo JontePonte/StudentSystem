@@ -113,7 +113,7 @@ max_length = 2
 
 [node name="Percent" type="HBoxContainer" parent="."]
 margin_left = 381.0
-margin_right = 473.0
+margin_right = 482.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 92, 0 )
 size_flags_horizontal = 3
@@ -129,37 +129,37 @@ valign = 1
 
 [node name="PercentE" type="Label" parent="Percent"]
 margin_left = 48.0
-margin_right = 60.0
+margin_right = 63.0
 margin_bottom = 25.0
-size_flags_horizontal = 3
+rect_min_size = Vector2( 15, 0 )
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 1 )
 text = "1"
 valign = 1
 
 [node name="PercentC" type="Label" parent="Percent"]
-margin_left = 64.0
-margin_right = 76.0
+margin_left = 67.0
+margin_right = 82.0
 margin_bottom = 25.0
-size_flags_horizontal = 3
+rect_min_size = Vector2( 15, 0 )
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 1 )
 text = "2"
 valign = 1
 
 [node name="PercentA" type="Label" parent="Percent"]
-margin_left = 80.0
-margin_right = 92.0
+margin_left = 86.0
+margin_right = 101.0
 margin_bottom = 25.0
-size_flags_horizontal = 3
+rect_min_size = Vector2( 15, 0 )
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 1 )
 text = "2"
 valign = 1
 
 [node name="Grade" type="HBoxContainer" parent="."]
-margin_left = 477.0
-margin_right = 569.0
+margin_left = 486.0
+margin_right = 578.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 92, 0 )
 size_flags_horizontal = 3
