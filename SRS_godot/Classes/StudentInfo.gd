@@ -3,6 +3,7 @@ extends WindowDialog
 
 onready var InfoKeys = get_node("Menu/InfoHBox/InfoKeys")
 onready var InfoVariables = get_node("Menu/InfoHBox/InfoVariables")
+onready var Tests = get_node("Menu/TestsCont/TestsScroll/Tests")
 
 
 # lists of what will be displayed under the header
@@ -111,8 +112,9 @@ func print_test_info(student_dict):
 		test_text_row.get_node("TestInfo/Percent/PercentA").set_text(percents[2])
 
 		test_text_row.get_node("TestInfo/Grade/GradeLetter").set_text(grade)
-
-		$Menu/TestsCont/TestsScroll/Tests.add_child(test_text_row)
+		
+		test_text_row.key_name = test_index
+		Tests.add_child(test_text_row)
 
 
 func calculate_percents(res_points, max_points):
@@ -176,18 +178,38 @@ func calculate_grade(res_points, limits):
 func _on_SaveButton_pressed():
 	var data_dict = FileSys.student_data_load()
 	var student_dict = collect_info()
+	
 
+	# ------------------ Info save ----------------------
 	# Create dictionary from the info text boxes
-	var edit_box_dict = {}
+	var info_edit_box_dict = {}
 	for child in InfoVariables.get_children():
-		edit_box_dict[child.key_name] = child.get_node("Label").text
+		info_edit_box_dict[child.key_name] = child.get_node("Label").text
 
-	# Update all student info changes in student dict and update data_dict
+	# Update all student info changes in student dict
 	for info_key in info_key_list:
 		for student_key in student_dict.keys():
 			if info_key == student_key:
-				student_dict[student_key] = edit_box_dict.get(info_key)
-	data_dict.get(GlobalVars.activeClass).students[str(GlobalVars.activeStudentId)] = student_dict
+				student_dict[student_key] = info_edit_box_dict.get(info_key)
+				
+				
+	# ------------------ Test save ----------------------
+	# Create a dictionary with all tests with results info from text edits
+	var test_edit_box_dict = {}
+	for child in Tests.get_children():
+		test_edit_box_dict[child.key_name] = [
+			int(child.get_node("TestInfo/Result/ResultE").text),
+			int(child.get_node("TestInfo/Result/ResultC").text),
+			int(child.get_node("TestInfo/Result/ResultA").text)]
+
+	for test_edited_id in test_edit_box_dict.keys():
+		for test_stored_id in student_dict.get("tests").keys():
+			if test_edited_id == test_stored_id:
+				student_dict.get("tests").get(test_stored_id)["result"] = test_edit_box_dict[test_edited_id]
+	print_test_info(student_dict)
 	
+
+	# update data_dict
+	data_dict.get(GlobalVars.activeClass).students[str(GlobalVars.activeStudentId)] = student_dict
 	
 	FileSys.student_data_save(data_dict)
