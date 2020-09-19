@@ -1,6 +1,10 @@
 extends WindowDialog
 
 
+onready var InfoKeys = get_node("Menu/InfoHBox/InfoKeys")
+onready var InfoVariables = get_node("Menu/InfoHBox/InfoVariables")
+
+
 func show_info():
 	var student_dict = collect_info()
 
@@ -24,9 +28,9 @@ func collect_info():
 
 func print_student_info(student_dict):
 	# Clear any old info
-	for child in $Menu/InfoHBox/InfoKeys.get_children():
+	for child in InfoKeys.get_children():
 		child.queue_free()
-	for child in $Menu/InfoHBox/InfoVariables.get_children():
+	for child in InfoVariables.get_children():
 		child.queue_free()
 
 	
@@ -45,7 +49,7 @@ func print_student_info(student_dict):
 		var info_text = scene.instance()
 
 		info_text.get_node("Label").set_text(info_key)
-		$Menu/InfoHBox/InfoKeys.add_child(info_text)
+		InfoKeys.add_child(info_text)
 
 	# print the info and store key name in 
 	for i in info_variable_list.size():
@@ -54,7 +58,7 @@ func print_student_info(student_dict):
 
 		info_text.get_node("Label").set_text(info_variable_list[i])
 		info_text.key_name = info_key_list[i]
-		$Menu/InfoHBox/InfoVariables.add_child(info_text)
+		InfoVariables.add_child(info_text)
 	
 
 func print_test_info(student_dict):
@@ -148,4 +152,5 @@ func calculate_grade(res_points, limits):
 
 
 func _on_SaveButton_pressed():
-	pass # Replace with function body.
+	var student_dict = collect_info()
+
