@@ -6,9 +6,9 @@
 [node name="StudentInfo" type="WindowDialog"]
 visible = true
 margin_top = 30.0
-margin_right = 600.0
-margin_bottom = 530.0
-rect_min_size = Vector2( 600, 500 )
+margin_right = 700.0
+margin_bottom = 630.0
+rect_min_size = Vector2( 700, 600 )
 window_title = "Student Info"
 script = ExtResource( 2 )
 __meta__ = {
@@ -28,7 +28,7 @@ __meta__ = {
 }
 
 [node name="StudentName" type="Label" parent="Menu"]
-margin_right = 580.0
+margin_right = 680.0
 margin_bottom = 29.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
@@ -37,55 +37,55 @@ align = 1
 
 [node name="InfoHBox" type="HBoxContainer" parent="Menu"]
 margin_top = 39.0
-margin_right = 580.0
-margin_bottom = 232.0
+margin_right = 680.0
+margin_bottom = 282.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="InfoKeys" type="VBoxContainer" parent="Menu/InfoHBox"]
-margin_right = 288.0
-margin_bottom = 193.0
+margin_right = 338.0
+margin_bottom = 243.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="InfoVariables" type="VBoxContainer" parent="Menu/InfoHBox"]
-margin_left = 292.0
-margin_right = 580.0
-margin_bottom = 193.0
+margin_left = 342.0
+margin_right = 680.0
+margin_bottom = 243.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TestsCont" type="VBoxContainer" parent="Menu"]
-margin_top = 242.0
-margin_right = 580.0
-margin_bottom = 435.0
+margin_top = 292.0
+margin_right = 680.0
+margin_bottom = 535.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 10
 
 [node name="TestHeader" type="Label" parent="Menu/TestsCont"]
-margin_right = 580.0
+margin_right = 680.0
 margin_bottom = 29.0
 custom_fonts/font = ExtResource( 1 )
 text = "Tests"
 
 [node name="TestsScroll" type="ScrollContainer" parent="Menu/TestsCont"]
 margin_top = 39.0
-margin_right = 580.0
-margin_bottom = 193.0
+margin_right = 680.0
+margin_bottom = 243.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Tests" type="VBoxContainer" parent="Menu/TestsCont/TestsScroll"]
-margin_right = 580.0
-margin_bottom = 154.0
+margin_right = 680.0
+margin_bottom = 204.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="SaveButton" type="Button" parent="Menu"]
-margin_top = 445.0
+margin_top = 545.0
 margin_right = 64.0
-margin_bottom = 480.0
+margin_bottom = 580.0
 size_flags_horizontal = 0
 custom_fonts/font = ExtResource( 1 )
 text = "Save"

@@ -96,21 +96,21 @@ func print_test_info(student_dict):
 		var grade = calculate_grade(test.result, grade_limits)
 		
 		# Add all texts to text_text row
-		test_text_row.get_node("Name").set_text(test.test_name)
+		test_text_row.get_node("TestInfo/Name").set_text(test.test_name)
 
-		test_text_row.get_node("Max/MaxE").set_text(str(max_points[0]))
-		test_text_row.get_node("Max/MaxC").set_text(str(max_points[1]))
-		test_text_row.get_node("Max/MaxA").set_text(str(max_points[2]))
+		test_text_row.get_node("TestInfo/Max/MaxE").set_text(str(max_points[0]))
+		test_text_row.get_node("TestInfo/Max/MaxC").set_text(str(max_points[1]))
+		test_text_row.get_node("TestInfo/Max/MaxA").set_text(str(max_points[2]))
 		
-		test_text_row.get_node("Result/ResultE").set_text(str(test.result[0]))
-		test_text_row.get_node("Result/ResultC").set_text(str(test.result[1]))
-		test_text_row.get_node("Result/ResultA").set_text(str(test.result[2]))
+		test_text_row.get_node("TestInfo/Result/ResultE").set_text(str(test.result[0]))
+		test_text_row.get_node("TestInfo/Result/ResultC").set_text(str(test.result[1]))
+		test_text_row.get_node("TestInfo/Result/ResultA").set_text(str(test.result[2]))
 
-		test_text_row.get_node("Percent/PercentE").set_text(percents[0])
-		test_text_row.get_node("Percent/PercentC").set_text(percents[1])
-		test_text_row.get_node("Percent/PercentA").set_text(percents[2])
+		test_text_row.get_node("TestInfo/Percent/PercentE").set_text(percents[0])
+		test_text_row.get_node("TestInfo/Percent/PercentC").set_text(percents[1])
+		test_text_row.get_node("TestInfo/Percent/PercentA").set_text(percents[2])
 
-		test_text_row.get_node("Grade/GradeLetter").set_text(grade)
+		test_text_row.get_node("TestInfo/Grade/GradeLetter").set_text(grade)
 
 		$Menu/TestsCont/TestsScroll/Tests.add_child(test_text_row)
 
