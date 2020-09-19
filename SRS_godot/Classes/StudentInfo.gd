@@ -5,6 +5,11 @@ onready var InfoKeys = get_node("Menu/InfoHBox/InfoKeys")
 onready var InfoVariables = get_node("Menu/InfoHBox/InfoVariables")
 
 
+# lists of what will be displayed under the header
+var info_key_list_nice_names = ["Class", "Email", "Pers Nr"]
+var info_key_list = ["class", "email", "pers_nr"]
+
+
 func show_info():
 	var student_dict = collect_info()
 
@@ -23,7 +28,6 @@ func collect_info():
 	# Collect student info in student_dict
 	for id_num in students_dict:
 		var student = students_dict.get(id_num)
-		print(GlobalVars.activeStudentId)
 		if int(id_num) == GlobalVars.activeStudentId:
 			return student
 
@@ -37,8 +41,6 @@ func print_student_info(student_dict):
 
 	
 	# Create lists for keys and variables
-	var info_key_list = ["class", "email", "pers_nr"]
-	var info_key_list_nice_names = ["Class", "Email", "Pers Nr"]
 	var info_variable_list = [
 		str(student_dict.get(info_key_list[0])),
 		str(student_dict.get(info_key_list[1])),
@@ -112,6 +114,7 @@ func print_test_info(student_dict):
 
 		$Menu/TestsCont/TestsScroll/Tests.add_child(test_text_row)
 
+
 func calculate_percents(res_points, max_points):
 	var e = stepify((res_points[0] / max_points[0]) * 100, 1.0)
 	var c = stepify((res_points[1] / max_points[1]) * 100, 1.0)
@@ -159,7 +162,14 @@ func _on_SaveButton_pressed():
 	var data_dict = FileSys.student_data_load()
 	var student_dict = collect_info()
 
-	for info_var in InfoVariables.get_children():
-		student_dict[info_var.key_name] = info_var.get(info_var.key_name)
+	var edit_box_dict = {}
+	for child in InfoVariables.get_children():
+		edit_box_dict[child.key_name] = child.get_node("Label").text
 
-	print(student_dict)
+	for info_key in info_key_list:
+		for student_key in student_dict.keys():
+			if info_key == student_key:
+				student_dict[student_key] = edit_box_dict.get(info_key)
+	
+	data_dict.get(GlobalVars.activeClass).students[str(GlobalVars.activeStudentId)] = student_dict
+	FileSys.student_data_save(data_dict)
