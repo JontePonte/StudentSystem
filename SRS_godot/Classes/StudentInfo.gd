@@ -29,26 +29,31 @@ func print_student_info(student_dict):
 	for child in $Menu/InfoHBox/InfoVariables.get_children():
 		child.queue_free()
 
+	
+	# Create lists for keys and variables
+	var info_key_list = ["class", "email", "pers_nr"]
+	var info_key_list_nice_names = ["Class", "Email", "Pers Nr"]
+	var info_variable_list = [
+		str(student_dict.get(info_key_list[0])),
+		str(student_dict.get(info_key_list[1])),
+		str(student_dict.get(info_key_list[2]))]
+	
+	
 	# Print class, email and personal number
-	for info_key in ["Class", "Email", "Pers Nr"]:
+	for info_key in info_key_list_nice_names:
 		var scene = load("res://InfoTexts/StudentInfoText.tscn")
 		var info_text = scene.instance()
 
 		info_text.get_node("Label").set_text(info_key)
 		$Menu/InfoHBox/InfoKeys.add_child(info_text)
-	
-	# Collect info to print right of class, email and personal number
-	var info_variable_list = [
-		str(student_dict.get("class")),
-		str(student_dict.get("email")),
-		str(student_dict.get("pers_nr"))]
 
-	# print the info
-	for info_var in info_variable_list:
+	# print the info and store key name in 
+	for i in info_variable_list.size():
 		var scene = load("res://InfoTexts/StudentInfoTextEdit.tscn")
 		var info_text = scene.instance()
 
-		info_text.get_node("Label").set_text(info_var)
+		info_text.get_node("Label").set_text(info_variable_list[i])
+		info_text.key_name = info_key_list[i]
 		$Menu/InfoHBox/InfoVariables.add_child(info_text)
 	
 
