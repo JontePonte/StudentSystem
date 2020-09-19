@@ -162,14 +162,17 @@ func _on_SaveButton_pressed():
 	var data_dict = FileSys.student_data_load()
 	var student_dict = collect_info()
 
+	# Create dictionary from the info text boxes
 	var edit_box_dict = {}
 	for child in InfoVariables.get_children():
 		edit_box_dict[child.key_name] = child.get_node("Label").text
 
+	# Update all student info changes in student dict and update data_dict
 	for info_key in info_key_list:
 		for student_key in student_dict.keys():
 			if info_key == student_key:
 				student_dict[student_key] = edit_box_dict.get(info_key)
-	
 	data_dict.get(GlobalVars.activeClass).students[str(GlobalVars.activeStudentId)] = student_dict
+	
+	
 	FileSys.student_data_save(data_dict)
