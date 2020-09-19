@@ -119,27 +119,28 @@ func print_test_info(student_dict):
 
 func calculate_percents(res_points, max_points):
 	# Calculate each perent
-	var e = (res_points[0] / max_points[0]) * 100
-	var c = (res_points[1] / max_points[1]) * 100
-	var a = (res_points[2] / max_points[2]) * 100
+	var e = stepify((res_points[0] / max_points[0]) * 100, 1.0)
+	var c = stepify((res_points[1] / max_points[1]) * 100, 1.0)
+	var a = stepify((res_points[2] / max_points[2]) * 100, 1.0)
 
-	# Set number of decimals to 0.1 if below ten and 1.0 if above
+	# Set different numbers of spaces if below 10 or above 100
+	var e_string = str(e) + " %"
 	if e < 10:
-		e = stepify(e, 0.1)
-	else:
-		e = stepify(e, 1.0)
+		e_string = str(e) + "  %"
+	elif e >= 100:
+		e_string = str(e) + "%"
+	
+	var c_string = str(c) + " %"
 	if c < 10:
-		c = stepify(c, 0.1)
-	else:
-		c = stepify(c, 1.0)
+		c_string = str(c) + "  %"
+	elif c >= 100:
+		c_string = str(c) + "%"
+	
+	var a_string = str(a) + " %"
 	if a < 10:
-		a = stepify(a, 0.1)
-	else:
-		a = stepify(a, 1.0)
-
-	var e_string = str(e) + "% "
-	var c_string = str(c) + "% "
-	var a_string = str(a) + "% "
+		a_string = str(a) + "  %"
+	elif a >= 100:
+		a_string = str(a) + "%"
 
 	return [e_string, c_string, a_string]
 
