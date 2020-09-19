@@ -152,5 +152,10 @@ func calculate_grade(res_points, limits):
 
 
 func _on_SaveButton_pressed():
+	var data_dict = FileSys.student_data_load()
 	var student_dict = collect_info()
 
+	for info_var in InfoVariables.get_children():
+		student_dict[info_var.key_name] = info_var.get(info_var.key_name)
+
+	print(student_dict)
