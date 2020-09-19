@@ -18,11 +18,13 @@ func show_info():
 func collect_info():
 	# Load students in the class into student_list
 	var students_data = FileSys.student_data_load()
-	var students_list = students_data.get(GlobalVars.activeClass).students
+	var students_dict = students_data.get(GlobalVars.activeClass).students
 	
 	# Collect student info in student_dict
-	for student in students_list:
-		if student.id_num == GlobalVars.activeStudentId:
+	for id_num in students_dict:
+		var student = students_dict.get(id_num)
+		print(GlobalVars.activeStudentId)
+		if int(id_num) == GlobalVars.activeStudentId:
 			return student
 
 
@@ -66,9 +68,10 @@ func print_test_info(student_dict):
 	for child in $Menu/TestsCont/TestsScroll/Tests.get_children():
 		child.queue_free()
 
-	var tests_list = student_dict.get("tests")
+	var tests_dict = student_dict.get("tests")
 	
-	for test in tests_list:
+	for test_index in tests_dict:
+		var test = tests_dict.get(test_index)
 		var scene = load("res://InfoTexts/TestInfoText.tscn")
 		var test_text_row = scene.instance()
 		
@@ -76,7 +79,8 @@ func print_test_info(student_dict):
 		var max_points = []
 		var grade_limits = {}
 		var data_dict = FileSys.student_data_load()
-		for test_base in data_dict.get(GlobalVars.activeClass).get("tests"):
+		for test_base_index in data_dict.get(GlobalVars.activeClass).get("tests"):
+			var test_base = data_dict.get(GlobalVars.activeClass).get("tests").get(test_base_index)
 			if test.test_name == test_base.test_name:
 				max_points = test_base.get("max_points")
 				grade_limits.E = test_base.get("grade_limits").get("E")

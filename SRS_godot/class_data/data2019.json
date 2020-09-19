@@ -9,8 +9,8 @@
                 "email": "anna.a9@utb.hudiksvall.se",
                 "pers_nr": 200101010101,
                 "comments": [],
-                "tests": [
-                    {
+                "tests": {
+                    "0": {
                         "test_name": "rorelse&acc",
                         "completed": true,
                         "result": [
@@ -19,7 +19,7 @@
                             4
                         ]
                     },
-                    {
+                    "1": {
                         "test_name": "krafter",
                         "completed": true,
                         "result": [
@@ -28,7 +28,7 @@
                             3
                         ]
                     }
-                ]
+                }
             },
             "1": {
                 "first_name": "Pelle",
@@ -38,8 +38,8 @@
                 "email": "pelle.p5@utb.hudiksvall.se",
                 "pers_nr": 200102020303,
                 "comments": [],
-                "tests": [
-                    {
+                "tests": {
+                    "0": {
                         "test_name": "rorelse&acc",
                         "completed": true,
                         "result": [
@@ -48,7 +48,7 @@
                             4
                         ]
                     },
-                    {
+                    "1": {
                         "test_name": "krafter",
                         "completed": true,
                         "result": [
@@ -57,7 +57,7 @@
                             3
                         ]
                     }
-                ]
+                }
             }
         },
         "tests": {
@@ -144,8 +144,8 @@
                 "email": "panna.p9@utb.hudiksvall.se",
                 "pers_nr": 200101010101,
                 "comments": [],
-                "tests": [
-                    {
+                "tests": {
+                    "0": {
                         "test_name": "rorelse&acc",
                         "completed": true,
                         "result": [
@@ -154,7 +154,7 @@
                             4
                         ]
                     },
-                    {
+                    "1":{
                         "test_name": "krafter",
                         "completed": true,
                         "result": [
@@ -163,7 +163,7 @@
                             3
                         ]
                     }
-                ]
+                }
             },
             "1": {
                 "first_name": "Pelle",
@@ -173,8 +173,8 @@
                 "email": "pelle.p5@utb.hudiksvall.se",
                 "pers_nr": 200102020303,
                 "comments": [],
-                "tests": [
-                    {
+                "tests": {
+                    "0": {
                         "test_name": "rorelse&acc",
                         "completed": true,
                         "result": [
@@ -183,7 +183,7 @@
                             4
                         ]
                     },
-                    {
+                    "1": {
                         "test_name": "krafter",
                         "completed": true,
                         "result": [
@@ -192,7 +192,7 @@
                             3
                         ]
                     }
-                ]
+                }
             }
         },
         "tests": {
