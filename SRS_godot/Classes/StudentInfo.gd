@@ -74,7 +74,7 @@ func print_test_info(student_dict):
 	
 	for test_index in tests_dict:
 		var test = tests_dict.get(test_index)
-		var scene = load("res://InfoTexts/TestInfoText.tscn")
+		var scene = load("res://InfoTexts/TestInfoTextEdit.tscn")
 		var test_text_row = scene.instance()
 		
 		# Extract max points and grade limits from data file
@@ -116,10 +116,10 @@ func print_test_info(student_dict):
 
 
 func calculate_percents(res_points, max_points):
-	var e = stepify((res_points[0] / max_points[0]) * 100, 1.0)
-	var c = stepify((res_points[1] / max_points[1]) * 100, 1.0)
-	var a = stepify((res_points[2] / max_points[2]) * 100, 1.0)
-	
+	var e = (res_points[0] / max_points[0]) * 100
+	var c = (res_points[1] / max_points[1]) * 100
+	var a = (res_points[2] / max_points[2]) * 100
+
 	var e_string = str(e) + "% "
 	var c_string = str(c) + "% "
 	var a_string = str(a) + "% "
