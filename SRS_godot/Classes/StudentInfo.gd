@@ -137,7 +137,6 @@ func print_comments(student_dict):
 		var comment = comments_dict.get(comment_index)
 		var scene = load("res://InfoTexts/CommentTextEdit.tscn")
 		var comment_row = scene.instance()
-		print(comment)
 
 		comment_row.get_node("CommentHBox/Comment").set_text(comment)
 		comment_row.key_name = comment_index
@@ -227,4 +226,6 @@ func _on_SaveButton_pressed():
 	# Update student list
 	get_parent().create_student_buttons()
 	
-	
+
+func _on_Comments_comment_remove(key_name):
+	print(key_name)
