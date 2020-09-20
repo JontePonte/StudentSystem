@@ -7,9 +7,9 @@
 [node name="StudentInfo" type="WindowDialog"]
 visible = true
 margin_top = 30.0
-margin_right = 700.0
+margin_right = 800.0
 margin_bottom = 630.0
-rect_min_size = Vector2( 700, 600 )
+rect_min_size = Vector2( 800, 600 )
 window_title = "Student Info"
 script = ExtResource( 2 )
 __meta__ = {
@@ -29,11 +29,11 @@ __meta__ = {
 }
 
 [node name="NameHeader" type="HBoxContainer" parent="Menu"]
-margin_right = 680.0
+margin_right = 780.0
 margin_bottom = 53.0
 
 [node name="FirstName" type="LineEdit" parent="Menu/NameHeader"]
-margin_right = 338.0
+margin_right = 388.0
 margin_bottom = 53.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
@@ -42,8 +42,8 @@ align = 2
 placeholder_text = "First Name"
 
 [node name="LastName" type="LineEdit" parent="Menu/NameHeader"]
-margin_left = 342.0
-margin_right = 680.0
+margin_left = 392.0
+margin_right = 780.0
 margin_bottom = 53.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
@@ -52,47 +52,47 @@ placeholder_text = "Last Name"
 
 [node name="InfoHBox" type="HBoxContainer" parent="Menu"]
 margin_top = 63.0
-margin_right = 680.0
+margin_right = 780.0
 margin_bottom = 294.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="InfoKeys" type="VBoxContainer" parent="Menu/InfoHBox"]
-margin_right = 338.0
+margin_right = 388.0
 margin_bottom = 231.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="InfoVariables" type="VBoxContainer" parent="Menu/InfoHBox"]
-margin_left = 342.0
-margin_right = 680.0
+margin_left = 392.0
+margin_right = 780.0
 margin_bottom = 231.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TestsCont" type="VBoxContainer" parent="Menu"]
 margin_top = 304.0
-margin_right = 680.0
+margin_right = 780.0
 margin_bottom = 535.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 10
 
 [node name="TestHeader" type="Label" parent="Menu/TestsCont"]
-margin_right = 680.0
+margin_right = 780.0
 margin_bottom = 29.0
 custom_fonts/font = ExtResource( 1 )
 text = "Tests"
 
 [node name="TestsScroll" type="ScrollContainer" parent="Menu/TestsCont"]
 margin_top = 39.0
-margin_right = 680.0
+margin_right = 780.0
 margin_bottom = 231.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Tests" type="VBoxContainer" parent="Menu/TestsCont/TestsScroll"]
-margin_right = 680.0
+margin_right = 780.0
 margin_bottom = 192.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
