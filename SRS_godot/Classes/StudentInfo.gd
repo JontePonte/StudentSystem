@@ -5,6 +5,9 @@ onready var InfoKeys = get_node("Menu/InfoHBox/InfoKeys")
 onready var InfoVariables = get_node("Menu/InfoHBox/InfoVariables")
 onready var Tests = get_node("Menu/TestsCont/TestsScroll/Tests")
 onready var Comments = get_node("Menu/CommentsCont/CommentsScroll/Comments")
+onready var ActiveCheck = get_node("Menu/NameHeader/ActiveCheck")
+onready var FirstName = get_node("Menu/NameHeader/FirstName")
+onready var LastName = get_node("Menu/NameHeader/LastName")
 
 
 # lists of what will be displayed under the header
@@ -208,12 +211,12 @@ func _on_SaveButton_pressed():
 	var data_dict = FileSys.student_data_load()
 	var student_dict = collect_info()
 	
-	# Update student dictionar with the new information
-	student_dict = save_active_check(student_dict)
-	student_dict = save_name(student_dict)
-	student_dict = save_info_text(student_dict)
-	student_dict = save_student_test(student_dict)
-	student_dict = save_comments(student_dict)
+	# Update student dictionar with the new information calld from SaveFunc auoload
+	student_dict = SaveFunc.save_active_check(student_dict, ActiveCheck)
+	student_dict = SaveFunc.save_name(student_dict, FirstName, LastName)
+	student_dict = SaveFunc.save_info_text(student_dict, InfoVariables, info_key_list)
+	student_dict = SaveFunc.save_student_test(student_dict, Tests)
+	student_dict = SaveFunc.save_comments(student_dict, Comments)
 	
 	# update data_dict and save the updated json
 	data_dict.get(GlobalVars.activeClass).students[str(GlobalVars.activeStudentId)] = student_dict
@@ -225,68 +228,3 @@ func _on_SaveButton_pressed():
 	get_parent().create_student_buttons()
 	
 	
-func save_active_check(student_dict):
-	student_dict["active"] = $Menu/NameHeader/ActiveCheck.pressed
-	return student_dict
-
-
-func save_name(student_dict):
-	var first_name = $Menu/NameHeader/FirstName.text
-	var last_name = $Menu/NameHeader/LastName.text
-	
-	student_dict["first_name"] = first_name
-	student_dict["last_name"] = last_name
-	return student_dict
-
-
-func save_info_text(student_dict):
-	# Create dictionary from the info text boxes
-	var info_edit_box_dict = {}
-	for child in InfoVariables.get_children():
-		info_edit_box_dict[child.key_name] = child.get_node("Label").text
-
-	# Update all student info changes in student dict
-	for info_key in info_key_list:
-		for student_key in student_dict.keys():
-			if info_key == student_key:
-				student_dict[student_key] = info_edit_box_dict.get(info_key)
-	return student_dict
-	
-				
-func save_student_test(student_dict):
-	# Create a dictionary with all tests with results info from text edits
-	var test_edit_box_dict = {}
-	for child in Tests.get_children():
-		test_edit_box_dict[child.key_name] = [
-			int(child.get_node("TestInfo/Result/ResultE").text),
-			int(child.get_node("TestInfo/Result/ResultC").text),
-			int(child.get_node("TestInfo/Result/ResultA").text)]
-	
-	for test_edited_id in test_edit_box_dict.keys():
-		for test_stored_id in student_dict.get("tests").keys():
-			if test_edited_id == test_stored_id:
-				student_dict.get("tests").get(test_stored_id)["result"] = test_edit_box_dict[test_edited_id]
-	
-	var test_check_box_dict = {}
-	for child in Tests.get_children():
-		test_check_box_dict[child.key_name] = child.get_node("TestInfo/Completed/CompletedCheck").pressed
-	
-	for test_check_id in test_check_box_dict.keys():
-		for test_stored_id in student_dict.get("tests").keys():
-			if test_check_id == test_stored_id:
-				student_dict.get("tests").get(test_stored_id)["completed"] = test_check_box_dict[test_check_id]
-	
-	return student_dict
-	
-
-func save_comments(student_dict):
-	var comment_edit_dict = {}
-	for child in Comments.get_children():
-		comment_edit_dict[child.key_name] = child.get_node("CommentHBox/Comment").text
-	
-	for comment_id in comment_edit_dict.keys():
-		for comment_stored_id in student_dict.get("comments").keys():
-			if comment_id == comment_stored_id:
-				student_dict.get("comments")[comment_stored_id] = comment_edit_dict.get(comment_id)
-	
-	return student_dict
