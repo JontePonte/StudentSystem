@@ -131,23 +131,23 @@ caret_blink_speed = 0.5
 
 [node name="Percent" type="HBoxContainer" parent="TestInfo"]
 margin_left = 381.0
-margin_right = 482.0
+margin_right = 473.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 92, 0 )
 size_flags_horizontal = 3
 
 [node name="PercentLabel" type="Label" parent="TestInfo/Percent"]
-margin_right = 44.0
+margin_right = 35.0
 margin_bottom = 25.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 1 )
-text = "Percent"
+text = "="
 valign = 1
 
 [node name="PercentE" type="Label" parent="TestInfo/Percent"]
-margin_left = 48.0
-margin_right = 63.0
+margin_left = 39.0
+margin_right = 54.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 15, 0 )
 size_flags_vertical = 1
@@ -156,8 +156,8 @@ text = "1"
 valign = 1
 
 [node name="PercentC" type="Label" parent="TestInfo/Percent"]
-margin_left = 67.0
-margin_right = 82.0
+margin_left = 58.0
+margin_right = 73.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 15, 0 )
 size_flags_vertical = 1
@@ -166,8 +166,8 @@ text = "2"
 valign = 1
 
 [node name="PercentA" type="Label" parent="TestInfo/Percent"]
-margin_left = 86.0
-margin_right = 101.0
+margin_left = 77.0
+margin_right = 92.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 15, 0 )
 size_flags_vertical = 1
@@ -175,8 +175,13 @@ custom_fonts/font = ExtResource( 1 )
 text = "2"
 valign = 1
 
+[node name="VSeparator" type="VSeparator" parent="TestInfo"]
+margin_left = 477.0
+margin_right = 481.0
+margin_bottom = 25.0
+
 [node name="Grade" type="HBoxContainer" parent="TestInfo"]
-margin_left = 486.0
+margin_left = 485.0
 margin_right = 578.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 92, 0 )
@@ -193,7 +198,7 @@ valign = 1
 
 [node name="GradeLetter" type="Label" parent="TestInfo/Grade"]
 margin_left = 48.0
-margin_right = 92.0
+margin_right = 93.0
 margin_bottom = 25.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
