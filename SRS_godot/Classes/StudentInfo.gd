@@ -181,6 +181,13 @@ func _on_SaveButton_pressed():
 	var data_dict = FileSys.student_data_load()
 	var student_dict = collect_info()
 	
+	# ------------------ Name save ----------------------
+	var first_name = $Menu/NameHeader/FirstName.text
+	var last_name = $Menu/NameHeader/LastName.text
+	
+	student_dict["first_name"] = first_name
+	student_dict["last_name"] = last_name
+
 
 	# ------------------ Info save ----------------------
 	# Create dictionary from the info text boxes
