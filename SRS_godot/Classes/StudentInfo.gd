@@ -183,15 +183,30 @@ func _on_SaveButton_pressed():
 	var data_dict = FileSys.student_data_load()
 	var student_dict = collect_info()
 	
-	# ------------------ Name save ----------------------
+	# Update student dictionar with the new information
+	student_dict = save_name(student_dict)
+	student_dict = save_info_text(student_dict)
+	student_dict = save_student_test(student_dict)
+	
+	print_test_info(student_dict)
+	
+	# update data_dict
+	data_dict.get(GlobalVars.activeClass).students[str(GlobalVars.activeStudentId)] = student_dict
+	
+	FileSys.student_data_save(data_dict)
+
+
+
+func save_name(student_dict):
 	var first_name = $Menu/NameHeader/FirstName.text
 	var last_name = $Menu/NameHeader/LastName.text
 	
 	student_dict["first_name"] = first_name
 	student_dict["last_name"] = last_name
+	return student_dict
 
 
-	# ------------------ Info save ----------------------
+func save_info_text(student_dict):
 	# Create dictionary from the info text boxes
 	var info_edit_box_dict = {}
 	for child in InfoVariables.get_children():
@@ -202,9 +217,10 @@ func _on_SaveButton_pressed():
 		for student_key in student_dict.keys():
 			if info_key == student_key:
 				student_dict[student_key] = info_edit_box_dict.get(info_key)
+	return student_dict
+	
 				
-				
-	# ------------------ Test save ----------------------
+func save_student_test(student_dict):
 	# Create a dictionary with all tests with results info from text edits
 	var test_edit_box_dict = {}
 	for child in Tests.get_children():
@@ -227,11 +243,5 @@ func _on_SaveButton_pressed():
 			if test_check_id == test_stored_id:
 				student_dict.get("tests").get(test_stored_id)["completed"] = test_check_box_dict[test_check_id]
 	
+	return student_dict
 	
-	print_test_info(student_dict)
-	
-
-	# update data_dict
-	data_dict.get(GlobalVars.activeClass).students[str(GlobalVars.activeStudentId)] = student_dict
-	
-	FileSys.student_data_save(data_dict)
