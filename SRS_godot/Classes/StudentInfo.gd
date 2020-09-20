@@ -193,14 +193,16 @@ func _on_SaveButton_pressed():
 	student_dict = save_info_text(student_dict)
 	student_dict = save_student_test(student_dict)
 	
-	print_test_info(student_dict)
-	
-	# update data_dict
+	# update data_dict and save the updated json
 	data_dict.get(GlobalVars.activeClass).students[str(GlobalVars.activeStudentId)] = student_dict
-	
 	FileSys.student_data_save(data_dict)
-
-
+	
+	# Update test info screen
+	print_test_info(student_dict)
+	# Update student list
+	get_parent().create_student_buttons()
+	
+	
 func save_active_check(student_dict):
 	student_dict["active"] = $Menu/NameHeader/ActiveCheck.pressed
 	return student_dict

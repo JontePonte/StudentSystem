@@ -7,8 +7,6 @@
 [ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Classes/StudentInfo.tscn" type="PackedScene" id=6]
 
-
-
 [node name="ClassScene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -198,4 +196,5 @@ custom_fonts/font = ExtResource( 4 )
 text = "Go Back "
 
 [node name="StudentInfo" parent="." instance=ExtResource( 6 )]
+visible = false
 [connection signal="pressed" from="Menu/BackButton" to="." method="_on_BackButton_pressed"]

@@ -13,6 +13,10 @@ func create_student_buttons():
 	var student_data = FileSys.student_data_load()
 	var students_dict = student_data.get(GlobalVars.activeClass).students
 
+	# Remove all previous student buttons
+	for child in $Menu/RowsCont/StundetsCont/StudentsScroll/Students.get_children():
+		child.queue_free()
+
 	# Instance menu buttons and make them childs of scroll menu
 	for id_num in students_dict:
 		var scene = load("res://Buttons/StudentButton.tscn")
