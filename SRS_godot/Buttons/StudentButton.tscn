@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/FontsDF/StudentButtons.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Buttons/StudentButton.gd" type="Script" id=2]
 
-[node name="Control" type="Button"]
+[node name="StudentButton" type="Button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -1221.0

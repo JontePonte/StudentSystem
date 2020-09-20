@@ -27,6 +27,10 @@ func create_student_buttons():
 		student_button.get_node("Label").set_text(student.first_name + " " + student.last_name)
 		student_button.name = str(id_num)
 		student_button.student_id = int(id_num)
+		if student.active:
+			student_button.get_node("Label").add_color_override("font_color", VisualVars.StudentButtonColorActive)
+		else:
+			student_button.get_node("Label").add_color_override("font_color", VisualVars.StudentButtonColorInactive)
 
 		$Menu/RowsCont/StundetsCont/StudentsScroll/Students.add_child(student_button)
 
