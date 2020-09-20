@@ -6,10 +6,11 @@
 [ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=4]
 
 [node name="StudentInfo" type="WindowDialog"]
+visible = true
 margin_top = 30.0
 margin_right = 800.0
-margin_bottom = 630.0
-rect_min_size = Vector2( 800, 600 )
+margin_bottom = 730.0
+rect_min_size = Vector2( 800, 700 )
 window_title = "Student Info"
 script = ExtResource( 2 )
 __meta__ = {
@@ -61,27 +62,27 @@ text = "Active"
 [node name="InfoHBox" type="HBoxContainer" parent="Menu"]
 margin_top = 63.0
 margin_right = 780.0
-margin_bottom = 294.0
+margin_bottom = 319.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="InfoKeys" type="VBoxContainer" parent="Menu/InfoHBox"]
 margin_right = 388.0
-margin_bottom = 231.0
+margin_bottom = 256.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="InfoVariables" type="VBoxContainer" parent="Menu/InfoHBox"]
 margin_left = 392.0
 margin_right = 780.0
-margin_bottom = 231.0
+margin_bottom = 256.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TestsCont" type="VBoxContainer" parent="Menu"]
-margin_top = 304.0
+margin_top = 329.0
 margin_right = 780.0
-margin_bottom = 535.0
+margin_bottom = 585.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 10
@@ -95,20 +96,45 @@ text = "Tests"
 [node name="TestsScroll" type="ScrollContainer" parent="Menu/TestsCont"]
 margin_top = 39.0
 margin_right = 780.0
-margin_bottom = 231.0
+margin_bottom = 256.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Tests" type="VBoxContainer" parent="Menu/TestsCont/TestsScroll"]
 margin_right = 780.0
-margin_bottom = 192.0
+margin_bottom = 217.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CommentsCont" type="VBoxContainer" parent="Menu"]
+margin_top = 595.0
+margin_right = 780.0
+margin_bottom = 634.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+
+[node name="CommentsHeader" type="Label" parent="Menu/CommentsCont"]
+margin_right = 780.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 1 )
+text = "Comments"
+
+[node name="CommentsScroll" type="ScrollContainer" parent="Menu/CommentsCont"]
+margin_top = 39.0
+margin_right = 780.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Comments" type="VBoxContainer" parent="Menu/CommentsCont/CommentsScroll"]
+margin_right = 780.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="SaveButton" type="Button" parent="Menu"]
-margin_top = 545.0
+margin_top = 644.0
 margin_right = 64.0
-margin_bottom = 580.0
+margin_bottom = 679.0
 size_flags_horizontal = 0
 custom_fonts/font = ExtResource( 1 )
 text = "Save"

@@ -12,12 +12,12 @@ __meta__ = {
 }
 
 [node name="HSeparator" type="HSeparator" parent="."]
-margin_right = 733.0
+margin_right = 716.0
 margin_bottom = 4.0
 
 [node name="TestInfo" type="HBoxContainer" parent="."]
 margin_top = 8.0
-margin_right = 733.0
+margin_right = 716.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 
