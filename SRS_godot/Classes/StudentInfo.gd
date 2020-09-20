@@ -4,6 +4,7 @@ extends WindowDialog
 onready var InfoKeys = get_node("Menu/InfoHBox/InfoKeys")
 onready var InfoVariables = get_node("Menu/InfoHBox/InfoVariables")
 onready var Tests = get_node("Menu/TestsCont/TestsScroll/Tests")
+onready var Comments = get_node("Menu/CommentsCont/CommentsScroll/Comments")
 
 
 # lists of what will be displayed under the header
@@ -21,6 +22,7 @@ func show_info():
 
 	print_student_info(student_dict)
 	print_test_info(student_dict)
+	print_comments(student_dict)
 
 
 func collect_info():
@@ -119,6 +121,22 @@ func print_test_info(student_dict):
 		
 		test_text_row.key_name = test_index
 		Tests.add_child(test_text_row)
+
+func print_comments(student_dict):
+	# Clear old comments in pop up box
+	for child in $Menu/CommentsCont/CommentsScroll/Comments.get_children():
+		child.queue_free()
+
+	var comments_dict = student_dict.get("comments")
+	
+	for comment_index in comments_dict:
+		var comment = comments_dict.get(comment_index)
+		var scene = load("res://InfoTexts/CommentTextEdit.tscn")
+		var comment_row = scene.instance()
+		print(comment)
+
+		comment_row.get_node("CommentHBox/Comment").set_text(comment)
+		Comments.add_child(comment_row)
 
 
 func calculate_percents(res_points, max_points):
