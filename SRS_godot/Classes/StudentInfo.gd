@@ -122,6 +122,7 @@ func print_test_info(student_dict):
 		test_text_row.key_name = test_index
 		Tests.add_child(test_text_row)
 
+
 func print_comments(student_dict):
 	# Clear old comments in pop up box
 	for child in $Menu/CommentsCont/CommentsScroll/Comments.get_children():
@@ -136,6 +137,8 @@ func print_comments(student_dict):
 		print(comment)
 
 		comment_row.get_node("CommentHBox/Comment").set_text(comment)
+		comment_row.key_name = comment_index
+
 		Comments.add_child(comment_row)
 
 
@@ -210,6 +213,7 @@ func _on_SaveButton_pressed():
 	student_dict = save_name(student_dict)
 	student_dict = save_info_text(student_dict)
 	student_dict = save_student_test(student_dict)
+	student_dict = save_comments(student_dict)
 	
 	# update data_dict and save the updated json
 	data_dict.get(GlobalVars.activeClass).students[str(GlobalVars.activeStudentId)] = student_dict
@@ -274,3 +278,15 @@ func save_student_test(student_dict):
 	
 	return student_dict
 	
+
+func save_comments(student_dict):
+	var comment_edit_dict = {}
+	for child in Comments.get_children():
+		comment_edit_dict[child.key_name] = child.get_node("CommentHBox/Comment").text
+	
+	for comment_id in comment_edit_dict.keys():
+		for comment_stored_id in student_dict.get("comments").keys():
+			if comment_id == comment_stored_id:
+				student_dict.get("comments")[comment_stored_id] = comment_edit_dict.get(comment_id)
+	
+	return student_dict
