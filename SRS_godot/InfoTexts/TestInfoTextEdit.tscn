@@ -87,27 +87,28 @@ margin_left = 200.0
 margin_right = 204.0
 margin_bottom = 25.0
 
-[node name="Compleated" type="HBoxContainer" parent="TestInfo"]
+[node name="Completed" type="HBoxContainer" parent="TestInfo"]
 margin_left = 208.0
 margin_right = 306.0
 margin_bottom = 25.0
 size_flags_horizontal = 0
 alignment = 1
 
-[node name="CompleatedLabel" type="Label" parent="TestInfo/Compleated"]
+[node name="CompletedLabel" type="Label" parent="TestInfo/Completed"]
 margin_right = 70.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 70, 0 )
 size_flags_horizontal = 0
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 1 )
-text = "Compleated"
+text = "Completed"
 valign = 1
 
-[node name="CompleatedCheck" type="CheckBox" parent="TestInfo/Compleated"]
+[node name="CompletedCheck" type="CheckBox" parent="TestInfo/Completed"]
 margin_left = 74.0
 margin_right = 98.0
 margin_bottom = 25.0
+pressed = true
 
 [node name="VSeparator3" type="VSeparator" parent="TestInfo"]
 margin_left = 310.0

@@ -103,6 +103,8 @@ func print_test_info(student_dict):
 		test_text_row.get_node("TestInfo/Max/MaxE").set_text(str(max_points[0]))
 		test_text_row.get_node("TestInfo/Max/MaxC").set_text(str(max_points[1]))
 		test_text_row.get_node("TestInfo/Max/MaxA").set_text(str(max_points[2]))
+
+		test_text_row.get_node("TestInfo/Completed/CompletedCheck").pressed = test.completed
 		
 		test_text_row.get_node("TestInfo/Result/ResultE").set_text(str(test.result[0]))
 		test_text_row.get_node("TestInfo/Result/ResultC").set_text(str(test.result[1]))
@@ -210,11 +212,22 @@ func _on_SaveButton_pressed():
 			int(child.get_node("TestInfo/Result/ResultE").text),
 			int(child.get_node("TestInfo/Result/ResultC").text),
 			int(child.get_node("TestInfo/Result/ResultA").text)]
-
+	
 	for test_edited_id in test_edit_box_dict.keys():
 		for test_stored_id in student_dict.get("tests").keys():
 			if test_edited_id == test_stored_id:
 				student_dict.get("tests").get(test_stored_id)["result"] = test_edit_box_dict[test_edited_id]
+	
+	var test_check_box_dict = {}
+	for child in Tests.get_children():
+		test_check_box_dict[child.key_name] = child.get_node("TestInfo/Completed/CompletedCheck").pressed
+	
+	for test_check_id in test_check_box_dict.keys():
+		for test_stored_id in student_dict.get("tests").keys():
+			if test_check_id == test_stored_id:
+				student_dict.get("tests").get(test_stored_id)["completed"] = test_check_box_dict[test_check_id]
+	
+	
 	print_test_info(student_dict)
 	
 
