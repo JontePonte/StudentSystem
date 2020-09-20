@@ -5,7 +5,11 @@
             "0": {
                 "active": true,
                 "class": "te22",
-                "comments": {},
+                "comments": {
+                    "0": "blablabla",
+                    "1": "jaaja",
+                    "2": "ppppppp"
+                },
                 "email": "anna.a9@utb.hudiksvall.se",
                 "first_name": "Hanna",
                 "last_name": "Handersson",
