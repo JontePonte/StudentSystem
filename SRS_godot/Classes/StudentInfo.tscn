@@ -51,7 +51,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "Last Name"
 placeholder_text = "Last Name"
 
-[node name="CheckBox" type="CheckBox" parent="Menu/NameHeader"]
+[node name="ActiveCheck" type="CheckBox" parent="Menu/NameHeader"]
 margin_left = 706.0
 margin_right = 779.0
 margin_bottom = 53.0

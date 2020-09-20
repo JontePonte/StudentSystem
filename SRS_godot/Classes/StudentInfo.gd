@@ -17,6 +17,7 @@ func show_info():
 	# set popup menu header to student name
 	$Menu/NameHeader/FirstName.set_text(student_dict.first_name)
 	$Menu/NameHeader/LastName.set_text(student_dict.last_name)
+	$Menu/NameHeader/ActiveCheck.pressed = student_dict.get("active")
 
 	print_student_info(student_dict)
 	print_test_info(student_dict)
@@ -184,6 +185,7 @@ func _on_SaveButton_pressed():
 	var student_dict = collect_info()
 	
 	# Update student dictionar with the new information
+	student_dict = save_active_check(student_dict)
 	student_dict = save_name(student_dict)
 	student_dict = save_info_text(student_dict)
 	student_dict = save_student_test(student_dict)
@@ -195,6 +197,10 @@ func _on_SaveButton_pressed():
 	
 	FileSys.student_data_save(data_dict)
 
+
+func save_active_check(student_dict):
+	student_dict["active"] = $Menu/NameHeader/ActiveCheck.pressed
+	return student_dict
 
 
 func save_name(student_dict):
