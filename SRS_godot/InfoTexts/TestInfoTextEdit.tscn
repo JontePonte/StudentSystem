@@ -12,12 +12,12 @@ __meta__ = {
 }
 
 [node name="HSeparator" type="HSeparator" parent="."]
-margin_right = 726.0
+margin_right = 733.0
 margin_bottom = 4.0
 
 [node name="TestInfo" type="HBoxContainer" parent="."]
 margin_top = 8.0
-margin_right = 726.0
+margin_right = 733.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 
@@ -89,35 +89,26 @@ margin_bottom = 25.0
 
 [node name="Completed" type="HBoxContainer" parent="TestInfo"]
 margin_left = 208.0
-margin_right = 306.0
+margin_right = 296.0
 margin_bottom = 25.0
 size_flags_horizontal = 0
 alignment = 1
 
-[node name="CompletedLabel" type="Label" parent="TestInfo/Completed"]
-margin_right = 70.0
-margin_bottom = 25.0
-rect_min_size = Vector2( 70, 0 )
-size_flags_horizontal = 0
-size_flags_vertical = 1
-custom_fonts/font = ExtResource( 1 )
-text = "Completed"
-valign = 1
-
 [node name="CompletedCheck" type="CheckBox" parent="TestInfo/Completed"]
-margin_left = 74.0
-margin_right = 98.0
+margin_right = 88.0
 margin_bottom = 25.0
+custom_fonts/font = ExtResource( 1 )
 pressed = true
+text = "Completed"
 
 [node name="VSeparator3" type="VSeparator" parent="TestInfo"]
-margin_left = 310.0
-margin_right = 314.0
+margin_left = 300.0
+margin_right = 304.0
 margin_bottom = 25.0
 
 [node name="Result" type="HBoxContainer" parent="TestInfo"]
-margin_left = 318.0
-margin_right = 503.0
+margin_left = 308.0
+margin_right = 493.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 92, 0 )
 size_flags_horizontal = 0
@@ -168,8 +159,8 @@ caret_blink = true
 caret_blink_speed = 0.5
 
 [node name="Percent" type="HBoxContainer" parent="TestInfo"]
-margin_left = 507.0
-margin_right = 622.0
+margin_left = 497.0
+margin_right = 612.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 92, 0 )
 size_flags_horizontal = 0
@@ -217,13 +208,13 @@ text = "2"
 valign = 1
 
 [node name="VSeparator4" type="VSeparator" parent="TestInfo"]
-margin_left = 626.0
-margin_right = 630.0
+margin_left = 616.0
+margin_right = 620.0
 margin_bottom = 25.0
 
 [node name="Grade" type="HBoxContainer" parent="TestInfo"]
-margin_left = 634.0
-margin_right = 726.0
+margin_left = 624.0
+margin_right = 716.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 92, 0 )
 size_flags_horizontal = 0

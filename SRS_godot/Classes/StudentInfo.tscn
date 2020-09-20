@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/FontsDF/SmallText.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Classes/StudentInfo.gd" type="Script" id=2]
 [ext_resource path="res://assets/FontsDF/Header2.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=4]
 
 [node name="StudentInfo" type="WindowDialog"]
 visible = true
@@ -33,7 +34,7 @@ margin_right = 780.0
 margin_bottom = 53.0
 
 [node name="FirstName" type="LineEdit" parent="Menu/NameHeader"]
-margin_right = 388.0
+margin_right = 349.0
 margin_bottom = 53.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
@@ -42,13 +43,21 @@ align = 2
 placeholder_text = "First Name"
 
 [node name="LastName" type="LineEdit" parent="Menu/NameHeader"]
-margin_left = 392.0
-margin_right = 780.0
+margin_left = 353.0
+margin_right = 702.0
 margin_bottom = 53.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 text = "Last Name"
 placeholder_text = "Last Name"
+
+[node name="CheckBox" type="CheckBox" parent="Menu/NameHeader"]
+margin_left = 706.0
+margin_right = 779.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 4 )
+pressed = true
+text = "Active"
 
 [node name="InfoHBox" type="HBoxContainer" parent="Menu"]
 margin_top = 63.0
