@@ -96,7 +96,7 @@ func print_test_info(student_dict):
 		
 		
 		var percents = calculate_percents(test.result, max_points)
-		var grade = calculate_grade(test.result, grade_limits)
+		var grade = calculate_grade(test.result, grade_limits, test.completed)
 		
 		# Add all texts to text_text row
 		test_text_row.get_node("TestInfo/Name").set_text(test.test_name)
@@ -149,7 +149,7 @@ func calculate_percents(res_points, max_points):
 	return [e_string, c_string, a_string]
 
 
-func calculate_grade(res_points, limits):
+func calculate_grade(res_points, limits, completed):
 	var e = res_points[0]
 	var c = res_points[1]
 	var a = res_points[2]
@@ -177,6 +177,9 @@ func calculate_grade(res_points, limits):
 			if a >= limits.A[2]:
 				grade = "A"
 	
+	if not completed:
+		grade = "-"
+
 	return grade
 
 
