@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/FontsDF/CommentsText.tres" type="DynamicFont" id=6]
 
 [node name="StudentInfo" type="WindowDialog"]
+visible = true
 margin_top = 30.0
 margin_right = 800.0
 margin_bottom = 730.0
@@ -126,7 +127,7 @@ margin_bottom = 22.0
 custom_fonts/font = ExtResource( 5 )
 text = "Comments"
 
-[node name="Button" type="Button" parent="Menu/CommentsCont/HeaderHBox"]
+[node name="AddComment" type="Button" parent="Menu/CommentsCont/HeaderHBox"]
 margin_left = 107.0
 margin_right = 206.0
 margin_bottom = 23.0
@@ -153,4 +154,5 @@ margin_bottom = 680.0
 size_flags_horizontal = 0
 custom_fonts/font = ExtResource( 1 )
 text = "Save"
+[connection signal="pressed" from="Menu/CommentsCont/HeaderHBox/AddComment" to="." method="_on_AddComment_pressed"]
 [connection signal="pressed" from="Menu/SaveButton" to="." method="_on_SaveButton_pressed"]

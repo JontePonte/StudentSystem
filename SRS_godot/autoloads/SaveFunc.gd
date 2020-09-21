@@ -65,6 +65,11 @@ func save_comments(student_dict, Comments):
 		if not comment_stored_key in comment_edit_dict.keys():
 			student_dict.get("comments").erase(comment_stored_key)
 
+	# Add added comments
+	for comment_edit_key in comment_edit_dict.keys():
+		if not comment_edit_key in student_dict.get("comments").keys():
+			student_dict.get("comments")[comment_edit_key] = comment_edit_dict.get(comment_edit_key)
+
 	# Update comment texts
 	for comment_id in comment_edit_dict.keys():
 		for comment_stored_id in student_dict.get("comments").keys():

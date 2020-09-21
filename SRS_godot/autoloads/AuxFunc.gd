@@ -5,7 +5,7 @@ func create_new_key_number(in_dict):
 	var key_list = in_dict.keys()
 	
 	if key_list.empty():
-		return 0
+		return "0"
 
 	var highest_num = 0
 

@@ -206,6 +206,21 @@ func calculate_grade(res_points, limits, completed):
 	return grade
 
 
+func _on_AddComment_pressed():
+	# The current state of comments is needed to make new key possible
+	var comments_current_keys = {}
+	for child in Comments.get_children():
+		# only the correct key is needed
+		comments_current_keys[child.key_name] = "p"
+
+	var scene = load("res://InfoTexts/CommentTextEdit.tscn")
+	var comment_row = scene.instance()
+	
+	comment_row.key_name = AuxFunc.create_new_key_number(comments_current_keys)
+
+	Comments.add_child(comment_row)
+
+
 func _on_SaveButton_pressed():
 	var data_dict = FileSys.student_data_load()
 	var student_dict = collect_info()
