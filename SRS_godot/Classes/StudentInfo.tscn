@@ -121,14 +121,14 @@ margin_bottom = 29.0
 custom_fonts/font = ExtResource( 1 )
 text = "Assignments"
 
-[node name="AssignemntsScroll" type="ScrollContainer" parent="Menu/AssignmentsCont"]
+[node name="AssignmentsScroll" type="ScrollContainer" parent="Menu/AssignmentsCont"]
 margin_top = 39.0
 margin_right = 780.0
 margin_bottom = 201.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Assignemnts" type="VBoxContainer" parent="Menu/AssignmentsCont/AssignemntsScroll"]
+[node name="Assignments" type="VBoxContainer" parent="Menu/AssignmentsCont/AssignmentsScroll"]
 margin_right = 780.0
 margin_bottom = 162.0
 size_flags_horizontal = 3

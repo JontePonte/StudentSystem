@@ -8,6 +8,7 @@ onready var Comments = get_node("Menu/CommentsCont/CommentsScroll/Comments")
 onready var ActiveCheck = get_node("Menu/NameHeader/ActiveCheck")
 onready var FirstName = get_node("Menu/NameHeader/FirstName")
 onready var LastName = get_node("Menu/NameHeader/LastName")
+onready var Assignments = get_node("Menu/AssignmentsCont/AssignmentsScroll/Assignments")
 
 
 # lists of what will be displayed under the header
@@ -25,6 +26,7 @@ func show_info():
 
 	print_student_info(student_dict)
 	print_test_info(student_dict)
+	print_assignments(student_dict)
 	print_comments(student_dict)
 
 
@@ -124,6 +126,39 @@ func print_test_info(student_dict):
 		
 		test_text_row.key_name = test_index
 		Tests.add_child(test_text_row)
+
+
+func print_assignments(student_dict):
+	# Clear old assignments in pop up box
+	for child in Assignments.get_children():
+		child.queue_free()
+
+	var assignments_dict = student_dict.get("assignments")
+	
+	for assignment_index in assignments_dict:
+		var assignment = assignments_dict.get(assignment_index)
+		var scene = load("res://InfoTexts/AssignmentTextEdit.tscn")
+		var assignment_text_row = scene.instance()
+		
+		# Extract assignment description from data file
+		var assignment_description = ""
+		var data_dict = FileSys.student_data_load()
+		for assignment_base_index in data_dict.get(GlobalVars.activeClass).get("assignments"):
+			var assignment_base = data_dict.get(GlobalVars.activeClass).get("assignments").get(assignment_base_index)
+			if assignment.assignment_name == assignment_base.assignment_name:
+				assignment_description = assignment_base.get("description")
+				
+		# Add all texts to text_text row
+		assignment_text_row.get_node("AssignmentInfo/Name").set_text(assignment.assignment_name)
+
+		assignment_text_row.get_node("AssignmentInfo/DescriptionScroll/DescriptionHBox/Description").set_text(assignment_description)
+		assignment_text_row.get_node("AssignmentInfo/Completed").pressed = assignment.completed
+		assignment_text_row.get_node("AssignmentInfo/CommentScroll/CommentHBox/Comment").set_text(assignment.comment)
+
+		assignment_text_row.get_node("AssignmentInfo/GradeHBox/GradeLetter").set_text(assignment.grade)
+		
+		assignment_text_row.key_name = assignment_index
+		Assignments.add_child(assignment_text_row)
 
 
 func print_comments(student_dict):
