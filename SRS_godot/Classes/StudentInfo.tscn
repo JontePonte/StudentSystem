@@ -8,7 +8,6 @@
 [ext_resource path="res://assets/FontsDF/CommentsText.tres" type="DynamicFont" id=6]
 
 [node name="StudentInfo" type="WindowDialog"]
-visible = true
 margin_top = 30.0
 margin_right = 800.0
 margin_bottom = 730.0
@@ -103,6 +102,33 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Tests" type="VBoxContainer" parent="Menu/TestsCont/TestsScroll"]
+margin_right = 780.0
+margin_bottom = 162.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AssignmentsCont" type="VBoxContainer" parent="Menu"]
+margin_top = 274.0
+margin_right = 780.0
+margin_bottom = 475.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="AssignmentsHeader" type="Label" parent="Menu/AssignmentsCont"]
+margin_right = 780.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 1 )
+text = "Assignments"
+
+[node name="AssignemntsScroll" type="ScrollContainer" parent="Menu/AssignmentsCont"]
+margin_top = 39.0
+margin_right = 780.0
+margin_bottom = 201.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Assignemnts" type="VBoxContainer" parent="Menu/AssignmentsCont/AssignemntsScroll"]
 margin_right = 780.0
 margin_bottom = 162.0
 size_flags_horizontal = 3
