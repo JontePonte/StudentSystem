@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/FontsDF/CommentsText.tres" type="DynamicFont" id=6]
 
 [node name="StudentInfo" type="WindowDialog"]
+visible = true
 margin_top = 30.0
 margin_right = 800.0
 margin_bottom = 730.0
@@ -63,27 +64,27 @@ text = "Active"
 [node name="InfoHBox" type="HBoxContainer" parent="Menu"]
 margin_top = 63.0
 margin_right = 780.0
-margin_bottom = 264.0
+margin_bottom = 193.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="InfoKeys" type="VBoxContainer" parent="Menu/InfoHBox"]
 margin_right = 388.0
-margin_bottom = 201.0
+margin_bottom = 130.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="InfoVariables" type="VBoxContainer" parent="Menu/InfoHBox"]
 margin_left = 392.0
 margin_right = 780.0
-margin_bottom = 201.0
+margin_bottom = 130.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TestsCont" type="VBoxContainer" parent="Menu"]
-margin_top = 274.0
+margin_top = 203.0
 margin_right = 780.0
-margin_bottom = 475.0
+margin_bottom = 333.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 10
@@ -97,20 +98,20 @@ text = "Tests"
 [node name="TestsScroll" type="ScrollContainer" parent="Menu/TestsCont"]
 margin_top = 39.0
 margin_right = 780.0
-margin_bottom = 201.0
+margin_bottom = 130.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Tests" type="VBoxContainer" parent="Menu/TestsCont/TestsScroll"]
 margin_right = 780.0
-margin_bottom = 162.0
+margin_bottom = 91.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AssignmentsCont" type="VBoxContainer" parent="Menu"]
-margin_top = 274.0
+margin_top = 343.0
 margin_right = 780.0
-margin_bottom = 475.0
+margin_bottom = 473.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 10
@@ -124,20 +125,20 @@ text = "Assignments"
 [node name="AssignmentsScroll" type="ScrollContainer" parent="Menu/AssignmentsCont"]
 margin_top = 39.0
 margin_right = 780.0
-margin_bottom = 201.0
+margin_bottom = 130.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Assignments" type="VBoxContainer" parent="Menu/AssignmentsCont/AssignmentsScroll"]
 margin_right = 780.0
-margin_bottom = 162.0
+margin_bottom = 91.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="CommentsCont" type="VBoxContainer" parent="Menu"]
-margin_top = 485.0
+margin_top = 483.0
 margin_right = 780.0
-margin_bottom = 635.0
+margin_bottom = 633.0
 rect_min_size = Vector2( 0, 150 )
 size_flags_horizontal = 3
 custom_constants/separation = 10
@@ -174,9 +175,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="SaveButton" type="Button" parent="Menu"]
-margin_top = 645.0
+margin_top = 643.0
 margin_right = 64.0
-margin_bottom = 680.0
+margin_bottom = 678.0
 size_flags_horizontal = 0
 custom_fonts/font = ExtResource( 1 )
 text = "Save"

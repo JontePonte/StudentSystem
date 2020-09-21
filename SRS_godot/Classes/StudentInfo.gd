@@ -265,6 +265,7 @@ func _on_SaveButton_pressed():
 	student_dict = SaveFunc.save_name(student_dict, FirstName, LastName)
 	student_dict = SaveFunc.save_info_text(student_dict, InfoVariables, info_key_list)
 	student_dict = SaveFunc.save_student_test(student_dict, Tests)
+	student_dict = SaveFunc.save_student_assignment(student_dict, Assignments)
 	student_dict = SaveFunc.save_comments(student_dict, Comments)
 	
 	# update data_dict and save the updated json

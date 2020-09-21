@@ -42,9 +42,8 @@ margin_bottom = 35.0
 rect_min_size = Vector2( 150, 0 )
 
 [node name="DescriptionHBox" type="HBoxContainer" parent="AssignmentInfo/DescriptionScroll"]
-margin_top = 4.0
 margin_right = 66.0
-margin_bottom = 39.0
+margin_bottom = 25.0
 alignment = 1
 
 [node name="Description" type="Label" parent="AssignmentInfo/DescriptionScroll/DescriptionHBox"]
@@ -75,7 +74,7 @@ margin_bottom = 35.0
 
 [node name="CommentLabel" type="Label" parent="AssignmentInfo"]
 margin_left = 384.0
-margin_right = 454.0
+margin_right = 441.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 0, 35 )
 custom_fonts/font = ExtResource( 1 )
@@ -109,7 +108,7 @@ margin_bottom = 35.0
 
 [node name="GradeHBox" type="HBoxContainer" parent="AssignmentInfo"]
 margin_left = 607.0
-margin_right = 697.0
+margin_right = 694.0
 margin_bottom = 35.0
 size_flags_horizontal = 0
 

@@ -38,22 +38,41 @@ func save_student_test(student_dict, Tests):
 			int(child.get_node("TestInfo/Result/ResultC").text),
 			int(child.get_node("TestInfo/Result/ResultA").text)]
 	
+	# Save student result
 	for test_edited_id in test_edit_box_dict.keys():
 		for test_stored_id in student_dict.get("tests").keys():
 			if test_edited_id == test_stored_id:
 				student_dict.get("tests").get(test_stored_id)["result"] = test_edit_box_dict[test_edited_id]
 	
+
+	# Create dictionary with check box status
 	var test_check_box_dict = {}
 	for child in Tests.get_children():
 		test_check_box_dict[child.key_name] = child.get_node("TestInfo/Completed/CompletedCheck").pressed
 	
+	# Save chekc box status
 	for test_check_id in test_check_box_dict.keys():
 		for test_stored_id in student_dict.get("tests").keys():
 			if test_check_id == test_stored_id:
 				student_dict.get("tests").get(test_stored_id)["completed"] = test_check_box_dict[test_check_id]
 	
 	return student_dict
-	
+
+
+func save_student_assignment(student_dict, Assignments):
+	# Create a dictionary with the assignments comment
+	var assignment_comment_dict = {}
+	for child in Assignments.get_children():
+		assignment_comment_dict[child.key_name] = child.get_node("AssignmentInfo/CommentScroll/CommentHBox/Comment").text
+
+	# Store the comments
+	for assignment_edited_id in assignment_comment_dict.keys():
+		for assignment_stored_id in student_dict.get("assignments").keys():
+			if assignment_edited_id == assignment_stored_id:
+				student_dict.get("assignments").get(assignment_stored_id)["comment"] = assignment_comment_dict[assignment_edited_id]
+
+	return student_dict
+
 
 func save_comments(student_dict, Comments):
 	var comment_edit_dict = {}
