@@ -60,6 +60,12 @@ func save_comments(student_dict, Comments):
 	for child in Comments.get_children():
 		comment_edit_dict[child.key_name] = child.get_node("CommentHBox/Comment").text
 	
+	# Remove removed comments
+	for comment_stored_key in student_dict.get("comments").keys():
+		if not comment_stored_key in comment_edit_dict.keys():
+			student_dict.get("comments").erase(comment_stored_key)
+
+	# Update comment texts
 	for comment_id in comment_edit_dict.keys():
 		for comment_stored_id in student_dict.get("comments").keys():
 			if comment_id == comment_stored_id:

@@ -226,6 +226,3 @@ func _on_SaveButton_pressed():
 	# Update student list
 	get_parent().create_student_buttons()
 	
-
-func _on_Comments_comment_remove(key_name):
-	print(key_name)

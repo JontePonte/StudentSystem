@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/FontsDF/SmallText.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Classes/StudentInfo.gd" type="Script" id=2]
@@ -6,10 +6,8 @@
 [ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=4]
 [ext_resource path="res://assets/FontsDF/CommentsHeader.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/FontsDF/CommentsText.tres" type="DynamicFont" id=6]
-[ext_resource path="res://Classes/Comments.gd" type="Script" id=7]
 
 [node name="StudentInfo" type="WindowDialog"]
-visible = true
 margin_top = 30.0
 margin_right = 800.0
 margin_bottom = 730.0
@@ -147,7 +145,6 @@ margin_right = 780.0
 margin_bottom = 117.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 7 )
 
 [node name="SaveButton" type="Button" parent="Menu"]
 margin_top = 645.0
@@ -156,5 +153,4 @@ margin_bottom = 680.0
 size_flags_horizontal = 0
 custom_fonts/font = ExtResource( 1 )
 text = "Save"
-[connection signal="comment_remove" from="Menu/CommentsCont/CommentsScroll/Comments" to="." method="_on_Comments_comment_remove"]
 [connection signal="pressed" from="Menu/SaveButton" to="." method="_on_SaveButton_pressed"]
