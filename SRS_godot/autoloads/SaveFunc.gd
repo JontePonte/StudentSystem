@@ -61,6 +61,18 @@ func save_student_test(student_dict, Tests):
 
 func save_student_assignment(student_dict, Assignments):
 	# Create a dictionary with the assignments comment
+	var assignment_completed_dict = {}
+	for child in Assignments.get_children():
+		assignment_completed_dict[child.key_name] = child.get_node("AssignmentInfo/Completed").pressed
+
+	# Store the check button status
+	for assignment_edited_id in assignment_completed_dict.keys():
+		for assignment_stored_id in student_dict.get("assignments").keys():
+			if assignment_edited_id == assignment_stored_id:
+				student_dict.get("assignments").get(assignment_stored_id)["completed"] = assignment_completed_dict[assignment_edited_id]
+	
+	
+	# Create a dictionary with the assignments comment
 	var assignment_comment_dict = {}
 	for child in Assignments.get_children():
 		assignment_comment_dict[child.key_name] = child.get_node("AssignmentInfo/CommentScroll/CommentHBox/Comment").text
@@ -70,7 +82,19 @@ func save_student_assignment(student_dict, Assignments):
 		for assignment_stored_id in student_dict.get("assignments").keys():
 			if assignment_edited_id == assignment_stored_id:
 				student_dict.get("assignments").get(assignment_stored_id)["comment"] = assignment_comment_dict[assignment_edited_id]
+	
+	
+	# Create a dictionary with the assignments grade
+	var assignment_grade_dict = {}
+	for child in Assignments.get_children():
+		assignment_grade_dict[child.key_name] = child.get_node("AssignmentInfo/GradeHBox/GradeLetter").text
 
+	# Store the grade
+	for assignment_edited_id in assignment_comment_dict.keys():
+		for assignment_stored_id in student_dict.get("assignments").keys():
+			if assignment_edited_id == assignment_stored_id:
+				student_dict.get("assignments").get(assignment_stored_id)["grade"] = assignment_grade_dict[assignment_edited_id]
+	
 	return student_dict
 
 
