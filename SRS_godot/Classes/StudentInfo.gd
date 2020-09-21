@@ -1,10 +1,10 @@
 extends WindowDialog
 
 
-onready var InfoKeys = get_node("Menu/InfoHBox/InfoKeys")
-onready var InfoVariables = get_node("Menu/InfoHBox/InfoVariables")
+onready var InfoKeys = get_node("Menu/InfoHBox/InfoKeysCont/InfoKeys")
+onready var InfoVariables = get_node("Menu/InfoHBox/InfoVariablesCont/InfoVariables")
 onready var Tests = get_node("Menu/TestsCont/TestsScroll/Tests")
-onready var Comments = get_node("Menu/CommentsCont/CommentsScroll/Comments")
+onready var Comments = get_node("Menu/InfoHBox/CommentsCont/CommentsScroll/Comments")
 onready var ActiveCheck = get_node("Menu/NameHeader/ActiveCheck")
 onready var FirstName = get_node("Menu/NameHeader/FirstName")
 onready var LastName = get_node("Menu/NameHeader/LastName")
@@ -163,7 +163,7 @@ func print_assignments(student_dict):
 
 func print_comments(student_dict):
 	# Clear old comments in pop up box
-	for child in $Menu/CommentsCont/CommentsScroll/Comments.get_children():
+	for child in Comments.get_children():
 		child.queue_free()
 
 	var comments_dict = student_dict.get("comments")
