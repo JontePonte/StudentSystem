@@ -1,0 +1,121 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/FontsDF/TestTextSmall.tres" type="DynamicFont" id=1]
+
+[node name="Assignment" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="."]
+margin_right = 1280.0
+margin_bottom = 4.0
+
+[node name="AssignmentInfo" type="HBoxContainer" parent="."]
+margin_top = 8.0
+margin_right = 1280.0
+margin_bottom = 33.0
+
+[node name="Name" type="Label" parent="AssignmentInfo"]
+margin_top = 5.0
+margin_right = 31.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 1 )
+text = "Name"
+valign = 1
+
+[node name="VSeparator" type="VSeparator" parent="AssignmentInfo"]
+margin_left = 35.0
+margin_right = 39.0
+margin_bottom = 25.0
+
+[node name="DescriptionScroll" type="ScrollContainer" parent="AssignmentInfo"]
+margin_left = 43.0
+margin_right = 193.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="DescriptionHBox" type="HBoxContainer" parent="AssignmentInfo/DescriptionScroll"]
+margin_right = 66.0
+margin_bottom = 15.0
+alignment = 1
+
+[node name="Description" type="Label" parent="AssignmentInfo/DescriptionScroll/DescriptionHBox"]
+margin_right = 66.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 1 )
+text = "Placeholder"
+valign = 1
+
+[node name="VSeparator2" type="VSeparator" parent="AssignmentInfo"]
+margin_left = 197.0
+margin_right = 201.0
+margin_bottom = 25.0
+
+[node name="Completed" type="CheckBox" parent="AssignmentInfo"]
+margin_left = 205.0
+margin_right = 293.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 1 )
+text = "Completed"
+
+[node name="VSeparator3" type="VSeparator" parent="AssignmentInfo"]
+margin_left = 297.0
+margin_right = 301.0
+margin_bottom = 25.0
+
+[node name="CommentLabel" type="Label" parent="AssignmentInfo"]
+margin_left = 305.0
+margin_top = 5.0
+margin_right = 362.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 1 )
+text = "Comment:"
+
+[node name="CommentScroll" type="ScrollContainer" parent="AssignmentInfo"]
+margin_left = 366.0
+margin_right = 516.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="CommentHBox" type="HBoxContainer" parent="AssignmentInfo/CommentScroll"]
+margin_right = 46.0
+margin_bottom = 25.0
+
+[node name="Comment" type="LineEdit" parent="AssignmentInfo/CommentScroll/CommentHBox"]
+margin_right = 46.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 25 )
+custom_fonts/font = ExtResource( 1 )
+text = "Placeholder"
+
+[node name="VSeparator4" type="VSeparator" parent="AssignmentInfo"]
+margin_left = 520.0
+margin_right = 524.0
+margin_bottom = 25.0
+
+[node name="GradeHBox" type="HBoxContainer" parent="AssignmentInfo"]
+margin_left = 528.0
+margin_right = 577.0
+margin_bottom = 25.0
+
+[node name="GradeLabel" type="Label" parent="AssignmentInfo/GradeHBox"]
+margin_top = -1.0
+margin_right = 37.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 25 )
+custom_fonts/font = ExtResource( 1 )
+text = "Grade:"
+valign = 1
+
+[node name="Grade" type="Label" parent="AssignmentInfo/GradeHBox"]
+margin_left = 41.0
+margin_top = -1.0
+margin_right = 49.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 25 )
+custom_fonts/font = ExtResource( 1 )
+text = "G"
+valign = 1

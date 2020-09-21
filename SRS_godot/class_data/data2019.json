@@ -3,16 +3,30 @@
         "assignments": {
             "0": {
                 "assignment_name": "Lab kap3: Grafer",
-                "comment": "Skapa tre s-t, v-t och a-t grafer"
+                "description": "Skapa tre s-t, v-t och a-t grafer"
             },
             "1": {
                 "assignment_name": "Lab kap5: Piff",
-                "comment": "Gör lite ditt och datt"
+                "description": "Gör lite ditt och datt"
             }
         },
         "students": {
             "0": {
                 "active": true,
+                "assignments": {
+                    "0": {
+                        "assignment_name": "Lab kap3: Grafer",
+                        "comment": "Miss här och där",
+                        "completed": true,
+                        "grade": "C"
+                    },
+                    "1": {
+                        "assignment_name": "Lab kap5: Piff",
+                        "comment": "Bra ditt men missade datt",
+                        "completed": true,
+                        "grade": "D"
+                    }
+                },
                 "class": "te22",
                 "comments": {
                     "0": "dfkjsdlfkj",
@@ -23,22 +37,6 @@
                 "first_name": "Hanna",
                 "last_name": "Handersson",
                 "pers_nr": "200101010101",
-                "assignments": {
-                    "0": {
-                        "completed": true,
-                        "assignment_name": "Lab kap3: Grafer",
-                        "grade": "C",
-                        "comment": "Miss här och där"
-
-                    },
-                    "1": {
-                        "completed": true,
-                        "assignment_name": "Lab kap5: Piff",
-                        "grade": "D",
-                        "comment": "Bra ditt men missade datt"
-
-                    }
-                },
                 "tests": {
                     "0": {
                         "completed": true,
@@ -62,28 +60,30 @@
             },
             "1": {
                 "active": true,
+                "assignments": {
+                    "0": {
+                        "assignment_name": "Lab kap3: Grafer",
+                        "comment": "Jävligt bra",
+                        "completed": true,
+                        "grade": "A"
+                    },
+                    "1": {
+                        "assignment_name": "Lab kap5: Piff",
+                        "comment": "Ej gjort",
+                        "completed": true,
+                        "grade": "-"
+                    }
+                },
                 "class": "te22",
-                "comments": {},
+                "comments": {
+                    "0": "tjenna",
+                    "1": "sdfsdfsdf",
+                    "2": "dfgdfgdfg"
+                },
                 "email": "pelle.p5@utb.hudiksvall.se",
                 "first_name": "Pelle",
                 "last_name": "Persson",
                 "pers_nr": "200102020303",
-                "assignments": {
-                    "0": {
-                        "completed": true,
-                        "assignment_name": "Lab kap3: Grafer",
-                        "grade": "A",
-                        "comment": "Jävligt bra"
-
-                    },
-                    "1": {
-                        "completed": true,
-                        "assignment_name": "Lab kap5: Piff",
-                        "grade": "-",
-                        "comment": "Ej gjort"
-
-                    }
-                },
                 "tests": {
                     "0": {
                         "completed": true,
