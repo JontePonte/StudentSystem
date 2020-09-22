@@ -47,11 +47,11 @@ func _on_AddStudent_pressed():
 
 	var new_studnet = {
 		"active": true,
-		"class": GlobalVars.activeDataFile,
+		"class": GlobalVars.activeClass,
 		"comments": {},
 		"email": "",
-		"first_name": "",
-		"last_name": "",
+		"first_name": "First name",
+		"last_name": "Last Name",
 		"pers_nr": 0,
 		"assignments": {},
 		"tests": {}
@@ -66,6 +66,8 @@ func _on_AddStudent_pressed():
 	data_dict.get(GlobalVars.activeClass).students[new_student_key] = new_studnet
 	FileSys.student_data_save(data_dict)
 
+	# Show popup window with the the new student
 	GlobalVars.activeStudentId = int(new_student_key)
 	$StudentInfo.popup_centered()
 	$StudentInfo.show_info()
+	create_student_buttons()
