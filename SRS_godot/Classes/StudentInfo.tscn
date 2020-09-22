@@ -249,3 +249,5 @@ custom_fonts/font = ExtResource( 1 )
 text = "Remove Student"
 [connection signal="pressed" from="Menu/InfoHBox/CommentsCont/HeaderHBox/AddComment" to="." method="_on_AddComment_pressed"]
 [connection signal="pressed" from="Menu/BottomButtons/SaveButton" to="." method="_on_SaveButton_pressed"]
+[connection signal="pressed" from="Menu/BottomButtons/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="Menu/BottomButtons/RemoveButton" to="." method="_on_RemoveButton_pressed"]

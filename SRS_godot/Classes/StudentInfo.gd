@@ -279,7 +279,7 @@ func _on_SaveButton_pressed():
 	
 
 func _on_ExitButton_pressed():
-	pass
+	hide()
 
 
 func _on_RemoveButton_pressed():
