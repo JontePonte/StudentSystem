@@ -1,6 +1,9 @@
 extends Control
 
 
+onready var Students = get_node("Menu/RowsCont/StundetsCont/StudentsScroll/Students")
+
+
 func _ready():
 	# Set header name
 	var active_class = GlobalVars.activeClass
@@ -14,7 +17,7 @@ func create_student_buttons():
 	var students_dict = student_data.get(GlobalVars.activeClass).students
 
 	# Remove all previous student buttons
-	for child in $Menu/RowsCont/StundetsCont/StudentsScroll/Students.get_children():
+	for child in Students.get_children():
 		child.queue_free()
 
 	# Instance menu buttons and make them childs of scroll menu
@@ -32,9 +35,37 @@ func create_student_buttons():
 		else:
 			student_button.get_node("Label").add_color_override("font_color", VisualVars.StudentButtonColorInactive)
 
-		$Menu/RowsCont/StundetsCont/StudentsScroll/Students.add_child(student_button)
+		Students.add_child(student_button)
 
 
 func _on_BackButton_pressed():
 	var path = "res://Main.tscn"
 	var _is_main = get_tree().change_scene(path)
+
+
+func _on_AddStudent_pressed():
+
+	var new_studnet = {
+		"active": true,
+		"class": GlobalVars.activeDataFile,
+		"comments": {},
+		"email": "",
+		"first_name": "",
+		"last_name": "",
+		"pers_nr": 0,
+		"assignments": {},
+		"tests": {}
+		}
+
+	var data_dict = FileSys.student_data_load()
+	var students_dict = data_dict.get(GlobalVars.activeClass).students
+
+	var new_student_key = AuxFunc.create_new_key_number(students_dict)
+
+	# add student to student data dictionary
+	data_dict.get(GlobalVars.activeClass).students[new_student_key] = new_studnet
+	FileSys.student_data_save(data_dict)
+
+	GlobalVars.activeStudentId = int(new_student_key)
+	$StudentInfo.popup_centered()
+	$StudentInfo.show_info()

@@ -197,4 +197,5 @@ text = "Go Back "
 
 [node name="StudentInfo" parent="." instance=ExtResource( 6 )]
 visible = false
+[connection signal="pressed" from="Menu/RowsCont/StundetsCont/StudentsTop/AddStudent" to="." method="_on_AddStudent_pressed"]
 [connection signal="pressed" from="Menu/BackButton" to="." method="_on_BackButton_pressed"]
