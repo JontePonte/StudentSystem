@@ -56,6 +56,7 @@ func _on_AddStudent_pressed():
 	var students_dict = data_dict.get(GlobalVars.activeClass).students
 
 	var tests = AuxFunc.create_unfinished_tests(data_dict)
+	var assignments = AuxFunc.create_unfinished_assignments(data_dict)
 
 	var new_studnet = {
 		"active": true,
@@ -65,7 +66,7 @@ func _on_AddStudent_pressed():
 		"first_name": "",
 		"last_name": "",
 		"pers_nr": 0,
-		"assignments": {},
+		"assignments": assignments,
 		"tests": tests
 		}
 
