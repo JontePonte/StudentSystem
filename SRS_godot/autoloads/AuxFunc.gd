@@ -1,6 +1,19 @@
 extends Node
 
 
+func create_unfinished_tests(data_dict):
+	var tests_output = {}
+	var tests_from_file = data_dict.get(GlobalVars.activeClass).get("tests")
+
+	for key in tests_from_file:
+		tests_output[key] = {
+			"completed": false,
+			"result": [0,0,0],
+			"test_name": tests_from_file[key]["test_name"]}
+
+	return tests_output
+
+
 func create_new_key_number(in_dict):
 	var key_list = in_dict.keys()
 	

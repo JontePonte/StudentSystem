@@ -52,6 +52,10 @@ func _on_BackButton_pressed():
 
 
 func _on_AddStudent_pressed():
+	var data_dict = FileSys.student_data_load()
+	var students_dict = data_dict.get(GlobalVars.activeClass).students
+
+	var tests = AuxFunc.create_unfinished_tests(data_dict)
 
 	var new_studnet = {
 		"active": true,
@@ -62,11 +66,8 @@ func _on_AddStudent_pressed():
 		"last_name": "",
 		"pers_nr": 0,
 		"assignments": {},
-		"tests": {}
+		"tests": tests
 		}
-
-	var data_dict = FileSys.student_data_load()
-	var students_dict = data_dict.get(GlobalVars.activeClass).students
 
 	var new_student_key = AuxFunc.create_new_key_number(students_dict)
 
