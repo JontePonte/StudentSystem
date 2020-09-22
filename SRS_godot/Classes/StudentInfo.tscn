@@ -83,9 +83,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Spacer" type="Label" parent="Menu/InfoHBox/InfoKeysCont"]
-margin_top = -1.0
 margin_right = 254.0
-margin_bottom = 27.0
+margin_bottom = 28.0
 rect_min_size = Vector2( 0, 28 )
 
 [node name="InfoKeys" type="VBoxContainer" parent="Menu/InfoHBox/InfoKeysCont"]
@@ -103,9 +102,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Spacer" type="Label" parent="Menu/InfoHBox/InfoVariablesCont"]
-margin_top = -1.0
 margin_right = 254.0
-margin_bottom = 27.0
+margin_bottom = 28.0
 rect_min_size = Vector2( 0, 28 )
 
 [node name="InfoVariables" type="VBoxContainer" parent="Menu/InfoHBox/InfoVariablesCont"]
@@ -213,12 +211,41 @@ margin_bottom = 140.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="SaveButton" type="Button" parent="Menu"]
+[node name="BottomButtons" type="HBoxContainer" parent="Menu"]
 margin_top = 644.0
-margin_right = 64.0
+margin_right = 780.0
 margin_bottom = 679.0
+
+[node name="SaveButton" type="Button" parent="Menu/BottomButtons"]
+margin_right = 64.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 64, 35 )
 size_flags_horizontal = 0
 custom_fonts/font = ExtResource( 1 )
 text = "Save"
+
+[node name="ExitButton" type="Button" parent="Menu/BottomButtons"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 64, 35 )
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 1 )
+text = "Exit"
+
+[node name="Spacer" type="Label" parent="Menu/BottomButtons"]
+margin_left = 136.0
+margin_top = 10.0
+margin_right = 589.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="RemoveButton" type="Button" parent="Menu/BottomButtons"]
+margin_left = 593.0
+margin_right = 780.0
+margin_bottom = 35.0
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 1 )
+text = "Remove Student"
 [connection signal="pressed" from="Menu/InfoHBox/CommentsCont/HeaderHBox/AddComment" to="." method="_on_AddComment_pressed"]
-[connection signal="pressed" from="Menu/SaveButton" to="." method="_on_SaveButton_pressed"]
+[connection signal="pressed" from="Menu/BottomButtons/SaveButton" to="." method="_on_SaveButton_pressed"]

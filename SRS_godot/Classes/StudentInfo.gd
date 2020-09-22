@@ -277,3 +277,10 @@ func _on_SaveButton_pressed():
 	# Update student list
 	get_parent().create_student_buttons()
 	
+
+func _on_ExitButton_pressed():
+	pass
+
+
+func _on_RemoveButton_pressed():
+	pass
