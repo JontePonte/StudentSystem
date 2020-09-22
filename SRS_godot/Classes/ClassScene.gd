@@ -26,8 +26,16 @@ func create_student_buttons():
 		var student_button = scene.instance()
 
 		var student = students_dict.get(id_num)
+		
+		var first_name = student.first_name
+		var last_name = student.last_name
 
-		student_button.get_node("Label").set_text(student.first_name + " " + student.last_name)
+		if not first_name:
+			first_name = "First Name"
+		if not last_name:
+			last_name = "Last Name"
+
+		student_button.get_node("Label").set_text(first_name + " " + last_name)
 		student_button.name = str(id_num)
 		student_button.student_id = int(id_num)
 		if student.active:
@@ -50,8 +58,8 @@ func _on_AddStudent_pressed():
 		"class": GlobalVars.activeClass,
 		"comments": {},
 		"email": "",
-		"first_name": "First name",
-		"last_name": "Last Name",
+		"first_name": "",
+		"last_name": "",
 		"pers_nr": 0,
 		"assignments": {},
 		"tests": {}
