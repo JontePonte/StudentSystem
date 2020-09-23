@@ -1,6 +1,10 @@
 extends Node
 
 
+func sort_students_by_name(students:Array):
+	return students
+
+
 func create_unfinished_tests(data_dict):
 	var tests_output = {}
 	var tests_from_file = data_dict.get(GlobalVars.activeClass).get("tests")
