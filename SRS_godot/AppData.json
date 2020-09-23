@@ -1,1 +1,4 @@
-{"active_data_file":"res://class_data/data2019.json"}
+{
+    "active_data_file": "res://class_data/data2019.json",
+    "sort_students_by": "last_name"
+}
