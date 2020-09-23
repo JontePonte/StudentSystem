@@ -12,8 +12,9 @@ visible = true
 margin_top = 30.0
 margin_right = 800.0
 margin_bottom = 730.0
-rect_min_size = Vector2( 800, 700 )
+rect_min_size = Vector2( 800, 400 )
 window_title = "Student Info"
+resizable = true
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
