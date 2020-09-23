@@ -283,4 +283,9 @@ func _on_ExitButton_pressed():
 
 
 func _on_RemoveButton_pressed():
-	pass
+	var data_dict = FileSys.student_data_load()
+	data_dict.get(GlobalVars.activeClass).students.erase(str(GlobalVars.activeStudentId))
+	
+	FileSys.student_data_save(data_dict)
+	get_parent().create_student_buttons()
+	hide()
