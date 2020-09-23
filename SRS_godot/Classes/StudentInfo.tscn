@@ -248,7 +248,29 @@ margin_bottom = 35.0
 size_flags_horizontal = 0
 custom_fonts/font = ExtResource( 1 )
 text = "Remove Student"
+
+[node name="RemoveCheck" type="ConfirmationDialog" parent="."]
+visible = true
+margin_left = 358.0
+margin_top = 248.0
+margin_right = 670.0
+margin_bottom = 339.0
+window_title = "Remove Student"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RemoveText" type="Label" parent="RemoveCheck"]
+margin_left = 40.0
+margin_top = 8.0
+margin_right = 270.0
+margin_bottom = 55.0
+custom_fonts/font = ExtResource( 4 )
+text = "Are you sure you want to remove the student?"
+align = 1
+autowrap = true
 [connection signal="pressed" from="Menu/InfoHBox/CommentsCont/HeaderHBox/AddComment" to="." method="_on_AddComment_pressed"]
 [connection signal="pressed" from="Menu/BottomButtons/SaveButton" to="." method="_on_SaveButton_pressed"]
 [connection signal="pressed" from="Menu/BottomButtons/ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="Menu/BottomButtons/RemoveButton" to="." method="_on_RemoveButton_pressed"]
+[connection signal="confirmed" from="RemoveCheck" to="." method="_on_RemoveCheck_confirmed"]

@@ -283,6 +283,14 @@ func _on_ExitButton_pressed():
 
 
 func _on_RemoveButton_pressed():
+	$RemoveCheck.popup_centered()
+
+
+func _on_RemoveCheck_confirmed():
+	remove_student()
+
+
+func remove_student():
 	var data_dict = FileSys.student_data_load()
 	data_dict.get(GlobalVars.activeClass).students.erase(str(GlobalVars.activeStudentId))
 	
