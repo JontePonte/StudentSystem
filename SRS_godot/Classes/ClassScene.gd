@@ -45,16 +45,21 @@ func create_student_buttons():
 		student_button.get_node("Label").set_text(first_name + " " + last_name)
 		student_button.name = str(id_num)
 		student_button.student_id = int(id_num)
+
+		# Sort students by first or last name based on info in app_data
+		var sort_name = last_name
+		if FileSys.app_data_load().sort_students_by == "first_name":
+			sort_name = first_name
 		
 		# Put active and inactive students in different lists and give the text different colors
 		if student.active:
 			student_button.get_node("Label").add_color_override("font_color", VisualVars.StudentButtonColorActive)
 			active_students.append(student_button)
-			active_id_num[first_name] = student_button.student_id # This dict is used for sorting
+			active_id_num[sort_name] = student_button.student_id # This dict is used for sorting
 		else:
 			student_button.get_node("Label").add_color_override("font_color", VisualVars.StudentButtonColorInactive)
 			inactive_students.append(student_button)
-			inactive_id_num[first_name] = student_button.student_id # This dict is used for sorting
+			inactive_id_num[last_name] = student_button.student_id # This dict is used for sorting
 	
 	# Collect arrays of sorted keys
 	var active_keys_sorted = AuxFunc.sort_students_by_name(active_id_num)
