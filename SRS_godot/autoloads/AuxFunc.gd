@@ -1,8 +1,16 @@
 extends Node
 
 
-func sort_students_by_name(students:Array):
-	return students
+func sort_students_by_name(students:Dictionary):
+
+	var names = students.keys()
+	names.sort()
+	
+	var sorted_index = []
+	for key in names:
+		sorted_index.append(students[key])
+
+	return sorted_index
 
 
 func create_unfinished_tests(data_dict):

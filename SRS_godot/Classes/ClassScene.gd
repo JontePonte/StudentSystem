@@ -22,7 +22,10 @@ func create_student_buttons():
 
 	# Instance menu buttons and make them childs of scroll menu
 	var active_students = []
+	var active_id_num = {}
 	var inactive_students = []
+	var inactive_id_num = {}
+
 	for id_num in students_dict:
 		var scene = load("res://Buttons/StudentButton.tscn")
 		var student_button = scene.instance()
@@ -45,18 +48,24 @@ func create_student_buttons():
 		if student.active:
 			student_button.get_node("Label").add_color_override("font_color", VisualVars.StudentButtonColorActive)
 			active_students.append(student_button)
+			active_id_num[first_name] = student_button.student_id
 		else:
 			student_button.get_node("Label").add_color_override("font_color", VisualVars.StudentButtonColorInactive)
 			inactive_students.append(student_button)
+			inactive_id_num[first_name] = student_button.student_id
 	
-	var active_students_sorted = AuxFunc.sort_students_by_name(active_students)
-	var inactive_students_sorted = AuxFunc.sort_students_by_name(inactive_students)
+	var active_keys_sorted = AuxFunc.sort_students_by_name(active_id_num)
+	var inactive_keys_sorted = AuxFunc.sort_students_by_name(inactive_id_num)
 
 	# Put students as childs of Students node
-	for active_student in active_students_sorted:
-		Students.add_child(active_student)
-	for inactive_student in inactive_students_sorted:
-		Students.add_child(inactive_student)
+	for key in active_keys_sorted:
+		for button in active_students:
+			if button.student_id == key:
+				Students.add_child(button)
+	for key in inactive_keys_sorted:
+		for button in inactive_students:
+			if button.student_id == key:
+				Students.add_child(button)
 
 
 func _on_BackButton_pressed():
