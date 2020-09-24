@@ -53,11 +53,11 @@ func create_student_buttons():
 		
 		# Put active and inactive students in different lists and give the text different colors
 		if student.active:
-			student_button.get_node("Label").add_color_override("font_color", VisualVars.StudentButtonColorActive)
+			student_button.get_node("Label").add_color_override("font_color", VisualVars.ColorText)
 			active_students.append(student_button)
 			active_id_num[sort_name] = student_button.student_id # This dict is used for sorting
 		else:
-			student_button.get_node("Label").add_color_override("font_color", VisualVars.StudentButtonColorInactive)
+			student_button.get_node("Label").add_color_override("font_color", VisualVars.ColorTextAlt)
 			inactive_students.append(student_button)
 			inactive_id_num[last_name] = student_button.student_id # This dict is used for sorting
 	

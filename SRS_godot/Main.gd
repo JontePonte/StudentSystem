@@ -6,10 +6,13 @@ var window_size = OS.get_window_size()
 
 
 
-func _ready():  
+func _ready():
 	OS.set_window_position(screen_size*0.5 - window_size*0.5)
+
+	VisualVars.set_color_palette()
 	
 	create_classes_buttons()
+
 
 
 func create_classes_buttons():
