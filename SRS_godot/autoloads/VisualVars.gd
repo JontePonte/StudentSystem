@@ -2,6 +2,7 @@ extends Node
 # All variables connected that governs the visuals
 
 # Color palet
+var ColorWhite = Color(1,1,1)
 var ColorText = Color("C4DEE1")
 var ColorTextAlt = Color("808E59")
 var ColorBackgroundAlt = Color("97C6CB")
