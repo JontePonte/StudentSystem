@@ -21,6 +21,7 @@ func create_student_buttons():
 		child.queue_free()
 
 	# Instance menu buttons and make them childs of scroll menu
+	# Create lists and dicts for sorting
 	var active_students = []
 	var active_id_num = {}
 	var inactive_students = []
@@ -35,6 +36,7 @@ func create_student_buttons():
 		var first_name = student.first_name
 		var last_name = student.last_name
 
+		# Let the botton say "Fisrt Name Last Name" if no name is given
 		if not first_name:
 			first_name = "First Name"
 		if not last_name:
@@ -44,22 +46,23 @@ func create_student_buttons():
 		student_button.name = str(id_num)
 		student_button.student_id = int(id_num)
 		
-		# Put active and inactive students in different lists
+		# Put active and inactive students in different lists and give the text different colors
 		if student.active:
 			student_button.get_node("Label").add_color_override("font_color", VisualVars.StudentButtonColorActive)
 			active_students.append(student_button)
-			active_id_num[first_name] = student_button.student_id
+			active_id_num[first_name] = student_button.student_id # This dict is used for sorting
 		else:
 			student_button.get_node("Label").add_color_override("font_color", VisualVars.StudentButtonColorInactive)
 			inactive_students.append(student_button)
-			inactive_id_num[first_name] = student_button.student_id
+			inactive_id_num[first_name] = student_button.student_id # This dict is used for sorting
 	
+	# Collect arrays of sorted keys
 	var active_keys_sorted = AuxFunc.sort_students_by_name(active_id_num)
 	var inactive_keys_sorted = AuxFunc.sort_students_by_name(inactive_id_num)
 
-	# Put students as childs of Students node
+	# Put student buttons as childs of Students node
 	for key in active_keys_sorted:
-		for button in active_students:
+		for button in active_students:		# not pretty but works...
 			if button.student_id == key:
 				Students.add_child(button)
 	for key in inactive_keys_sorted:

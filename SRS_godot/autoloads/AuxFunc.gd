@@ -1,16 +1,18 @@
 extends Node
 
 
+# takes a dict of names and keys (numbers) and return an array of alphabetically sorted keys
 func sort_students_by_name(students:Dictionary):
 
 	var names = students.keys()
 	names.sort()
 	
-	var sorted_index = []
+	# Append the new sorted keys to sorted_keys
+	var sorted_keys = []
 	for key in names:
-		sorted_index.append(students[key])
+		sorted_keys.append(students[key])
 
-	return sorted_index
+	return sorted_keys
 
 
 func create_unfinished_tests(data_dict):
