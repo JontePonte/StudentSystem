@@ -4,6 +4,7 @@ extends Node
 var activeDataFile = ""
 var activeClass = ""
 var activeStudentId = 0
+var activeTestId = 0
 
 
 func _ready():

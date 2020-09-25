@@ -2,6 +2,7 @@ extends Control
 
 
 onready var Students = get_node("Menu/RowsCont/StundetsCont/StudentsScroll/Students")
+onready var Tests = get_node("Menu/RowsCont/TestsCont/TestsScroll/Tests")
 
 
 func _ready():
@@ -10,6 +11,7 @@ func _ready():
 	$Menu/Header.set_text(active_class)
 
 	create_student_buttons()
+	create_test_buttons()
 
 
 func create_student_buttons(): 
@@ -76,6 +78,29 @@ func create_student_buttons():
 				Students.add_child(button)
 
 
+func create_test_buttons():
+	var student_data = FileSys.student_data_load()
+	var tests_dict = student_data.get(GlobalVars.activeClass).tests
+
+	# Remove all previous test buttons
+	for child in Tests.get_children():
+		child.queue_free()
+	
+	for id_num in tests_dict:
+		var scene = load("res://Buttons/TestButton.tscn")
+		var test_button = scene.instance()
+		var active_test = tests_dict[id_num]
+
+		test_button.name = str(id_num)
+		test_button.test_id = int(id_num)
+		test_button.get_node("Label").set_text(active_test.test_name)
+
+		Tests.add_child(test_button)
+
+
+
+
+
 func _on_BackButton_pressed():
 	var path = "res://Main.tscn"
 	var _is_main = get_tree().change_scene(path)
@@ -111,3 +136,7 @@ func _on_AddStudent_pressed():
 	$StudentInfo.popup_centered()
 	$StudentInfo.show_info()
 	create_student_buttons()
+
+
+func _on_AddTests_pressed():
+	pass

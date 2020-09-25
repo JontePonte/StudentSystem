@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/FontsDF/StudentButtons.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Buttons/TestButton.gd" type="Script" id=2]
+
+[node name="TestButton" type="Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1221.0
+margin_bottom = -691.0
+rect_min_size = Vector2( 59, 29 )
+flat = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+text = "Label"
+__meta__ = {
+"_edit_use_anchors_": false
+}
