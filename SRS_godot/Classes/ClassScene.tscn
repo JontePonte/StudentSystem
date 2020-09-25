@@ -216,12 +216,39 @@ __meta__ = {
 }
 
 [node name="Top" type="HBoxContainer" parent="TestInfo/Menu"]
-margin_right = 40.0
+margin_right = 48.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TestInfo/Menu"]
+[node name="Center" type="HBoxContainer" parent="TestInfo/Menu"]
 margin_top = 4.0
-margin_right = 40.0
+margin_right = 48.0
 margin_bottom = 4.0
+
+[node name="StudentResults" type="VBoxContainer" parent="TestInfo/Menu/Center"]
+
+[node name="LowerBUttons" type="HBoxContainer" parent="TestInfo/Menu"]
+margin_top = 8.0
+margin_right = 48.0
+margin_bottom = 28.0
+
+[node name="Save" type="Button" parent="TestInfo/Menu/LowerBUttons"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Exit" type="Button" parent="TestInfo/Menu/LowerBUttons"]
+margin_left = 16.0
+margin_right = 28.0
+margin_bottom = 20.0
+
+[node name="Spacer" type="Label" parent="TestInfo/Menu/LowerBUttons"]
+margin_left = 32.0
+margin_top = 3.0
+margin_right = 32.0
+margin_bottom = 17.0
+
+[node name="Remove" type="Button" parent="TestInfo/Menu/LowerBUttons"]
+margin_left = 36.0
+margin_right = 48.0
+margin_bottom = 20.0
 [connection signal="pressed" from="Menu/RowsCont/StundetsCont/StudentsTop/AddStudent" to="." method="_on_AddStudent_pressed"]
 [connection signal="pressed" from="Menu/RowsCont/TestsCont/TestsTop/AddTests" to="." method="_on_AddTests_pressed"]
 [connection signal="pressed" from="Menu/RowsCont/AssignmentsCont/AssignmentsTopntainer/Add Assignments" to="." method="_on_Add_Assignments_pressed"]
