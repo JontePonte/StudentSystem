@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Classes/TestInfo.gd" type="Script" id=1]
+[ext_resource path="res://assets/FontsDF/Header2.tres" type="DynamicFont" id=2]
+
+[node name="TestInfo" type="WindowDialog"]
+visible = true
+margin_right = 700.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 600, 400 )
+window_title = "Test Info"
+resizable = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top" type="HBoxContainer" parent="Menu"]
+margin_right = 579.0
+margin_bottom = 53.0
+
+[node name="TestNameLabel" type="Label" parent="Menu/Top"]
+margin_top = 5.0
+margin_right = 175.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 2 )
+text = "TestName:"
+
+[node name="TestName" type="LineEdit" parent="Menu/Top"]
+margin_left = 179.0
+margin_right = 579.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 400, 0 )
+custom_fonts/font = ExtResource( 2 )
+placeholder_text = "Test Name"
+
+[node name="Center" type="HBoxContainer" parent="Menu"]
+margin_top = 57.0
+margin_right = 579.0
+margin_bottom = 57.0
+
+[node name="StudentResults" type="VBoxContainer" parent="Menu/Center"]
+
+[node name="TestProperties" type="VBoxContainer" parent="Menu/Center"]
+margin_left = 4.0
+margin_right = 4.0
+
+[node name="LowerBUttons" type="HBoxContainer" parent="Menu"]
+margin_top = 61.0
+margin_right = 579.0
+margin_bottom = 81.0
+
+[node name="Save" type="Button" parent="Menu/LowerBUttons"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Exit" type="Button" parent="Menu/LowerBUttons"]
+margin_left = 16.0
+margin_right = 28.0
+margin_bottom = 20.0
+
+[node name="Spacer" type="Label" parent="Menu/LowerBUttons"]
+margin_left = 32.0
+margin_top = 3.0
+margin_right = 32.0
+margin_bottom = 17.0
+
+[node name="Remove" type="Button" parent="Menu/LowerBUttons"]
+margin_left = 36.0
+margin_right = 48.0
+margin_bottom = 20.0

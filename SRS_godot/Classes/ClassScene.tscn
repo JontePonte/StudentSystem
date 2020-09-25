@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Classes/ClassScene.gd" type="Script" id=1]
 [ext_resource path="res://assets/FontsDF/Header.tres" type="DynamicFont" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/FontsDF/SmallText.tres" type="DynamicFont" id=4]
 [ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Classes/StudentInfo.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Classes/TestInfo.tscn" type="PackedScene" id=7]
 
 [node name="ClassScene" type="Control"]
 anchor_right = 1.0
@@ -197,58 +198,7 @@ text = "Go Back "
 
 [node name="StudentInfo" parent="." instance=ExtResource( 6 )]
 
-[node name="TestInfo" type="WindowDialog" parent="."]
-visible = true
-margin_right = 700.0
-margin_bottom = 600.0
-rect_min_size = Vector2( 600, 400 )
-window_title = "Test Info"
-resizable = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Menu" type="VBoxContainer" parent="TestInfo"]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Top" type="HBoxContainer" parent="TestInfo/Menu"]
-margin_right = 48.0
-
-[node name="Center" type="HBoxContainer" parent="TestInfo/Menu"]
-margin_top = 4.0
-margin_right = 48.0
-margin_bottom = 4.0
-
-[node name="StudentResults" type="VBoxContainer" parent="TestInfo/Menu/Center"]
-
-[node name="LowerBUttons" type="HBoxContainer" parent="TestInfo/Menu"]
-margin_top = 8.0
-margin_right = 48.0
-margin_bottom = 28.0
-
-[node name="Save" type="Button" parent="TestInfo/Menu/LowerBUttons"]
-margin_right = 12.0
-margin_bottom = 20.0
-
-[node name="Exit" type="Button" parent="TestInfo/Menu/LowerBUttons"]
-margin_left = 16.0
-margin_right = 28.0
-margin_bottom = 20.0
-
-[node name="Spacer" type="Label" parent="TestInfo/Menu/LowerBUttons"]
-margin_left = 32.0
-margin_top = 3.0
-margin_right = 32.0
-margin_bottom = 17.0
-
-[node name="Remove" type="Button" parent="TestInfo/Menu/LowerBUttons"]
-margin_left = 36.0
-margin_right = 48.0
-margin_bottom = 20.0
+[node name="TestInfo" parent="." instance=ExtResource( 7 )]
 [connection signal="pressed" from="Menu/RowsCont/StundetsCont/StudentsTop/AddStudent" to="." method="_on_AddStudent_pressed"]
 [connection signal="pressed" from="Menu/RowsCont/TestsCont/TestsTop/AddTests" to="." method="_on_AddTests_pressed"]
 [connection signal="pressed" from="Menu/RowsCont/AssignmentsCont/AssignmentsTopntainer/Add Assignments" to="." method="_on_Add_Assignments_pressed"]
