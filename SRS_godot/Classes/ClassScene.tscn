@@ -196,7 +196,32 @@ custom_fonts/font = ExtResource( 4 )
 text = "Go Back "
 
 [node name="StudentInfo" parent="." instance=ExtResource( 6 )]
-visible = false
+
+[node name="TestInfo" type="WindowDialog" parent="."]
+visible = true
+margin_right = 700.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 600, 400 )
+window_title = "Test Info"
+resizable = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="TestInfo"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top" type="HBoxContainer" parent="TestInfo/Menu"]
+margin_right = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TestInfo/Menu"]
+margin_top = 4.0
+margin_right = 40.0
+margin_bottom = 4.0
 [connection signal="pressed" from="Menu/RowsCont/StundetsCont/StudentsTop/AddStudent" to="." method="_on_AddStudent_pressed"]
 [connection signal="pressed" from="Menu/RowsCont/TestsCont/TestsTop/AddTests" to="." method="_on_AddTests_pressed"]
 [connection signal="pressed" from="Menu/RowsCont/AssignmentsCont/AssignmentsTopntainer/Add Assignments" to="." method="_on_Add_Assignments_pressed"]

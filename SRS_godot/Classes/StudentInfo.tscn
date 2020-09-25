@@ -8,7 +8,6 @@
 [ext_resource path="res://assets/FontsDF/CommentsText.tres" type="DynamicFont" id=6]
 
 [node name="StudentInfo" type="WindowDialog"]
-visible = true
 margin_top = 30.0
 margin_right = 800.0
 margin_bottom = 730.0
@@ -261,9 +260,9 @@ __meta__ = {
 }
 
 [node name="RemoveText" type="Label" parent="RemoveCheck"]
-margin_left = 40.0
+margin_left = 8.0
 margin_top = 8.0
-margin_right = 270.0
+margin_right = 304.0
 margin_bottom = 55.0
 custom_fonts/font = ExtResource( 4 )
 text = "Are you sure you want to remove the student?"
