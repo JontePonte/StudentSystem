@@ -3,6 +3,7 @@ extends Control
 
 onready var Students = get_node("Menu/RowsCont/StundetsCont/StudentsScroll/Students")
 onready var Tests = get_node("Menu/RowsCont/TestsCont/TestsScroll/Tests")
+onready var Assignments = get_node("Menu/RowsCont/AssignmentsCont/AssignmentsScroll/Assignments")
 
 
 func _ready():
@@ -12,6 +13,7 @@ func _ready():
 
 	create_student_buttons()
 	create_test_buttons()
+	create_assignment_buttons()
 
 
 func create_student_buttons(): 
@@ -98,7 +100,24 @@ func create_test_buttons():
 		Tests.add_child(test_button)
 
 
+func create_assignment_buttons():
+	var student_data = FileSys.student_data_load()
+	var assignments_dict = student_data.get(GlobalVars.activeClass).assignments
 
+	# Remove all previous assignment buttons
+	for child in Assignments.get_children():
+		child.queue_free()
+	
+	for id_num in assignments_dict:
+		var scene = load("res://Buttons/AssignmentButton.tscn")
+		var assignment_button = scene.instance()
+		var assignment = assignments_dict[id_num]
+
+		assignment_button.name = str(id_num)
+		assignment_button.assignment_id = int(id_num)
+		assignment_button.get_node("Label").set_text(assignment.assignment_name)
+
+		Assignments.add_child(assignment_button)
 
 
 func _on_BackButton_pressed():
@@ -139,4 +158,8 @@ func _on_AddStudent_pressed():
 
 
 func _on_AddTests_pressed():
-	pass
+	print("Add test")
+
+
+func _on_Add_Assignments_pressed():
+	print("Add assignment")
