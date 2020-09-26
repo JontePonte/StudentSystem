@@ -1,12 +1,12 @@
 extends Node
 
 
-func save_active_check(student_dict, ActiveCheck):
+func save_student_active_check(student_dict, ActiveCheck):
 	student_dict["active"] = ActiveCheck.pressed
 	return student_dict
 
 
-func save_name(student_dict, FirstName, LastName):
+func save_student_name(student_dict, FirstName, LastName):
 	var first_name = FirstName.text
 	var last_name = LastName.text
 	
@@ -15,7 +15,7 @@ func save_name(student_dict, FirstName, LastName):
 	return student_dict
 
 
-func save_info_text(student_dict, InfoVariables, info_key_list):
+func save_student_info_text(student_dict, InfoVariables, info_key_list):
 	# Create dictionary from the info text boxes
 	var info_edit_box_dict = {}
 	for child in InfoVariables.get_children():
@@ -98,7 +98,7 @@ func save_student_assignment(student_dict, Assignments):
 	return student_dict
 
 
-func save_comments(student_dict, Comments):
+func save_student_comments(student_dict, Comments):
 	var comment_edit_dict = {}
 	for child in Comments.get_children():
 		comment_edit_dict[child.key_name] = child.get_node("CommentHBox/Comment").text

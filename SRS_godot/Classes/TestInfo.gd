@@ -133,7 +133,10 @@ func print_test_properties(test_dict):
 
 
 func _on_Save_pressed():
-	print("Save test")
+	var data_dict = FileSys.student_data_load()
+	var test_dict = data_dict.get(GlobalVars.activeClass).get("tests").get(GlobalVars.activeTestId)
+	var students_dict = data_dict.get(GlobalVars.activeClass).get("students")
+	
 
 
 func _on_Exit_pressed():

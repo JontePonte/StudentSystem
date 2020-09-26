@@ -227,12 +227,12 @@ func _on_SaveButton_pressed():
 	var student_dict = collect_info()
 	
 	# Update student dictionar with the new information calld from SaveFunc auoload
-	student_dict = SaveFunc.save_active_check(student_dict, ActiveCheck)
-	student_dict = SaveFunc.save_name(student_dict, FirstName, LastName)
-	student_dict = SaveFunc.save_info_text(student_dict, InfoVariables, info_key_list)
+	student_dict = SaveFunc.save_student_active_check(student_dict, ActiveCheck)
+	student_dict = SaveFunc.save_student_name(student_dict, FirstName, LastName)
+	student_dict = SaveFunc.save_student_info_text(student_dict, InfoVariables, info_key_list)
 	student_dict = SaveFunc.save_student_test(student_dict, Tests)
 	student_dict = SaveFunc.save_student_assignment(student_dict, Assignments)
-	student_dict = SaveFunc.save_comments(student_dict, Comments)
+	student_dict = SaveFunc.save_student_comments(student_dict, Comments)
 	
 	# update data_dict and save the updated json
 	data_dict.get(GlobalVars.activeClass).students[str(GlobalVars.activeStudentId)] = student_dict
