@@ -1,0 +1,120 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=1]
+
+[node name="StudentResult" type="HBoxContainer"]
+margin_right = 384.0
+margin_bottom = 29.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameScroll" type="ScrollContainer" parent="."]
+margin_right = 100.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 100, 0 )
+
+[node name="LabelName" type="Label" parent="NameScroll"]
+margin_right = 100.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 1 )
+text = "Name"
+valign = 1
+clip_text = true
+
+[node name="VSeparator" type="VSeparator" parent="."]
+margin_left = 104.0
+margin_right = 108.0
+margin_bottom = 29.0
+
+[node name="E" type="Label" parent="."]
+margin_left = 112.0
+margin_top = 5.0
+margin_right = 126.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 1 )
+text = "E:"
+
+[node name="LineEditE" type="LineEdit" parent="."]
+margin_left = 130.0
+margin_right = 156.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 1 )
+custom_constants/minimum_spaces = 4
+max_length = 1
+
+[node name="VSeparator2" type="VSeparator" parent="."]
+margin_left = 160.0
+margin_right = 164.0
+margin_bottom = 29.0
+
+[node name="C" type="Label" parent="."]
+margin_left = 168.0
+margin_top = 5.0
+margin_right = 183.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 1 )
+text = "C:"
+
+[node name="LineEditC" type="LineEdit" parent="."]
+margin_left = 187.0
+margin_right = 213.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 1 )
+custom_constants/minimum_spaces = 4
+max_length = 1
+
+[node name="VSeparator3" type="VSeparator" parent="."]
+margin_left = 217.0
+margin_right = 221.0
+margin_bottom = 29.0
+
+[node name="A" type="Label" parent="."]
+margin_left = 225.0
+margin_top = 5.0
+margin_right = 241.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 1 )
+text = "A:"
+
+[node name="LineEditA" type="LineEdit" parent="."]
+margin_left = 245.0
+margin_right = 271.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 1 )
+custom_constants/minimum_spaces = 4
+max_length = 1
+
+[node name="Colon" type="Label" parent="."]
+margin_left = 275.0
+margin_top = 5.0
+margin_right = 280.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 1 )
+text = ":"
+
+[node name="Percent" type="Label" parent="."]
+margin_left = 284.0
+margin_top = 5.0
+margin_right = 318.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 1 )
+text = "40 %"
+
+[node name="Equals" type="Label" parent="."]
+margin_left = 322.0
+margin_top = 5.0
+margin_right = 331.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 1 )
+text = "="
+
+[node name="Grade" type="Label" parent="."]
+margin_left = 335.0
+margin_top = 5.0
+margin_right = 346.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 1 )
+text = "A"
