@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Classes/TestInfo.gd" type="Script" id=1]
 [ext_resource path="res://assets/FontsDF/Header2.tres" type="DynamicFont" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://InfoTexts/TestProperty.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/FontsDF/TestTextSmall.tres" type="DynamicFont" id=6]
 [ext_resource path="res://InfoTexts/TestInfoStudentResult.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=8]
 
 [node name="TestInfo" type="WindowDialog"]
 visible = true
@@ -179,3 +180,31 @@ margin_right = 780.0
 margin_bottom = 35.0
 custom_fonts/font = ExtResource( 3 )
 text = "Remove Test"
+
+[node name="RemoveConfirm" type="ConfirmationDialog" parent="."]
+visible = true
+margin_right = 200.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 200, 90 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RemoveText" type="Label" parent="RemoveConfirm"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 192.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 8 )
+text = "Are you sure you want to remove test?"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Menu/LowerBUttons/Save" to="." method="_on_Save_pressed"]
+[connection signal="pressed" from="Menu/LowerBUttons/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Menu/LowerBUttons/Remove" to="." method="_on_Remove_pressed"]
+[connection signal="confirmed" from="RemoveConfirm" to="." method="_on_RemoveConfirm_confirmed"]

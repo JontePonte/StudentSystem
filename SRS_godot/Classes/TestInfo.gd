@@ -132,3 +132,17 @@ func print_test_properties(test_dict):
 		TestProperties.add_child(property)
 
 
+func _on_Save_pressed():
+	print("Save test")
+
+
+func _on_Exit_pressed():
+	hide()
+
+
+func _on_Remove_pressed():
+	$RemoveConfirm.popup_centered()
+
+
+func _on_RemoveConfirm_confirmed():
+	print("Remove test")
