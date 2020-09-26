@@ -20,9 +20,9 @@ func show_info():
 	var student_dict = collect_info()
 
 	# set popup menu header to student name
-	$Menu/NameHeader/FirstName.set_text(student_dict.first_name)
-	$Menu/NameHeader/LastName.set_text(student_dict.last_name)
-	$Menu/NameHeader/ActiveCheck.pressed = student_dict.get("active")
+	FirstName.set_text(student_dict.first_name)
+	LastName.set_text(student_dict.last_name)
+	ActiveCheck.pressed = student_dict.get("active")
 
 	print_student_info(student_dict)
 	print_test_info(student_dict)
