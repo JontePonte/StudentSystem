@@ -23,9 +23,17 @@ func print_student_results(data_dict):
 	var students_dict = data_dict.get(GlobalVars.activeClass).students
 	
 	for key in students_dict.keys():
+		
 		var student = students_dict[key]
+		var student_test_info = student.get("tests").get(str(GlobalVars.activeTestId))
+
 		var scene = load("res://InfoTexts/TestInfoStudentResult.tscn")
 		var student_result = scene.instance()
+
+		student_result.get_node("Done").pressed = student_test_info.completed
+		student_result.get_node("LineEditE").set_text(str(student_test_info.result[0]))
+		student_result.get_node("LineEditC").set_text(str(student_test_info.result[1]))
+		student_result.get_node("LineEditA").set_text(str(student_test_info.result[1]))
 		
 		StudentResults.add_child(student_result)
 
