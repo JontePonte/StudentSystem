@@ -63,7 +63,7 @@ func create_student_buttons():
 		else:
 			student_button.get_node("Label").add_color_override("font_color", VisualVars.ColorTextAlt)
 			inactive_students.append(student_button)
-			inactive_id_num[last_name] = student_button.student_id # This dict is used for sorting
+			inactive_id_num[sort_name] = student_button.student_id # This dict is used for sorting
 	
 	# Collect arrays of sorted keys
 	var active_keys_sorted = AuxFunc.sort_students_by_name(active_id_num)

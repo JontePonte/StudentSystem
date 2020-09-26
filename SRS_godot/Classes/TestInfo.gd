@@ -23,10 +23,22 @@ func print_student_results(data_dict):
 	var students_dict = data_dict.get(GlobalVars.activeClass).students
 	var test_dict = data_dict.get(GlobalVars.activeClass).get("tests").get(str(GlobalVars.activeTestId))
 
+
+	# Create lists and dicts for sorting
+	var active_students = []
+	var active_id_num = {}
+	var inactive_students = []
+	var inactive_id_num = {}
+
 	for key in students_dict.keys():
 		
 		var student = students_dict[key]
 		var student_test_info = student.get("tests").get(str(GlobalVars.activeTestId))
+		
+		# Set firts or last name sorting bases on add data variable
+		var sort_name = student.last_name
+		if FileSys.app_data_load().sort_students_by == "first_name":
+			sort_name = student.first_name
 
 		# collect grade limit info
 		var test_grade_limits = {}
@@ -47,6 +59,7 @@ func print_student_results(data_dict):
 		# Instance text scene
 		var scene = load("res://InfoTexts/TestInfoStudentResult.tscn")
 		var student_result = scene.instance()
+		student_result.key_name = str(key)
 
 		student_result.get_node("NameScroll/NameHbox/LabelName").set_text(student.first_name + " " + student.last_name)
 		student_result.get_node("Done").pressed = student_test_info.completed
@@ -56,7 +69,30 @@ func print_student_results(data_dict):
 		student_result.get_node("Percent").set_text(percent_string)
 		student_result.get_node("Grade").set_text(grade)
 		
-		StudentResults.add_child(student_result)
+		# Put active and inactive students in different lists and give the text different colors
+		if student.active:
+			student_result.get_node("NameScroll/NameHbox/LabelName").add_color_override("font_color", VisualVars.ColorWhite)
+			active_students.append(student_result)
+			active_id_num[sort_name] = student_result.key_name # This dict is used for sorting
+		else:
+			student_result.get_node("NameScroll/NameHbox/LabelName").add_color_override("font_color", VisualVars.ColorTextAlt)
+			inactive_students.append(student_result)
+			inactive_id_num[sort_name] = student_result.key_name # This dict is used for sorting
+
+
+	# Collect arrays of sorted keys
+	var active_keys_sorted = AuxFunc.sort_students_by_name(active_id_num)
+	var inactive_keys_sorted = AuxFunc.sort_students_by_name(inactive_id_num)
+
+	# Put student buttons as childs of Students node
+	for key in active_keys_sorted:
+		for student_result in active_students:		# not pretty but works...
+			if student_result.key_name == key:
+				StudentResults.add_child(student_result)
+	for key in inactive_keys_sorted:
+		for student_result in inactive_students:
+			if student_result.key_name == key:
+				StudentResults.add_child(student_result)
 
 
 func print_test_properties(test_dict):
