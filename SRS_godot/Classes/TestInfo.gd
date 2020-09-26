@@ -3,6 +3,7 @@ extends WindowDialog
 
 onready var TestName = get_node("Menu/TopVbox/TopHbox/TestName")
 onready var TestProperties = get_node("Menu/Center/TestProperties/TestPropertyScroll/TestPointsProperty")
+onready var StudentResults = get_node("Menu/Center/StudentResults")
 onready var MaxPoints = get_node("Menu/Center/TestProperties/MaxPoints")
 
 func show_info():
@@ -10,7 +11,17 @@ func show_info():
 	var test_dict = data_dict.get(GlobalVars.activeClass).get("tests").get(str(GlobalVars.activeTestId))
 
 	TestName.set_text(test_dict.test_name)
+	print_student_results(data_dict)
 	print_test_properties(test_dict)
+
+
+func print_student_results(data_dict):
+
+	for child in StudentResults.get_children():
+		child.queue_free()
+
+	var students_dict = data_dict.get(GlobalVars.activeClass).students
+	print(students_dict)
 
 
 func print_test_properties(test_dict):
