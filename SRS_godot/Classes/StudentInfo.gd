@@ -103,7 +103,7 @@ func print_test_info(student_dict):
 		
 		
 		var percents = calculate_percents(test.result, max_points)
-		var grade = calculate_grade(test.result, grade_limits, test.completed)
+		var grade = AuxFunc.calculate_grade(test.result, grade_limits, test.completed)
 		
 		# Add all texts to text_text row
 		test_text_row.get_node("TestInfo/Name").set_text(test.test_name)
@@ -205,40 +205,6 @@ func calculate_percents(res_points, max_points):
 		a_string = str(a) + "%"
 
 	return [e_string, c_string, a_string]
-
-
-func calculate_grade(res_points, limits, completed):
-	var e = res_points[0]
-	var c = res_points[1]
-	var a = res_points[2]
-	
-	var grade = "F"
-
-	if (e + c + a) >= limits.E[0]:
-		grade = "E"
-	
-	if (e + c + a) >= (limits.D[0] + limits.D[1]):
-		if (c + a) >= limits.D[1]:
-			grade = "D"
-	
-	if (e + c + a) >= (limits.C[0] + limits.D[1]):
-		if (c + a) >= limits.C[1]:
-			grade = "C"
-	
-	if (e + c + a) >= (limits.B[0] + limits.B[1] + limits.B[2]):
-		if (c + a) >= (limits.B[1] + limits.B[2]):
-			if a >= limits.B[2]:
-				grade = "B"
-	
-	if (e + c + a) >= (limits.A[0] + limits.A[1] + limits.A[2]):
-		if (c + a) >= (limits.A[1] + limits.A[2]):
-			if a >= limits.A[2]:
-				grade = "A"
-	
-	if not completed:
-		grade = "-"
-
-	return grade
 
 
 func _on_AddComment_pressed():

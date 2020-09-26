@@ -14,6 +14,40 @@ func sort_students_by_name(students:Dictionary):
 
 	return sorted_keys
 
+	
+func calculate_grade(res_points, limits, completed):
+	var e = res_points[0]
+	var c = res_points[1]
+	var a = res_points[2]
+	
+	var grade = "F"
+
+	if (e + c + a) >= limits.E[0]:
+		grade = "E"
+	
+	if (e + c + a) >= (limits.D[0] + limits.D[1]):
+		if (c + a) >= limits.D[1]:
+			grade = "D"
+	
+	if (e + c + a) >= (limits.C[0] + limits.D[1]):
+		if (c + a) >= limits.C[1]:
+			grade = "C"
+	
+	if (e + c + a) >= (limits.B[0] + limits.B[1] + limits.B[2]):
+		if (c + a) >= (limits.B[1] + limits.B[2]):
+			if a >= limits.B[2]:
+				grade = "B"
+	
+	if (e + c + a) >= (limits.A[0] + limits.A[1] + limits.A[2]):
+		if (c + a) >= (limits.A[1] + limits.A[2]):
+			if a >= limits.A[2]:
+				grade = "A"
+	
+	if not completed:
+		grade = "-"
+
+	return grade
+
 
 func create_unfinished_tests(data_dict):
 	var tests_output = {}
