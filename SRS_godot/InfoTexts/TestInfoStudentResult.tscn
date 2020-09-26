@@ -123,23 +123,26 @@ text = ":"
 [node name="Percent" type="Label" parent="."]
 margin_left = 372.0
 margin_top = 5.0
-margin_right = 406.0
+margin_right = 417.0
 margin_bottom = 24.0
+rect_min_size = Vector2( 45, 0 )
 custom_fonts/font = ExtResource( 1 )
 text = "40 %"
 
 [node name="Equals" type="Label" parent="."]
-margin_left = 410.0
+margin_left = 421.0
 margin_top = 5.0
-margin_right = 419.0
+margin_right = 430.0
 margin_bottom = 24.0
 custom_fonts/font = ExtResource( 1 )
 text = "="
 
 [node name="Grade" type="Label" parent="."]
-margin_left = 423.0
+margin_left = 434.0
 margin_top = 5.0
-margin_right = 434.0
+margin_right = 449.0
 margin_bottom = 24.0
+rect_min_size = Vector2( 15, 0 )
 custom_fonts/font = ExtResource( 1 )
 text = "A"
+align = 2

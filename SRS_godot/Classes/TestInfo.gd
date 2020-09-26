@@ -36,8 +36,15 @@ func print_student_results(data_dict):
 		test_grade_limits.B = test_dict.get("grade_limits").get("B")
 		test_grade_limits.A = test_dict.get("grade_limits").get("A")
 
+		# calculate percent correct on test
+		var points_correct = student_test_info.result[0]+student_test_info.result[1]+student_test_info.result[2]
+		var points_max = test_dict.max_points[0]+test_dict.max_points[1]+test_dict.max_points[2]
+		var percent = stepify(points_correct / points_max * 100, 0.1)
+		var percent_string = str(percent) + " %"
+	
 		var grade = AuxFunc.calculate_grade(student_test_info.result, test_grade_limits, student_test_info.completed)
 
+		# Instance text scene
 		var scene = load("res://InfoTexts/TestInfoStudentResult.tscn")
 		var student_result = scene.instance()
 
@@ -45,7 +52,8 @@ func print_student_results(data_dict):
 		student_result.get_node("Done").pressed = student_test_info.completed
 		student_result.get_node("LineEditE").set_text(str(student_test_info.result[0]))
 		student_result.get_node("LineEditC").set_text(str(student_test_info.result[1]))
-		student_result.get_node("LineEditA").set_text(str(student_test_info.result[1]))
+		student_result.get_node("LineEditA").set_text(str(student_test_info.result[2]))
+		student_result.get_node("Percent").set_text(percent_string)
 		student_result.get_node("Grade").set_text(grade)
 		
 		StudentResults.add_child(student_result)
