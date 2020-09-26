@@ -142,8 +142,12 @@ func _on_Save_pressed():
 
 	students_dict = SaveFunc.save_student_test_name(students_dict, TestName)
 	
-	print(test_dict)
-	print(students_dict)
+
+	# update data_dict and save the updated json
+	data_dict.get(GlobalVars.activeClass).get("tests")[str(GlobalVars.activeTestId)] = test_dict
+	data_dict.get(GlobalVars.activeClass)["students"] = students_dict
+	
+	FileSys.student_data_save(data_dict)
 
 
 func _on_Exit_pressed():
