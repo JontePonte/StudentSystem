@@ -22,12 +22,12 @@ func print_student_results(data_dict):
 
 	var students_dict = data_dict.get(GlobalVars.activeClass).students
 	
-
-	# move to for loop
-	var scene = load("res://InfoTexts/TestInfoStudentResult.tscn")
-	var student_result = scene.instance()
-	
-	StudentResults.add_child(student_result)
+	for key in students_dict.keys():
+		var student = students_dict[key]
+		var scene = load("res://InfoTexts/TestInfoStudentResult.tscn")
+		var student_result = scene.instance()
+		
+		StudentResults.add_child(student_result)
 
 
 func print_test_properties(test_dict):
@@ -53,7 +53,7 @@ func print_test_properties(test_dict):
 		var points_E = str(limit[0])
 		var points_C = str(limit[1])
 		var points_A = str(limit[2])
-		var label_text = '"' + key + '"' + "-limit:"
+		var label_text = key + "-limit:"
 
 		var scene = load("res://InfoTexts/TestProperty.tscn")
 		var property = scene.instance()
