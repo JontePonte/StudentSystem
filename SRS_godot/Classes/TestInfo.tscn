@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Classes/TestInfo.gd" type="Script" id=1]
 [ext_resource path="res://assets/FontsDF/Header2.tres" type="DynamicFont" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/FontsDF/StudentButtons.tres" type="DynamicFont" id=4]
 [ext_resource path="res://InfoTexts/TestProperty.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/FontsDF/TestTextSmall.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=7]
 
 [node name="TestInfo" type="WindowDialog"]
 visible = true
@@ -67,6 +68,144 @@ margin_bottom = 476.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Label" type="Label" parent="Menu/Center/StudentResults"]
+margin_right = 384.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 4 )
+text = "Results:"
+
+[node name="HSeparator" type="HSeparator" parent="Menu/Center/StudentResults"]
+margin_top = 33.0
+margin_right = 384.0
+margin_bottom = 37.0
+
+[node name="StudentsScroll" type="ScrollContainer" parent="Menu/Center/StudentResults"]
+margin_top = 41.0
+margin_right = 384.0
+margin_bottom = 476.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Students" type="VBoxContainer" parent="Menu/Center/StudentResults/StudentsScroll"]
+margin_right = 384.0
+margin_bottom = 435.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StudentResult" type="HBoxContainer" parent="Menu/Center/StudentResults/StudentsScroll/Students"]
+margin_right = 384.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+
+[node name="NameScroll" type="ScrollContainer" parent="Menu/Center/StudentResults/StudentsScroll/Students/StudentResult"]
+margin_right = 100.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 100, 0 )
+
+[node name="LabelName" type="Label" parent="Menu/Center/StudentResults/StudentsScroll/Students/StudentResult/NameScroll"]
+margin_right = 100.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 7 )
+text = "Name"
+clip_text = true
+
+[node name="VSeparator" type="VSeparator" parent="Menu/Center/StudentResults/StudentsScroll/Students/StudentResult"]
+margin_left = 104.0
+margin_right = 108.0
+margin_bottom = 29.0
+
+[node name="E" type="Label" parent="Menu/Center/StudentResults/StudentsScroll/Students/StudentResult"]
+margin_left = 112.0
+margin_top = 5.0
+margin_right = 126.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 7 )
+text = "E:"
+
+[node name="LineEditE" type="LineEdit" parent="Menu/Center/StudentResults/StudentsScroll/Students/StudentResult"]
+margin_left = 130.0
+margin_right = 156.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 7 )
+custom_constants/minimum_spaces = 4
+max_length = 1
+
+[node name="VSeparator2" type="VSeparator" parent="Menu/Center/StudentResults/StudentsScroll/Students/StudentResult"]
+margin_left = 160.0
+margin_right = 164.0
+margin_bottom = 29.0
+
+[node name="C" type="Label" parent="Menu/Center/StudentResults/StudentsScroll/Students/StudentResult"]
+margin_left = 168.0
+margin_top = 5.0
+margin_right = 183.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 7 )
+text = "C:"
+
+[node name="LineEditC" type="LineEdit" parent="Menu/Center/StudentResults/StudentsScroll/Students/StudentResult"]
+margin_left = 187.0
+margin_right = 213.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 7 )
+custom_constants/minimum_spaces = 4
+max_length = 1
+
+[node name="VSeparator3" type="VSeparator" parent="Menu/Center/StudentResults/StudentsScroll/Students/StudentResult"]
+margin_left = 217.0
+margin_right = 221.0
+margin_bottom = 29.0
+
+[node name="A" type="Label" parent="Menu/Center/StudentResults/StudentsScroll/Students/StudentResult"]
+margin_left = 225.0
+margin_top = 5.0
+margin_right = 241.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 7 )
+text = "A:"
+
+[node name="LineEditA" type="LineEdit" parent="Menu/Center/StudentResults/StudentsScroll/Students/StudentResult"]
+margin_left = 245.0
+margin_right = 271.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 7 )
+custom_constants/minimum_spaces = 4
+max_length = 1
+
+[node name="Colon" type="Label" parent="Menu/Center/StudentResults/StudentsScroll/Students/StudentResult"]
+margin_left = 275.0
+margin_top = 5.0
+margin_right = 280.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 7 )
+text = ":"
+
+[node name="Percent" type="Label" parent="Menu/Center/StudentResults/StudentsScroll/Students/StudentResult"]
+margin_left = 284.0
+margin_top = 5.0
+margin_right = 318.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 7 )
+text = "40 %"
+
+[node name="Equals" type="Label" parent="Menu/Center/StudentResults/StudentsScroll/Students/StudentResult"]
+margin_left = 322.0
+margin_top = 5.0
+margin_right = 331.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 7 )
+text = "="
+
+[node name="Grade" type="Label" parent="Menu/Center/StudentResults/StudentsScroll/Students/StudentResult"]
+margin_left = 335.0
+margin_top = 5.0
+margin_right = 346.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 7 )
+text = "A"
+
 [node name="VSeparator" type="VSeparator" parent="Menu/Center"]
 margin_left = 388.0
 margin_right = 392.0
@@ -85,20 +224,25 @@ margin_bottom = 29.0
 custom_fonts/font = ExtResource( 4 )
 text = "Test Properties:"
 
-[node name="MaxPoints" parent="Menu/Center/TestProperties" instance=ExtResource( 5 )]
+[node name="HSeparator" type="HSeparator" parent="Menu/Center/TestProperties"]
 margin_top = 33.0
 margin_right = 384.0
-margin_bottom = 62.0
+margin_bottom = 37.0
 
-[node name="HSeparator" type="HSeparator" parent="Menu/Center/TestProperties"]
-margin_top = 66.0
+[node name="MaxPoints" parent="Menu/Center/TestProperties" instance=ExtResource( 5 )]
+margin_top = 41.0
 margin_right = 384.0
 margin_bottom = 70.0
 
-[node name="Label2" type="Label" parent="Menu/Center/TestProperties"]
+[node name="HSeparator2" type="HSeparator" parent="Menu/Center/TestProperties"]
 margin_top = 74.0
 margin_right = 384.0
-margin_bottom = 89.0
+margin_bottom = 78.0
+
+[node name="Label2" type="Label" parent="Menu/Center/TestProperties"]
+margin_top = 82.0
+margin_right = 384.0
+margin_bottom = 97.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 6 )
 text = "Grade Limits:"
@@ -107,7 +251,7 @@ __meta__ = {
 }
 
 [node name="TestPropertyScroll" type="ScrollContainer" parent="Menu/Center/TestProperties"]
-margin_top = 93.0
+margin_top = 101.0
 margin_right = 384.0
 margin_bottom = 476.0
 size_flags_horizontal = 3

@@ -34,53 +34,56 @@ text = "E:"
 
 [node name="LineEditE" type="LineEdit" parent="."]
 margin_left = 109.0
-margin_right = 167.0
+margin_right = 135.0
 margin_bottom = 29.0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 1 )
+custom_constants/minimum_spaces = 4
 
 [node name="VSeparator2" type="VSeparator" parent="."]
-margin_left = 171.0
-margin_right = 175.0
+margin_left = 139.0
+margin_right = 143.0
 margin_bottom = 29.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="C" type="Label" parent="."]
-margin_left = 179.0
+margin_left = 147.0
 margin_top = 5.0
-margin_right = 194.0
+margin_right = 162.0
 margin_bottom = 24.0
 custom_fonts/font = ExtResource( 1 )
 text = "C:"
 
 [node name="LineEditC" type="LineEdit" parent="."]
-margin_left = 198.0
-margin_right = 256.0
+margin_left = 166.0
+margin_right = 192.0
 margin_bottom = 29.0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 1 )
+custom_constants/minimum_spaces = 4
 
 [node name="VSeparator3" type="VSeparator" parent="."]
-margin_left = 260.0
-margin_right = 264.0
+margin_left = 196.0
+margin_right = 200.0
 margin_bottom = 29.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="A" type="Label" parent="."]
-margin_left = 268.0
+margin_left = 204.0
 margin_top = 5.0
-margin_right = 284.0
+margin_right = 220.0
 margin_bottom = 24.0
 custom_fonts/font = ExtResource( 1 )
 text = "A:"
 
 [node name="LineEditA" type="LineEdit" parent="."]
-margin_left = 288.0
-margin_right = 346.0
+margin_left = 224.0
+margin_right = 250.0
 margin_bottom = 29.0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 1 )
+custom_constants/minimum_spaces = 4
