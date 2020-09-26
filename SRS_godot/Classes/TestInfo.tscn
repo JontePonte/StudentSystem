@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Classes/TestInfo.gd" type="Script" id=1]
 [ext_resource path="res://assets/FontsDF/Header2.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/FontsDF/SmallText.tres" type="DynamicFont" id=3]
 
 [node name="TestInfo" type="WindowDialog"]
 visible = true
@@ -16,63 +17,93 @@ __meta__ = {
 }
 
 [node name="Menu" type="VBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Top" type="HBoxContainer" parent="Menu"]
-margin_right = 579.0
+[node name="TopVbox" type="VBoxContainer" parent="Menu"]
+margin_right = 680.0
+margin_bottom = 61.0
+
+[node name="TopHbox" type="HBoxContainer" parent="Menu/TopVbox"]
+margin_right = 680.0
 margin_bottom = 53.0
+size_flags_horizontal = 3
 
-[node name="TestNameLabel" type="Label" parent="Menu/Top"]
-margin_top = 5.0
-margin_right = 175.0
-margin_bottom = 48.0
-custom_fonts/font = ExtResource( 2 )
-text = "TestName:"
-
-[node name="TestName" type="LineEdit" parent="Menu/Top"]
-margin_left = 179.0
-margin_right = 579.0
+[node name="TestName" type="LineEdit" parent="Menu/TopVbox/TopHbox"]
+margin_right = 680.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
 placeholder_text = "Test Name"
 
-[node name="Center" type="HBoxContainer" parent="Menu"]
+[node name="HSeparator" type="HSeparator" parent="Menu/TopVbox"]
 margin_top = 57.0
-margin_right = 579.0
-margin_bottom = 57.0
+margin_right = 680.0
+margin_bottom = 61.0
+
+[node name="Center" type="HBoxContainer" parent="Menu"]
+margin_top = 65.0
+margin_right = 680.0
+margin_bottom = 541.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="StudentResults" type="VBoxContainer" parent="Menu/Center"]
+margin_right = 334.0
+margin_bottom = 476.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VSeparator" type="VSeparator" parent="Menu/Center"]
+margin_left = 338.0
+margin_right = 342.0
+margin_bottom = 476.0
 
 [node name="TestProperties" type="VBoxContainer" parent="Menu/Center"]
-margin_left = 4.0
-margin_right = 4.0
+margin_left = 346.0
+margin_right = 680.0
+margin_bottom = 476.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="LowerBUttons" type="HBoxContainer" parent="Menu"]
-margin_top = 61.0
-margin_right = 579.0
-margin_bottom = 81.0
+margin_top = 545.0
+margin_right = 680.0
+margin_bottom = 580.0
 
 [node name="Save" type="Button" parent="Menu/LowerBUttons"]
-margin_right = 12.0
-margin_bottom = 20.0
+margin_right = 64.0
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 3 )
+text = "Save"
 
 [node name="Exit" type="Button" parent="Menu/LowerBUttons"]
-margin_left = 16.0
-margin_right = 28.0
-margin_bottom = 20.0
+margin_left = 68.0
+margin_right = 120.0
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 3 )
+text = "Exit"
 
 [node name="Spacer" type="Label" parent="Menu/LowerBUttons"]
-margin_left = 32.0
-margin_top = 3.0
-margin_right = 32.0
-margin_bottom = 17.0
+margin_left = 124.0
+margin_top = 10.0
+margin_right = 524.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
 
 [node name="Remove" type="Button" parent="Menu/LowerBUttons"]
-margin_left = 36.0
-margin_right = 48.0
-margin_bottom = 20.0
+margin_left = 528.0
+margin_right = 680.0
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 3 )
+text = "Remove Test"
