@@ -21,19 +21,32 @@ func print_student_results(data_dict):
 		child.queue_free()
 
 	var students_dict = data_dict.get(GlobalVars.activeClass).students
-	
+	var test_dict = data_dict.get(GlobalVars.activeClass).get("tests").get(str(GlobalVars.activeTestId))
+
 	for key in students_dict.keys():
 		
 		var student = students_dict[key]
 		var student_test_info = student.get("tests").get(str(GlobalVars.activeTestId))
 
+		# collect grade limit info
+		var test_grade_limits = {}
+		test_grade_limits.E = test_dict.get("grade_limits").get("E")
+		test_grade_limits.D = test_dict.get("grade_limits").get("D")
+		test_grade_limits.C = test_dict.get("grade_limits").get("C")
+		test_grade_limits.B = test_dict.get("grade_limits").get("B")
+		test_grade_limits.A = test_dict.get("grade_limits").get("A")
+
+		var grade = AuxFunc.calculate_grade(student_test_info.result, test_grade_limits, student_test_info.completed)
+
 		var scene = load("res://InfoTexts/TestInfoStudentResult.tscn")
 		var student_result = scene.instance()
 
+		student_result.get_node("NameScroll/NameHbox/LabelName").set_text(student.first_name + " " + student.last_name)
 		student_result.get_node("Done").pressed = student_test_info.completed
 		student_result.get_node("LineEditE").set_text(str(student_test_info.result[0]))
 		student_result.get_node("LineEditC").set_text(str(student_test_info.result[1]))
 		student_result.get_node("LineEditA").set_text(str(student_test_info.result[1]))
+		student_result.get_node("Grade").set_text(grade)
 		
 		StudentResults.add_child(student_result)
 
