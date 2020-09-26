@@ -138,11 +138,9 @@ func _on_Save_pressed():
 	var students_dict = data_dict.get(GlobalVars.activeClass).get("students")
 
 	test_dict = SaveFunc.save_test_info_name(test_dict, TestName)
+	students_dict = SaveFunc.save_student_test_name(students_dict, TestName)	# Test name is allso stored in the student part
 	test_dict = SaveFunc.save_test_info_max_points(test_dict, MaxPoints)
-
-	students_dict = SaveFunc.save_student_test_name(students_dict, TestName)
 	
-
 	# update data_dict and save the updated json
 	data_dict.get(GlobalVars.activeClass).get("tests")[str(GlobalVars.activeTestId)] = test_dict
 	data_dict.get(GlobalVars.activeClass)["students"] = students_dict

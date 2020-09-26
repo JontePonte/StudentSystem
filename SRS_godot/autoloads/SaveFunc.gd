@@ -128,13 +128,23 @@ func save_test_info_name(test_dict, TestName):
 	return test_dict
 
 
-func save_test_info_max_points(test_dict, MaxPoints):
-	return test_dict
-
-
 func save_student_test_name(students_dict, TestName):
 	# Save the name of the test in all student test packages
 	for id_num in students_dict.keys():
 		students_dict.get(id_num).get("tests").get(str(GlobalVars.activeTestId)).test_name = TestName.text
 
 	return students_dict
+	
+
+func save_test_info_max_points(test_dict, MaxPoints):
+	# Extract eventually edited max points from line edit nodes
+	var max_points_edit = [
+		int(MaxPoints.get_node("LineEditE").text),
+		int(MaxPoints.get_node("LineEditC").text),
+		int(MaxPoints.get_node("LineEditA").text)]
+
+	test_dict.max_points = max_points_edit
+
+	return test_dict
+
+
