@@ -136,7 +136,9 @@ func _on_Save_pressed():
 	var data_dict = FileSys.student_data_load()
 	var test_dict = data_dict.get(GlobalVars.activeClass).get("tests").get(GlobalVars.activeTestId)
 	var students_dict = data_dict.get(GlobalVars.activeClass).get("students")
-	
+
+	test_dict = SaveFunc.save_test_info_name(test_dict, TestName)
+	test_dict = SaveFunc.save_test_info_max_points(test_dict, MaxPoints)
 
 
 func _on_Exit_pressed():

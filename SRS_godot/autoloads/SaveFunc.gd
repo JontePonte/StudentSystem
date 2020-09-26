@@ -1,12 +1,12 @@
 extends Node
 
 
-func save_student_active_check(student_dict, ActiveCheck):
+func save_student_info_active_check(student_dict, ActiveCheck):
 	student_dict["active"] = ActiveCheck.pressed
 	return student_dict
 
 
-func save_student_name(student_dict, FirstName, LastName):
+func save_student_info_name(student_dict, FirstName, LastName):
 	var first_name = FirstName.text
 	var last_name = LastName.text
 	
@@ -29,7 +29,7 @@ func save_student_info_text(student_dict, InfoVariables, info_key_list):
 	return student_dict
 	
 				
-func save_student_test(student_dict, Tests):
+func save_student_info_test(student_dict, Tests):
 	# Create a dictionary with all tests with results info from text edits
 	var test_edit_box_dict = {}
 	for child in Tests.get_children():
@@ -59,7 +59,7 @@ func save_student_test(student_dict, Tests):
 	return student_dict
 
 
-func save_student_assignment(student_dict, Assignments):
+func save_student_info_assignment(student_dict, Assignments):
 	# Create a dictionary with the assignments comment
 	var assignment_completed_dict = {}
 	for child in Assignments.get_children():
@@ -98,7 +98,7 @@ func save_student_assignment(student_dict, Assignments):
 	return student_dict
 
 
-func save_student_comments(student_dict, Comments):
+func save_student_info_comments(student_dict, Comments):
 	var comment_edit_dict = {}
 	for child in Comments.get_children():
 		comment_edit_dict[child.key_name] = child.get_node("CommentHBox/Comment").text
@@ -120,3 +120,12 @@ func save_student_comments(student_dict, Comments):
 				student_dict.get("comments")[comment_stored_id] = comment_edit_dict.get(comment_id)
 	
 	return student_dict
+
+
+func save_test_info_name(test_dict, TestName):
+	return test_dict
+
+
+func save_test_max_points(test_dict, MaxPoints):
+	return test_dict
+
