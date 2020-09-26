@@ -23,9 +23,11 @@ func print_student_results(data_dict):
 	var students_dict = data_dict.get(GlobalVars.activeClass).students
 	
 
+	# move to for loop
 	var scene = load("res://InfoTexts/TestInfoStudentResult.tscn")
 	var student_result = scene.instance()
 	
+	StudentResults.add_child(student_result)
 
 
 func print_test_properties(test_dict):
