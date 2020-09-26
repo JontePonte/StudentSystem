@@ -126,14 +126,6 @@ func save_test_info_name(test_dict, TestName):
 	var name = TestName.text
 	test_dict.test_name = name
 	return test_dict
-
-
-func save_student_test_name(students_dict, TestName):
-	# Save the name of the test in all student test packages
-	for id_num in students_dict.keys():
-		students_dict.get(id_num).get("tests").get(str(GlobalVars.activeTestId)).test_name = TestName.text
-
-	return students_dict
 	
 
 func save_test_info_max_points(test_dict, MaxPoints):
@@ -148,3 +140,25 @@ func save_test_info_max_points(test_dict, MaxPoints):
 	return test_dict
 
 
+func save_test_info_grade_limits(test_dict, TestProperties):
+	
+	for child in TestProperties.get_children():
+		if not child.name in ["A", "B", "C", "D", "E"]:
+			continue
+
+		var grade_edit = [
+			int(child.get_node("LineEditE").text),
+			int(child.get_node("LineEditC").text),
+			int(child.get_node("LineEditA").text)]
+
+		test_dict.get("grade_limits")[child.name] = grade_edit
+
+	return test_dict
+
+
+func save_student_test_name(students_dict, TestName):
+	# Save the name of the test in all student test packages
+	for id_num in students_dict.keys():
+		students_dict.get(id_num).get("tests").get(str(GlobalVars.activeTestId)).test_name = TestName.text
+
+	return students_dict
