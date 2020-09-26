@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Classes/TestInfo.gd" type="Script" id=1]
 [ext_resource path="res://assets/FontsDF/Header2.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/FontsDF/SmallText.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/FontsDF/StudentButtons.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=5]
 
 [node name="TestInfo" type="WindowDialog"]
 visible = true
@@ -59,22 +61,113 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="StudentResults" type="VBoxContainer" parent="Menu/Center"]
-margin_right = 334.0
+margin_right = 322.0
 margin_bottom = 476.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VSeparator" type="VSeparator" parent="Menu/Center"]
-margin_left = 338.0
-margin_right = 342.0
+margin_left = 326.0
+margin_right = 330.0
 margin_bottom = 476.0
 
 [node name="TestProperties" type="VBoxContainer" parent="Menu/Center"]
-margin_left = 346.0
+margin_left = 334.0
 margin_right = 680.0
 margin_bottom = 476.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Menu/Center/TestProperties"]
+margin_right = 346.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 4 )
+text = "Test Properties:"
+
+[node name="TestProperty" type="VBoxContainer" parent="Menu/Center/TestProperties"]
+margin_top = 33.0
+margin_right = 346.0
+margin_bottom = 62.0
+
+[node name="MaxPoints" type="HBoxContainer" parent="Menu/Center/TestProperties/TestProperty"]
+margin_right = 346.0
+margin_bottom = 29.0
+
+[node name="Label" type="Label" parent="Menu/Center/TestProperties/TestProperty/MaxPoints"]
+margin_top = 5.0
+margin_right = 79.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 5 )
+text = "Max Points"
+
+[node name="VSeparator" type="VSeparator" parent="Menu/Center/TestProperties/TestProperty/MaxPoints"]
+margin_left = 83.0
+margin_right = 87.0
+margin_bottom = 29.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="E" type="Label" parent="Menu/Center/TestProperties/TestProperty/MaxPoints"]
+margin_left = 91.0
+margin_top = 5.0
+margin_right = 105.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 5 )
+text = "E:"
+
+[node name="LineEditE" type="LineEdit" parent="Menu/Center/TestProperties/TestProperty/MaxPoints"]
+margin_left = 109.0
+margin_right = 167.0
+margin_bottom = 29.0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 5 )
+
+[node name="VSeparator2" type="VSeparator" parent="Menu/Center/TestProperties/TestProperty/MaxPoints"]
+margin_left = 171.0
+margin_right = 175.0
+margin_bottom = 29.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C" type="Label" parent="Menu/Center/TestProperties/TestProperty/MaxPoints"]
+margin_left = 179.0
+margin_top = 5.0
+margin_right = 194.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 5 )
+text = "C:"
+
+[node name="LineEditC" type="LineEdit" parent="Menu/Center/TestProperties/TestProperty/MaxPoints"]
+margin_left = 198.0
+margin_right = 256.0
+margin_bottom = 29.0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 5 )
+
+[node name="VSeparator3" type="VSeparator" parent="Menu/Center/TestProperties/TestProperty/MaxPoints"]
+margin_left = 260.0
+margin_right = 264.0
+margin_bottom = 29.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A" type="Label" parent="Menu/Center/TestProperties/TestProperty/MaxPoints"]
+margin_left = 268.0
+margin_top = 5.0
+margin_right = 284.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 5 )
+text = "A:"
+
+[node name="LineEditA" type="LineEdit" parent="Menu/Center/TestProperties/TestProperty/MaxPoints"]
+margin_left = 288.0
+margin_right = 346.0
+margin_bottom = 29.0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 5 )
 
 [node name="LowerBUttons" type="HBoxContainer" parent="Menu"]
 margin_top = 545.0
