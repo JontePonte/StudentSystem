@@ -2,6 +2,7 @@ extends WindowDialog
 
 
 onready var AssignmentName = get_node("Menu/TopVbox/TopHbox/AssignmentName")
+onready var DescriptionTextEdit = get_node("Menu/Center/AssignmentDescription/AssignmentDescriptionScroll/AssignmentDescription/TextEdit")
 
 
 func show_info():
@@ -18,7 +19,8 @@ func print_student_results(data_dict):
 
 
 func print_assignment_description(assignment_dict):
-	pass
+	var description = assignment_dict.description
+	DescriptionTextEdit.text = description
 
 
 func _on_Save_pressed():

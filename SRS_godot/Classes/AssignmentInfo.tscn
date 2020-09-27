@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Classes/AssignmentInfo.gd" type="Script" id=1]
 [ext_resource path="res://assets/FontsDF/Header2.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/FontsDF/SmallText.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/FontsDF/StudentButtons.tres" type="DynamicFont" id=4]
-[ext_resource path="res://InfoTexts/TestInfoStudentResult.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=8]
 
 [node name="AssignmentInfo" type="WindowDialog"]
@@ -62,68 +61,79 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="StudentResults" type="VBoxContainer" parent="Menu/Center"]
-margin_right = 637.0
+margin_right = 608.0
 margin_bottom = 476.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Menu/Center/StudentResults"]
-margin_right = 637.0
+margin_right = 608.0
 margin_bottom = 29.0
 custom_fonts/font = ExtResource( 4 )
 text = "Results:"
 
 [node name="HSeparator" type="HSeparator" parent="Menu/Center/StudentResults"]
 margin_top = 33.0
-margin_right = 637.0
+margin_right = 608.0
 margin_bottom = 37.0
 
 [node name="StudentsScroll" type="ScrollContainer" parent="Menu/Center/StudentResults"]
 margin_top = 41.0
-margin_right = 637.0
+margin_right = 608.0
 margin_bottom = 476.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Students" type="VBoxContainer" parent="Menu/Center/StudentResults/StudentsScroll"]
-margin_right = 637.0
+margin_right = 608.0
 margin_bottom = 435.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="StudentResult" parent="Menu/Center/StudentResults/StudentsScroll/Students" instance=ExtResource( 7 )]
-margin_right = 637.0
-
 [node name="VSeparator" type="VSeparator" parent="Menu/Center"]
-margin_left = 641.0
-margin_right = 645.0
+margin_left = 612.0
+margin_right = 616.0
 margin_bottom = 476.0
 
 [node name="AssignmentDescription" type="VBoxContainer" parent="Menu/Center"]
-margin_left = 649.0
+margin_left = 620.0
 margin_right = 780.0
 margin_bottom = 476.0
+rect_min_size = Vector2( 160, 0 )
 size_flags_vertical = 3
 
 [node name="Description" type="Label" parent="Menu/Center/AssignmentDescription"]
-margin_right = 131.0
+margin_right = 160.0
 margin_bottom = 29.0
 custom_fonts/font = ExtResource( 4 )
 text = "Description:"
 
 [node name="HSeparator" type="HSeparator" parent="Menu/Center/AssignmentDescription"]
 margin_top = 33.0
-margin_right = 131.0
+margin_right = 160.0
 margin_bottom = 37.0
 
 [node name="AssignmentDescriptionScroll" type="ScrollContainer" parent="Menu/Center/AssignmentDescription"]
 margin_top = 41.0
-margin_right = 131.0
+margin_right = 160.0
 margin_bottom = 476.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AssignmentDescription" type="VBoxContainer" parent="Menu/Center/AssignmentDescription/AssignmentDescriptionScroll"]
+margin_right = 160.0
+margin_bottom = 435.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextEdit" type="TextEdit" parent="Menu/Center/AssignmentDescription/AssignmentDescriptionScroll/AssignmentDescription"]
+margin_right = 160.0
+margin_bottom = 435.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 8 )
+text = "Placeholder"
+wrap_enabled = true
 
 [node name="LowerBUttons" type="HBoxContainer" parent="Menu"]
 margin_top = 545.0
