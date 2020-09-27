@@ -180,10 +180,16 @@ func print_comments(student_dict):
 
 
 func calculate_percents(res_points, max_points):
-	# Calculate each perent
-	var e = stepify((res_points[0] / max_points[0]) * 100, 1.0)
-	var c = stepify((res_points[1] / max_points[1]) * 100, 1.0)
-	var a = stepify((res_points[2] / max_points[2]) * 100, 1.0)
+	# Calculate each perent (avoid divide by zero)
+	var e = 0
+	if max_points[0] != 0:
+		e = stepify((res_points[0] / float(max_points[0])) * 100, 1.0)
+	var c = 0
+	if max_points[1] != 0:
+		c = stepify((res_points[1] / float(max_points[1])) * 100, 1.0)
+	var a = 0
+	if max_points[2] != 0:
+		a = stepify((res_points[2] / float(max_points[2])) * 100, 1.0)
 
 	# Set different numbers of spaces if below 10 or above 100
 	var e_string = str(e) + " %"
