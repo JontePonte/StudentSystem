@@ -1,0 +1,180 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/FontsDF/Header2.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/FontsDF/SmallText.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/FontsDF/StudentButtons.tres" type="DynamicFont" id=4]
+[ext_resource path="res://InfoTexts/TestInfoStudentResult.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=8]
+
+[node name="AssignmentInfo" type="WindowDialog"]
+visible = true
+margin_right = 800.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 600, 400 )
+window_title = "Test Info"
+resizable = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopVbox" type="VBoxContainer" parent="Menu"]
+margin_right = 780.0
+margin_bottom = 61.0
+
+[node name="TopHbox" type="HBoxContainer" parent="Menu/TopVbox"]
+margin_right = 780.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+
+[node name="AssignmentName" type="LineEdit" parent="Menu/TopVbox/TopHbox"]
+margin_right = 780.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+placeholder_text = "Assignment Name"
+
+[node name="HSeparator" type="HSeparator" parent="Menu/TopVbox"]
+margin_top = 57.0
+margin_right = 780.0
+margin_bottom = 61.0
+
+[node name="Center" type="HBoxContainer" parent="Menu"]
+margin_top = 65.0
+margin_right = 780.0
+margin_bottom = 541.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StudentResults" type="VBoxContainer" parent="Menu/Center"]
+margin_right = 637.0
+margin_bottom = 476.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Menu/Center/StudentResults"]
+margin_right = 637.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 4 )
+text = "Results:"
+
+[node name="HSeparator" type="HSeparator" parent="Menu/Center/StudentResults"]
+margin_top = 33.0
+margin_right = 637.0
+margin_bottom = 37.0
+
+[node name="StudentsScroll" type="ScrollContainer" parent="Menu/Center/StudentResults"]
+margin_top = 41.0
+margin_right = 637.0
+margin_bottom = 476.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Students" type="VBoxContainer" parent="Menu/Center/StudentResults/StudentsScroll"]
+margin_right = 637.0
+margin_bottom = 435.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StudentResult" parent="Menu/Center/StudentResults/StudentsScroll/Students" instance=ExtResource( 7 )]
+margin_right = 637.0
+
+[node name="VSeparator" type="VSeparator" parent="Menu/Center"]
+margin_left = 641.0
+margin_right = 645.0
+margin_bottom = 476.0
+
+[node name="AssignmentDescription" type="VBoxContainer" parent="Menu/Center"]
+margin_left = 649.0
+margin_right = 780.0
+margin_bottom = 476.0
+size_flags_vertical = 3
+
+[node name="Description" type="Label" parent="Menu/Center/AssignmentDescription"]
+margin_right = 131.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 4 )
+text = "Description:"
+
+[node name="HSeparator" type="HSeparator" parent="Menu/Center/AssignmentDescription"]
+margin_top = 33.0
+margin_right = 131.0
+margin_bottom = 37.0
+
+[node name="AssignmentDescriptionScroll" type="ScrollContainer" parent="Menu/Center/AssignmentDescription"]
+margin_top = 41.0
+margin_right = 131.0
+margin_bottom = 476.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AssignmentDescription" type="VBoxContainer" parent="Menu/Center/AssignmentDescription/AssignmentDescriptionScroll"]
+
+[node name="LowerBUttons" type="HBoxContainer" parent="Menu"]
+margin_top = 545.0
+margin_right = 780.0
+margin_bottom = 580.0
+
+[node name="Save" type="Button" parent="Menu/LowerBUttons"]
+margin_right = 64.0
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 3 )
+text = "Save"
+
+[node name="Exit" type="Button" parent="Menu/LowerBUttons"]
+margin_left = 68.0
+margin_right = 120.0
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 3 )
+text = "Exit"
+
+[node name="Spacer" type="Label" parent="Menu/LowerBUttons"]
+margin_left = 124.0
+margin_top = 10.0
+margin_right = 544.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Remove" type="Button" parent="Menu/LowerBUttons"]
+margin_left = 548.0
+margin_right = 780.0
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 3 )
+text = "Remove Assignment"
+
+[node name="RemoveConfirm" type="ConfirmationDialog" parent="."]
+visible = true
+margin_right = 200.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 200, 90 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RemoveText" type="Label" parent="RemoveConfirm"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 192.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 8 )
+text = "Are you sure you want to remove assignment?"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
