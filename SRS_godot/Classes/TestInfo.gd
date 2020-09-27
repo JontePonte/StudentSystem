@@ -156,6 +156,8 @@ func _on_Save_pressed():
 	print_student_results(data_dict)
 	FileSys.student_data_save(data_dict)
 
+	get_parent().create_test_buttons()
+
 
 func _on_Exit_pressed():
 	hide()
