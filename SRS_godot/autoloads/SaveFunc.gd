@@ -176,7 +176,18 @@ func save_students_test_name(students_dict, TestName):
 
 func save_students_test_complete(students_dict, StudentResults):
 	return students_dict
-
+	
 
 func save_students_test_results(students_dict, StudentResults):
+	for student_key in students_dict.keys():
+		# Loop the nodes with student results and get the active students test
+		for child in StudentResults.get_children():
+			if child.key_name == student_key:
+				var student_result = [
+					int(child.get_node("LineEditE").text),
+					int(child.get_node("LineEditC").text),
+					int(child.get_node("LineEditA").text)]
+				# Store the new result in student_dict
+				students_dict.get(student_key).get("tests").get(str(GlobalVars.activeTestId)).result = student_result
+
 	return students_dict
