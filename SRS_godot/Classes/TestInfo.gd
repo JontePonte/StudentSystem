@@ -149,6 +149,8 @@ func _on_Save_pressed():
 	data_dict.get(GlobalVars.activeClass).get("tests")[str(GlobalVars.activeTestId)] = test_dict
 	data_dict.get(GlobalVars.activeClass)["students"] = students_dict
 	
+	# Update student result list and save data dictionary to file
+	print_student_results(data_dict)
 	FileSys.student_data_save(data_dict)
 
 
