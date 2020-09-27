@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=1]
+[ext_resource path="res://InfoTexts/TestInfoStudentResult.gd" type="Script" id=2]
+
+[node name="StudentResult" type="HBoxContainer"]
+margin_right = 384.0
+margin_bottom = 29.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameScroll" type="ScrollContainer" parent="."]
+margin_right = 100.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 100, 0 )
+
+[node name="NameHbox" type="HBoxContainer" parent="NameScroll"]
+margin_right = 100.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+
+[node name="LabelName" type="Label" parent="NameScroll/NameHbox"]
+margin_right = 100.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 1 )
+text = "Name"
+valign = 1
+clip_text = true
+
+[node name="VSeparator" type="VSeparator" parent="."]
+margin_left = 104.0
+margin_right = 108.0
+margin_bottom = 29.0
+
+[node name="Done" type="CheckBox" parent="."]
+margin_left = 112.0
+margin_right = 176.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 1 )
+text = "done"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSeparator4" type="VSeparator" parent="."]
+margin_left = 180.0
+margin_right = 184.0
+margin_bottom = 29.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Commentlabel" type="Label" parent="."]
+margin_left = 188.0
+margin_top = 5.0
+margin_right = 261.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 1 )
+text = "Comment:"
+
+[node name="Comment" type="LineEdit" parent="."]
+margin_left = 265.0
+margin_right = 415.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = ExtResource( 1 )
+custom_constants/minimum_spaces = 5
+max_length = 2
+
+[node name="VSeparator2" type="VSeparator" parent="."]
+margin_left = 419.0
+margin_right = 423.0
+margin_bottom = 29.0
+
+[node name="GradeColon" type="Label" parent="."]
+margin_left = 427.0
+margin_top = 5.0
+margin_right = 475.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 1 )
+text = "Grade:"
+
+[node name="Grade" type="Label" parent="."]
+margin_left = 479.0
+margin_top = 5.0
+margin_right = 494.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 15, 0 )
+custom_fonts/font = ExtResource( 1 )
+text = "A"
+align = 2

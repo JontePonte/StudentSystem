@@ -7,7 +7,6 @@
 [ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=8]
 
 [node name="AssignmentInfo" type="WindowDialog"]
-visible = true
 margin_right = 800.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 600, 400 )
