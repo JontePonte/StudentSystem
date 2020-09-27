@@ -1,11 +1,13 @@
 extends Node
 
 
+# Save student active check from student info
 func save_student_info_active_check(student_dict, ActiveCheck):
 	student_dict["active"] = ActiveCheck.pressed
 	return student_dict
 
 
+# Svae student name from student info
 func save_student_info_name(student_dict, FirstName, LastName):
 	var first_name = FirstName.text
 	var last_name = LastName.text
@@ -15,6 +17,7 @@ func save_student_info_name(student_dict, FirstName, LastName):
 	return student_dict
 
 
+# Save student info from student info
 func save_student_info_text(student_dict, InfoVariables, info_key_list):
 	# Create dictionary from the info text boxes
 	var info_edit_box_dict = {}
@@ -28,7 +31,8 @@ func save_student_info_text(student_dict, InfoVariables, info_key_list):
 				student_dict[student_key] = info_edit_box_dict.get(info_key)
 	return student_dict
 	
-				
+
+# Save student results and active check rom student info
 func save_student_info_test(student_dict, Tests):
 	# Create a dictionary with all tests with results info from text edits
 	var test_edit_box_dict = {}
@@ -59,6 +63,7 @@ func save_student_info_test(student_dict, Tests):
 	return student_dict
 
 
+# Student assignment info from student info
 func save_student_info_assignment(student_dict, Assignments):
 	# Create a dictionary with the assignments comment
 	var assignment_completed_dict = {}
@@ -98,6 +103,7 @@ func save_student_info_assignment(student_dict, Assignments):
 	return student_dict
 
 
+# Save student comments from student info
 func save_student_info_comments(student_dict, Comments):
 	var comment_edit_dict = {}
 	for child in Comments.get_children():
@@ -122,12 +128,14 @@ func save_student_info_comments(student_dict, Comments):
 	return student_dict
 
 
+# Save test name from test info
 func save_test_info_name(test_dict, TestName):
 	var name = TestName.text
 	test_dict.test_name = name
 	return test_dict
 	
 
+# Save test max points from test info
 func save_test_info_max_points(test_dict, MaxPoints):
 	# Extract eventually edited max points from line edit nodes
 	var max_points_edit = [
@@ -140,6 +148,7 @@ func save_test_info_max_points(test_dict, MaxPoints):
 	return test_dict
 
 
+# Save test grade limits from test info
 func save_test_info_grade_limits(test_dict, TestProperties):
 	
 	for child in TestProperties.get_children():
@@ -156,9 +165,18 @@ func save_test_info_grade_limits(test_dict, TestProperties):
 	return test_dict
 
 
-func save_student_test_name(students_dict, TestName):
+# Save from test name to students from test info
+func save_students_test_name(students_dict, TestName):
 	# Save the name of the test in all student test packages
 	for id_num in students_dict.keys():
 		students_dict.get(id_num).get("tests").get(str(GlobalVars.activeTestId)).test_name = TestName.text
 
+	return students_dict
+
+
+func save_students_test_complete(students_dict, StudentResults):
+	return students_dict
+
+
+func save_students_test_results(students_dict, StudentResults):
 	return students_dict
