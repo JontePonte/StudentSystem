@@ -169,4 +169,16 @@ func _on_Remove_pressed():
 
 
 func _on_RemoveConfirm_confirmed():
-	print("Remove test")
+	var data_dict = FileSys.student_data_load()
+	var students_dict = data_dict.get(GlobalVars.activeClass).get("students")
+	
+	# Erase test for tests
+	data_dict.get(GlobalVars.activeClass).tests.erase(str(GlobalVars.activeTestId))
+	
+	# Erase test from students
+	for student_key in students_dict.keys():
+		data_dict.get(GlobalVars.activeClass).get("students").get(student_key).get("tests").erase(str(GlobalVars.activeTestId))
+
+	FileSys.student_data_save(data_dict)
+	get_parent().create_test_buttons()
+	hide()
