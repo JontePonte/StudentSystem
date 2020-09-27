@@ -199,6 +199,7 @@ text = "Go Back "
 [node name="StudentInfo" parent="." instance=ExtResource( 6 )]
 
 [node name="TestInfo" parent="." instance=ExtResource( 7 )]
+visible = false
 [connection signal="pressed" from="Menu/RowsCont/StundetsCont/StudentsTop/AddStudent" to="." method="_on_AddStudent_pressed"]
 [connection signal="pressed" from="Menu/RowsCont/TestsCont/TestsTop/AddTests" to="." method="_on_AddTests_pressed"]
 [connection signal="pressed" from="Menu/RowsCont/AssignmentsCont/AssignmentsTopntainer/Add Assignments" to="." method="_on_Add_Assignments_pressed"]

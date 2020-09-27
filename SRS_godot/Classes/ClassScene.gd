@@ -158,7 +158,43 @@ func _on_AddStudent_pressed():
 
 
 func _on_AddTests_pressed():
-	print("Add test")
+	var data_dict = FileSys.student_data_load()
+	var students_dict = data_dict.get(GlobalVars.activeClass).students
+	var tests_dict = data_dict.get(GlobalVars.activeClass).tests
+
+	var new_test_key = AuxFunc.create_new_key_number(tests_dict)
+	var test_name = "new test"
+
+	# Create empty test info packages
+	var dict_for_tests = {
+		"grade_limits": {
+			"A": [0,0,0],
+			"B": [0,0,0],
+			"C": [0,0,0],
+			"D": [0,0,0],
+			"E": [0,0,0]
+		},
+		"max_points": [0,0,0],
+		"test_name": test_name
+	}
+	var dict_for_students = {
+		"completed": true,
+		"result": [0,0,0],
+		"test_name": test_name
+	}
+	# Save the new test in class
+	data_dict.get(GlobalVars.activeClass).get("tests")[new_test_key] = dict_for_tests
+
+	# Save the new test in each student
+	for student_key in students_dict:
+		data_dict.get(GlobalVars.activeClass).get("students").get(student_key).get("tests")[new_test_key] = dict_for_students
+
+	# Save to file, update list and pop up the new test info window
+	FileSys.student_data_save(data_dict)
+	GlobalVars.activeTestId = int(new_test_key)
+	$TestInfo.popup_centered()
+	$TestInfo.show_info()
+	create_test_buttons()
 
 
 func _on_Add_Assignments_pressed():

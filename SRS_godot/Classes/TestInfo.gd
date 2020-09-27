@@ -51,7 +51,10 @@ func print_student_results(data_dict):
 		# calculate percent correct on test
 		var points_correct = student_test_info.result[0]+student_test_info.result[1]+student_test_info.result[2]
 		var points_max = test_dict.max_points[0]+test_dict.max_points[1]+test_dict.max_points[2]
-		var percent = stepify(points_correct / points_max * 100, 0.1)
+		
+		var percent = 0
+		if points_max != 0:
+			percent = stepify(points_correct / points_max * 100, 0.1)
 		var percent_string = str(percent) + " %"
 	
 		var grade = AuxFunc.calculate_grade(student_test_info.result, test_grade_limits, student_test_info.completed)
