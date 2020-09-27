@@ -5,6 +5,7 @@ var activeDataFile = ""
 var activeClass = ""
 var activeStudentId = 0
 var activeTestId = 0
+var activeAssignmentId = 0
 
 
 func _ready():
