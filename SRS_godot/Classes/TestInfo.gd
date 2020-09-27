@@ -54,8 +54,9 @@ func print_student_results(data_dict):
 		
 		var percent = 0
 		if points_max != 0:
-			percent = stepify(points_correct / points_max * 100, 0.1)
+			percent = stepify(float(points_correct) / float(points_max) * 100, 0.1)
 		var percent_string = str(percent) + " %"
+	
 	
 		var grade = AuxFunc.calculate_grade(student_test_info.result, test_grade_limits, student_test_info.completed)
 
@@ -153,9 +154,9 @@ func _on_Save_pressed():
 	data_dict.get(GlobalVars.activeClass)["students"] = students_dict
 	
 	# Update student result list and save data dictionary to file
-	print_student_results(data_dict)
 	FileSys.student_data_save(data_dict)
 
+	print_student_results(data_dict)
 	get_parent().create_test_buttons()
 
 
