@@ -19,3 +19,19 @@ func print_student_results(data_dict):
 
 func print_assignment_description(assignment_dict):
 	pass
+
+
+func _on_Save_pressed():
+	print("Save Assignment info")
+
+
+func _on_Exit_pressed():
+	hide()
+
+	
+func _on_Remove_pressed():
+	$RemoveConfirm.popup_centered()
+
+
+func _on_RemoveConfirm_confirmed():
+	print("Remove Assignment")
