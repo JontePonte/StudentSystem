@@ -174,10 +174,20 @@ func save_students_test_name(students_dict, TestName):
 	return students_dict
 
 
+# Save status of done checkbox in test info to students
 func save_students_test_complete(students_dict, StudentResults):
+	for student_key in students_dict.keys():
+		# Loop the nodes with student results and get the active students test
+		for child in StudentResults.get_children():
+			if child.key_name == student_key:
+				var completed_status = child.get_node("Done").pressed
+				# Store checkbox status in students dictionary
+				students_dict.get(student_key).get("tests").get(str(GlobalVars.activeTestId)).completed = completed_status
+				
 	return students_dict
 	
 
+# Save student results to students from test info
 func save_students_test_results(students_dict, StudentResults):
 	for student_key in students_dict.keys():
 		# Loop the nodes with student results and get the active students test
