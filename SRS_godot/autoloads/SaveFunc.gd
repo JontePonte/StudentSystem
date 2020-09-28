@@ -237,9 +237,25 @@ func save_students_assignment_complete(students_dict, StudentResults):
 	return students_dict
 
 
+# Save student assignment comment from assignment info
 func save_students_assignment_comment(students_dict, StudentResults):
+	for student_key in students_dict.keys():
+		# Loop the nodes with student results and get the active students assignment
+		for child in StudentResults.get_children():
+			if child.key_name == student_key:
+				var comment_new = child.get_node("Comment").text
+				# Store comment in students dictionary
+				students_dict.get(student_key).get("assignments").get(str(GlobalVars.activeAssignmentId)).comment = comment_new
 	return students_dict
 
 
+# Save student assignment grade from assignment info
 func save_students_assignment_grade(students_dict, StudentResults):
+	for student_key in students_dict.keys():
+		# Loop the nodes with student results and get the active students assignment
+		for child in StudentResults.get_children():
+			if child.key_name == student_key:
+				var grade_new = child.get_node("Grade").text
+				# Store grade in students dictionary
+				students_dict.get(student_key).get("assignments").get(str(GlobalVars.activeAssignmentId)).grade = grade_new
 	return students_dict
