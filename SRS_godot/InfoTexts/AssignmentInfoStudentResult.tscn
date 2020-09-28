@@ -83,12 +83,13 @@ margin_bottom = 24.0
 custom_fonts/font = ExtResource( 1 )
 text = "Grade:"
 
-[node name="Grade" type="Label" parent="."]
+[node name="Grade" type="LineEdit" parent="."]
 margin_left = 479.0
-margin_top = 5.0
-margin_right = 494.0
-margin_bottom = 24.0
+margin_right = 509.0
+margin_bottom = 29.0
 rect_min_size = Vector2( 15, 0 )
 custom_fonts/font = ExtResource( 1 )
+custom_constants/minimum_spaces = 5
 text = "A"
 align = 2
+max_length = 1

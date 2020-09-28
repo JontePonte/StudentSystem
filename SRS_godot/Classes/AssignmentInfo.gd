@@ -79,7 +79,25 @@ func print_assignment_description(assignment_dict):
 
 
 func _on_Save_pressed():
-	print("Save Assignment info")
+	var data_dict = FileSys.student_data_load()
+	var assignment_dict = data_dict.get(GlobalVars.activeClass).get("assignments").get(str(GlobalVars.activeAssignmentId))
+	var students_dict = data_dict.get(GlobalVars.activeClass).get("students")
+
+	assignment_dict = SaveFunc.save_assignment_info_name(assignment_dict, AssignmentName)
+	assignment_dict = SaveFunc.save_assignment_info_description(assignment_dict, DescriptionTextEdit)
+
+	students_dict = SaveFunc.save_students_assignment_name(students_dict, AssignmentName)
+	students_dict = SaveFunc.save_students_assignment_complete(students_dict, StudentResults)
+	students_dict = SaveFunc.save_students_assignment_comment(students_dict, StudentResults)
+	students_dict = SaveFunc.save_students_assignment_grade(students_dict, StudentResults)
+
+	# update data_dict and save the updated json
+	data_dict.get(GlobalVars.activeClass).get("assignments")[str(GlobalVars.activeAssignmentId)] = assignment_dict
+	data_dict.get(GlobalVars.activeClass)["students"] = students_dict
+
+	# Update class assignment buttons  and save data dictionary to file
+	FileSys.student_data_save(data_dict)
+	get_parent().create_assignment_buttons()
 
 
 func _on_Exit_pressed():

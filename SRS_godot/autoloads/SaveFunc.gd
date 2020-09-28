@@ -201,3 +201,27 @@ func save_students_test_results(students_dict, StudentResults):
 				students_dict.get(student_key).get("tests").get(str(GlobalVars.activeTestId)).result = student_result
 
 	return students_dict
+
+
+func save_assignment_info_name(assignment_dict, AssignmentName):
+	return assignment_dict
+
+
+func save_assignment_info_description(assignment_dict, DescriptionTextEdit):
+	return assignment_dict
+	
+
+func save_students_assignment_name(students_dict, AssignmentName):
+	return students_dict
+
+
+func save_students_assignment_complete(students_dict, StudentResults):
+	return students_dict
+
+
+func save_students_assignment_comment(students_dict, StudentResults):
+	return students_dict
+
+
+func save_students_assignment_grade(students_dict, StudentResults):
+	return students_dict
