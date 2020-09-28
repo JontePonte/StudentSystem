@@ -222,11 +222,18 @@ func save_students_assignment_name(students_dict, AssignmentName):
 	# Save the name of the assignment in all student test packages
 	for id_num in students_dict.keys():
 		students_dict.get(id_num).get("assignments").get(str(GlobalVars.activeAssignmentId)).assignment_name = AssignmentName.text
-
 	return students_dict
 
 
+# Save student assignment completed status from assignment info
 func save_students_assignment_complete(students_dict, StudentResults):
+	for student_key in students_dict.keys():
+		# Loop the nodes with student results and get the active students assignment
+		for child in StudentResults.get_children():
+			if child.key_name == student_key:
+				var completed_status = child.get_node("Done").pressed
+				# Store checkbox status in students dictionary
+				students_dict.get(student_key).get("assignments").get(str(GlobalVars.activeAssignmentId)).completed = completed_status
 	return students_dict
 
 
