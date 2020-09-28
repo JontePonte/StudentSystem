@@ -203,15 +203,26 @@ func save_students_test_results(students_dict, StudentResults):
 	return students_dict
 
 
+# Save assignments name from assignment info
 func save_assignment_info_name(assignment_dict, AssignmentName):
+	var name_new = AssignmentName.text
+	assignment_dict.assignment_name = name_new
 	return assignment_dict
 
 
+# Save assignment description from assignment info
 func save_assignment_info_description(assignment_dict, DescriptionTextEdit):
+	var description = DescriptionTextEdit.text
+	assignment_dict.description = description
 	return assignment_dict
 	
 
+# Save assignment name in students dict
 func save_students_assignment_name(students_dict, AssignmentName):
+	# Save the name of the assignment in all student test packages
+	for id_num in students_dict.keys():
+		students_dict.get(id_num).get("assignments").get(str(GlobalVars.activeAssignmentId)).assignment_name = AssignmentName.text
+
 	return students_dict
 
 
