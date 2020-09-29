@@ -109,4 +109,17 @@ func _on_Remove_pressed():
 
 
 func _on_RemoveConfirm_confirmed():
-	print("Remove Assignment")
+	var data_dict = FileSys.student_data_load()
+	var students_dict = data_dict.get(GlobalVars.activeClass).get("students")
+	
+	# Erase assignment from assignments
+	data_dict.get(GlobalVars.activeClass).assignments.erase(str(GlobalVars.activeAssignmentId))
+	
+	# Erase assignments from students
+	for student_key in students_dict.keys():
+		data_dict.get(GlobalVars.activeClass).get("students").get(student_key).get("assignments").erase(str(GlobalVars.activeAssignmentId))
+
+	FileSys.student_data_save(data_dict)
+	get_parent().create_assignment_buttons()
+	hide()
+
