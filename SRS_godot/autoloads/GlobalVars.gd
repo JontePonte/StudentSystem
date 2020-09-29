@@ -2,6 +2,8 @@ extends Node
 # All global variables
 
 var version = 0.2
+var enable_log = true
+var debug_mode = true
 
 var activeDataFile = ""
 var activeClass = ""

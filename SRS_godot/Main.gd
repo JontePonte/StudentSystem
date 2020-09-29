@@ -16,7 +16,7 @@ func _ready():
 	
 	create_classes_buttons()
 	VersionLabel.set_text("Version: " + str(GlobalVars.version))
-
+	Log.info("App started")
 
 
 func create_classes_buttons():
