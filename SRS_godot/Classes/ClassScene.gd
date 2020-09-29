@@ -198,4 +198,35 @@ func _on_AddTests_pressed():
 
 
 func _on_Add_Assignments_pressed():
-	print("Add assignment")
+	var data_dict = FileSys.student_data_load()
+	var students_dict = data_dict.get(GlobalVars.activeClass).students
+	var assignments_dict = data_dict.get(GlobalVars.activeClass).assignments
+
+	var new_assignment_key = AuxFunc.create_new_key_number(assignments_dict)
+	var new_assignment_name = "new assignment"
+	var new_assignment_description = "new description"
+
+	# Create empty assignment info packages
+	var dict_for_assignments = {
+		"assignment_name": new_assignment_name,
+		"description": new_assignment_description
+	}
+	var dict_for_students = {
+		"assignment_name": new_assignment_name,
+		"comment": "",
+		"completed": true,
+		"grade": "-"
+	}
+	# Save the new assignment in class
+	data_dict.get(GlobalVars.activeClass).get("assignments")[new_assignment_key] = dict_for_assignments
+
+	# Save the new assignment in each student
+	for student_key in students_dict:
+		data_dict.get(GlobalVars.activeClass).get("students").get(student_key).get("assignments")[new_assignment_key] = dict_for_students
+
+	# Save to file, update list and pop up the new assignment info window
+	FileSys.student_data_save(data_dict)
+	GlobalVars.activeAssignmentId = int(new_assignment_key)
+	$AssignmentInfo.popup_centered()
+	$AssignmentInfo.show_info()
+	create_assignment_buttons()
