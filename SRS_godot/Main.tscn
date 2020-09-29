@@ -90,8 +90,7 @@ margin_bottom = 70.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 7 )
-text = "Version 0.1
-John Nordstrand"
+text = "Version 0.1"
 
 [node name="LoadDataCont" type="VBoxContainer" parent="Menu/HBoxContainer"]
 margin_left = 522.0

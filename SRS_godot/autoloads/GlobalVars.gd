@@ -1,6 +1,8 @@
 extends Node
 # All global variables
 
+var version = 0.2
+
 var activeDataFile = ""
 var activeClass = ""
 var activeStudentId = 0

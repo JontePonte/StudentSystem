@@ -1,6 +1,9 @@
 extends Control
 
 
+onready var VersionLabel = get_node("Menu/HBoxContainer/VersionLabel")
+
+
 var screen_size = OS.get_screen_size()
 var window_size = OS.get_window_size()
 
@@ -12,6 +15,7 @@ func _ready():
 	VisualVars.set_color_palette()
 	
 	create_classes_buttons()
+	VersionLabel.set_text("Version: " + str(GlobalVars.version))
 
 
 
