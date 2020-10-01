@@ -7,12 +7,14 @@ onready var StudentResults = get_node("Menu/Center/StudentResults/StudentsScroll
 onready var MaxPoints = get_node("Menu/Center/TestProperties/MaxPoints")
 
 func show_info():
+	Log.debug("Test id %s in class %s info window loading" % [str(GlobalVars.activeTestId), str(GlobalVars.activeClass)])
 	var data_dict = FileSys.student_data_load()
 	var test_dict = data_dict.get(GlobalVars.activeClass).get("tests").get(str(GlobalVars.activeTestId))
 
 	TestName.set_text(test_dict.test_name)
 	print_student_results(data_dict)
 	print_test_properties(test_dict)
+	Log.debug("Test id %s in class %s info window loading" % [str(GlobalVars.activeTestId), str(GlobalVars.activeClass)])
 
 
 func print_student_results(data_dict):
@@ -97,6 +99,7 @@ func print_student_results(data_dict):
 		for student_result in inactive_students:
 			if student_result.key_name == key:
 				StudentResults.add_child(student_result)
+	Log.debug("Student result loaded and printed in test id %s in class %s" % [str(GlobalVars.activeTestId), GlobalVars.activeClass])
 
 
 func print_test_properties(test_dict):
@@ -134,9 +137,11 @@ func print_test_properties(test_dict):
 		property.get_node("LineEditA").set_text(points_A)
 
 		TestProperties.add_child(property)
+	Log.debug("Test id %s properties printed" % GlobalVars.activeTestId)
 
 
 func _on_Save_pressed():
+	Log.debug("Save process for test %s in class %s initiated" % [str(GlobalVars.activeTestId), GlobalVars.activeClass])
 	var data_dict = FileSys.student_data_load()
 	var test_dict = data_dict.get(GlobalVars.activeClass).get("tests").get(str(GlobalVars.activeTestId))
 	var students_dict = data_dict.get(GlobalVars.activeClass).get("students")
@@ -148,6 +153,7 @@ func _on_Save_pressed():
 	students_dict = SaveFunc.save_students_test_name(students_dict, TestName)
 	students_dict = SaveFunc.save_students_test_complete(students_dict, StudentResults)
 	students_dict = SaveFunc.save_students_test_results(students_dict, StudentResults)
+	Log.debug("Data collected from UI")
 
 	# update data_dict and save the updated json
 	data_dict.get(GlobalVars.activeClass).get("tests")[str(GlobalVars.activeTestId)] = test_dict
@@ -158,10 +164,12 @@ func _on_Save_pressed():
 
 	print_student_results(data_dict)
 	get_parent().create_test_buttons()
+	Log.info("Save process for test %s in class %s completed" % [str(GlobalVars.activeTestId), GlobalVars.activeClass])
 
 
 func _on_Exit_pressed():
 	hide()
+	Log.debug("Back button pressed")
 
 
 func _on_Remove_pressed():
@@ -169,6 +177,7 @@ func _on_Remove_pressed():
 
 
 func _on_RemoveConfirm_confirmed():
+	Log.debug("Remove process for test %s in class %s initiated" % [str(GlobalVars.activeTestId), GlobalVars.activeClass])
 	var data_dict = FileSys.student_data_load()
 	var students_dict = data_dict.get(GlobalVars.activeClass).get("students")
 	
@@ -182,3 +191,5 @@ func _on_RemoveConfirm_confirmed():
 	FileSys.student_data_save(data_dict)
 	get_parent().create_test_buttons()
 	hide()
+	Log.info("Test %s removed from class %s" % [str(GlobalVars.activeTestId), GlobalVars.activeClass])
+
