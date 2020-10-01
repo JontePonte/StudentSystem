@@ -36,10 +36,10 @@ func create_classes_buttons():
 		class_button.name = subject
 
 		$Menu/CenterRow/ScrollClass/Classes.add_child(class_button)
-		Log.debug("Button named " + subject + " added to main scene")
-
+	
 	# Make the first button selected so the menu can be navigated with arrows
 	$Menu/CenterRow/ScrollClass/Classes.get_node(s_data.keys()[0]).grab_focus()
+	Log.debug("Class buttons added to main scene")
 
 
 func _on_SelectData_pressed():

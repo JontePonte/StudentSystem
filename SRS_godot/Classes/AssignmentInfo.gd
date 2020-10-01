@@ -7,12 +7,14 @@ onready var DescriptionTextEdit = get_node("Menu/Center/AssignmentDescription/As
 
 
 func show_info():
+	Log.debug("Assignment %s in class %s window loading" % [str(GlobalVars.activeAssignmentId), str(GlobalVars.activeClass)])
 	var data_dict = FileSys.student_data_load()
 	var assignment_dict = data_dict.get(GlobalVars.activeClass).get("assignments").get(str(GlobalVars.activeAssignmentId))
 
 	AssignmentName.set_text(assignment_dict.assignment_name)
 	print_student_results(data_dict)
 	print_assignment_description(assignment_dict)
+	Log.info("Assignment %s in %s window opened" % [str(GlobalVars.activeAssignmentId), str(GlobalVars.activeClass)])
 
 
 func print_student_results(data_dict):
@@ -71,14 +73,16 @@ func print_student_results(data_dict):
 		for student_result in inactive_students:
 			if student_result.key_name == key:
 				StudentResults.add_child(student_result)
-
+	Log.debug("Student results loaded")
 
 func print_assignment_description(assignment_dict):
 	var description = assignment_dict.description
 	DescriptionTextEdit.text = description
+	Log.debug("Assignment description loaded")
 
 
 func _on_Save_pressed():
+	Log.debug("Assignment save process started")
 	var data_dict = FileSys.student_data_load()
 	var assignment_dict = data_dict.get(GlobalVars.activeClass).get("assignments").get(str(GlobalVars.activeAssignmentId))
 	var students_dict = data_dict.get(GlobalVars.activeClass).get("students")
@@ -90,6 +94,7 @@ func _on_Save_pressed():
 	students_dict = SaveFunc.save_students_assignment_complete(students_dict, StudentResults)
 	students_dict = SaveFunc.save_students_assignment_comment(students_dict, StudentResults)
 	students_dict = SaveFunc.save_students_assignment_grade(students_dict, StudentResults)
+	Log.debug("Assignment info finnished collecting from UI")
 
 	# update data_dict and save the updated json
 	data_dict.get(GlobalVars.activeClass).get("assignments")[str(GlobalVars.activeAssignmentId)] = assignment_dict
@@ -98,10 +103,12 @@ func _on_Save_pressed():
 	# Update class assignment buttons  and save data dictionary to file
 	FileSys.student_data_save(data_dict)
 	get_parent().create_assignment_buttons()
+	Log.info("Assignment id %s data saved to file" % str(GlobalVars.activeAssignmentId))
 
 
 func _on_Exit_pressed():
 	hide()
+	Log.debug("Assignment exit button pressed")
 
 	
 func _on_Remove_pressed():
@@ -122,4 +129,5 @@ func _on_RemoveConfirm_confirmed():
 	FileSys.student_data_save(data_dict)
 	get_parent().create_assignment_buttons()
 	hide()
+	Log.info("Assignment id %s removed from %s" % [str(GlobalVars.activeAssignmentId), str(GlobalVars.activeClass)])
 

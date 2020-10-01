@@ -128,9 +128,11 @@ func create_assignment_buttons():
 func _on_BackButton_pressed():
 	var path = "res://Main.tscn"
 	var _is_main = get_tree().change_scene(path)
+	Log.debug("Back button pressed - return to main menu")
 
 
 func _on_AddStudent_pressed():
+	Log.debug("New student creation started")
 	var data_dict = FileSys.student_data_load()
 	var students_dict = data_dict.get(GlobalVars.activeClass).students
 
@@ -160,9 +162,11 @@ func _on_AddStudent_pressed():
 	$StudentInfo.popup_centered()
 	$StudentInfo.show_info()
 	create_student_buttons()
+	Log.info("New student with id %s created" % new_student_key)
 
 
 func _on_AddTests_pressed():
+	Log.debug("New test creation started")
 	var data_dict = FileSys.student_data_load()
 	var students_dict = data_dict.get(GlobalVars.activeClass).students
 	var tests_dict = data_dict.get(GlobalVars.activeClass).tests
@@ -200,9 +204,11 @@ func _on_AddTests_pressed():
 	$TestInfo.popup_centered()
 	$TestInfo.show_info()
 	create_test_buttons()
+	Log.info("New test with id %s created" % new_test_key)
 
 
 func _on_Add_Assignments_pressed():
+	Log.debug("New assignment createion started")
 	var data_dict = FileSys.student_data_load()
 	var students_dict = data_dict.get(GlobalVars.activeClass).students
 	var assignments_dict = data_dict.get(GlobalVars.activeClass).assignments
@@ -235,3 +241,5 @@ func _on_Add_Assignments_pressed():
 	$AssignmentInfo.popup_centered()
 	$AssignmentInfo.show_info()
 	create_assignment_buttons()
+	Log.info("New assignment with id %s created" % new_assignment_key)
+	
