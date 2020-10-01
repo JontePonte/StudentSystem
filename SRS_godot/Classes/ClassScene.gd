@@ -7,6 +7,7 @@ onready var Assignments = get_node("Menu/RowsCont/AssignmentsCont/AssignmentsScr
 
 
 func _ready():
+	Log.debug("Selected class named %s" % GlobalVars.activeClass)
 	# Set header name
 	var active_class = GlobalVars.activeClass
 	$Menu/Header.set_text(active_class)

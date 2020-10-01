@@ -36,7 +36,7 @@ window/size/height=720
 [logging]
 
 file_logging/enable_file_logging=true
-file_logging/log_path="C:\\Users\\John_\\logs\\StudentSystem\\log"
+file_logging/log_path="C:\\Users\\John_\\logs\\StudentSystem\\log_output.txt"
 
 [rendering]
 

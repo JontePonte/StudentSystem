@@ -8,7 +8,7 @@ func info(message):
         # Get datetime to dictionary
         var dt=OS.get_datetime()
         # Format and print with message
-        print("INFO: ", "%02d:%02d:%02d " % [dt.hour,dt.minute,dt.second], message)
+        print("INFO:  ", "%02d:%02d:%02d " % [dt.hour,dt.minute,dt.second], message)
 
 
 # Log debug message
@@ -28,7 +28,7 @@ func warning(message):
         # Get datetime to dictionary
         var dt=OS.get_datetime()
         # Format and print with message
-        print("WARN: ", "%02d:%02d:%02d " % [dt.hour,dt.minute,dt.second], message)
+        print("WARN:  ", "%02d:%02d:%02d " % [dt.hour,dt.minute,dt.second], message)
 
 
 # Log critical message

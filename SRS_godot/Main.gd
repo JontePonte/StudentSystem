@@ -10,13 +10,14 @@ var window_size = OS.get_window_size()
 
 
 func _ready():
+	Log.info("Main window initiated, main menu loading")
 	OS.set_window_position(screen_size*0.5 - window_size*0.5)
 
 	VisualVars.set_color_palette()
 	
 	create_classes_buttons()
 	VersionLabel.set_text("Version: " + str(GlobalVars.version))
-	Log.info("App started")
+	Log.debug("Main menu loaded")
 
 
 func create_classes_buttons():
@@ -35,6 +36,7 @@ func create_classes_buttons():
 		class_button.name = subject
 
 		$Menu/CenterRow/ScrollClass/Classes.add_child(class_button)
+		Log.debug("Button named " + subject + " added to main scene")
 
 	# Make the first button selected so the menu can be navigated with arrows
 	$Menu/CenterRow/ScrollClass/Classes.get_node(s_data.keys()[0]).grab_focus()
@@ -48,3 +50,5 @@ func _on_LoadDataPopup_file_selected(path):
 	FileSys.change_active_data_file(path)
 	$Menu/HBoxContainer/LoadDataCont/SelectData.update_text()
 	create_classes_buttons()
+	Log.info("New data file selected")
+	Log.debug("New data file path: " + path)
