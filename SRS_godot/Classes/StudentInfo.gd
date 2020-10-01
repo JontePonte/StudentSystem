@@ -17,6 +17,7 @@ var info_key_list = ["class", "email", "pers_nr"]
 
 
 func show_info():
+	Log.debug("Student id %s in class %s info window loading" % [str(GlobalVars.activeStudentId), str(GlobalVars.activeClass)])
 	var student_dict = collect_info()
 
 	# set popup menu header to student name
@@ -28,6 +29,7 @@ func show_info():
 	print_test_info(student_dict)
 	print_assignments(student_dict)
 	print_comments(student_dict)
+	Log.info("Student id %s in %s info window opened" % [str(GlobalVars.activeStudentId), str(GlobalVars.activeClass)])
 
 
 func collect_info():
@@ -73,6 +75,7 @@ func print_student_info(student_dict):
 		info_text.get_node("Label").set_text(info_variable_list[i])
 		info_text.key_name = info_key_list[i]
 		InfoVariables.add_child(info_text)
+	Log.debug("Student information added to info window")
 	
 
 func print_test_info(student_dict):
@@ -126,6 +129,7 @@ func print_test_info(student_dict):
 		
 		test_text_row.key_name = test_index
 		Tests.add_child(test_text_row)
+	Log.debug("Test information loaded and printed in student %s info window" % str(GlobalVars.activeStudentId))
 
 
 func print_assignments(student_dict):
@@ -159,6 +163,7 @@ func print_assignments(student_dict):
 		
 		assignment_text_row.key_name = assignment_index
 		Assignments.add_child(assignment_text_row)
+	Log.debug("Assignment information loaded and printed in student %s info window" % str(GlobalVars.activeStudentId))
 
 
 func print_comments(student_dict):
@@ -177,6 +182,7 @@ func print_comments(student_dict):
 		comment_row.key_name = comment_index
 
 		Comments.add_child(comment_row)
+	Log.debug("Comments loaded and printed in student %s info window" % str(GlobalVars.activeStudentId))
 
 
 func calculate_percents(res_points, max_points):
@@ -209,7 +215,7 @@ func calculate_percents(res_points, max_points):
 		a_string = str(a) + "  %"
 	elif a >= 100:
 		a_string = str(a) + "%"
-
+	
 	return [e_string, c_string, a_string]
 
 
@@ -226,9 +232,11 @@ func _on_AddComment_pressed():
 	comment_row.key_name = AuxFunc.create_new_key_number(comments_current_keys)
 
 	Comments.add_child(comment_row)
+	Log.debug("New comment id %s added to student %s" % [str(comment_row.key_name), GlobalVars.activeStudentId])
 
 
 func _on_SaveButton_pressed():
+	Log.debug("Save process started for student id %s" % str(GlobalVars.activeStudentId))
 	var data_dict = FileSys.student_data_load()
 	var student_dict = collect_info()
 	
@@ -239,7 +247,8 @@ func _on_SaveButton_pressed():
 	student_dict = SaveFunc.save_student_info_test(student_dict, Tests)
 	student_dict = SaveFunc.save_student_info_assignment(student_dict, Assignments)
 	student_dict = SaveFunc.save_student_info_comments(student_dict, Comments)
-	
+	Log.debug("Data collected from student info")
+
 	# update data_dict and save the updated json
 	data_dict.get(GlobalVars.activeClass).students[str(GlobalVars.activeStudentId)] = student_dict
 	FileSys.student_data_save(data_dict)
@@ -248,10 +257,12 @@ func _on_SaveButton_pressed():
 	print_test_info(student_dict)
 	# Update student list
 	get_parent().create_student_buttons()
+	Log.info("Student id %s in class %s information saved to file" % [str(GlobalVars.activeStudentId), GlobalVars.activeClass])
 	
 
 func _on_ExitButton_pressed():
 	hide() # Hide popup window
+	Log.debug("Exit button pressed")
 
 
 func _on_RemoveButton_pressed():
@@ -263,9 +274,11 @@ func _on_RemoveCheck_confirmed():
 
 
 func remove_student():
+	Log.debug("Remove student process initiated")
 	var data_dict = FileSys.student_data_load()
 	data_dict.get(GlobalVars.activeClass).students.erase(str(GlobalVars.activeStudentId))
 	
 	FileSys.student_data_save(data_dict)
 	get_parent().create_student_buttons()
 	hide()
+	Log.info("Student id %s removed from %s" % [str(GlobalVars.activeStudentId), str(GlobalVars.activeClass)])
