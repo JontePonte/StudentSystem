@@ -7,7 +7,7 @@ onready var Assignments = get_node("Menu/RowsCont/AssignmentsCont/AssignmentsScr
 
 
 func _ready():
-	Log.debug("Selected class named %s" % GlobalVars.activeClass)
+	Log.debug('Selected class named "%s", started loading scene' % GlobalVars.activeClass)
 	# Set header name
 	var active_class = GlobalVars.activeClass
 	$Menu/Header.set_text(active_class)
@@ -15,6 +15,7 @@ func _ready():
 	create_student_buttons()
 	create_test_buttons()
 	create_assignment_buttons()
+	Log.debug("%s scene finnished loading" % GlobalVars.activeClass)
 
 
 func create_student_buttons(): 
@@ -79,6 +80,7 @@ func create_student_buttons():
 		for button in inactive_students:
 			if button.student_id == key:
 				Students.add_child(button)
+	Log.debug("Student buttons loaded")
 
 
 func create_test_buttons():
@@ -99,6 +101,7 @@ func create_test_buttons():
 		test_button.get_node("Label").set_text(active_test.test_name)
 
 		Tests.add_child(test_button)
+	Log.debug("Test buttons loaded")
 
 
 func create_assignment_buttons():
@@ -119,6 +122,7 @@ func create_assignment_buttons():
 		assignment_button.get_node("Label").set_text(assignment.assignment_name)
 
 		Assignments.add_child(assignment_button)
+	Log.debug("Assignemnt buttons loaded")
 
 
 func _on_BackButton_pressed():
