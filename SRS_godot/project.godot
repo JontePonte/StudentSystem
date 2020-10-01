@@ -33,6 +33,10 @@ Log="*res://autoloads/Log.gd"
 window/size/width=1280
 window/size/height=720
 
+[editor_plugins]
+
+enabled=PoolStringArray( "gut" )
+
 [logging]
 
 file_logging/enable_file_logging=true
