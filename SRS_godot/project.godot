@@ -37,11 +37,6 @@ window/size/height=720
 
 enabled=PoolStringArray( "gut" )
 
-[logging]
-
-file_logging/enable_file_logging=true
-file_logging/log_path="C:\\Users\\John_\\logs\\StudentSystem\\student-system_log.txt"
-
 [rendering]
 
 environment/default_clear_color=Color( 0.164706, 0.235294, 0.156863, 1 )
