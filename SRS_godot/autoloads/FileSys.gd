@@ -8,6 +8,7 @@ func change_active_data_file(new_file_name):
 	var data = app_data_load()
 	data.active_data_file = new_file_name
 	app_data_save(data)
+	Log.info("Active data file path changed")
 
 
 func student_data_save(data):
@@ -19,6 +20,7 @@ func student_data_save(data):
 
 	s_data.store_line(to_json(data))
 	s_data.close()
+	Log.info("Student info data saved to %s" % path)
 
 
 func student_data_load():
@@ -33,6 +35,7 @@ func student_data_load():
 
     # Unpack information to dict data
 	var data = parse_json(text)
+	Log.debug("Student info data loaded from %s" % path)
 	return data
 
 
@@ -45,6 +48,7 @@ func app_data_save(data):
 
 	app_data.store_line(to_json(data))
 	app_data.close()
+	Log.info("Application changes made to %s" % path)
 
 
 func app_data_load():
@@ -59,4 +63,5 @@ func app_data_load():
 
     # Unpack information to dict data
 	var data = parse_json(text)
+	Log.debug("Application info loaded from %s" % path)
 	return data
