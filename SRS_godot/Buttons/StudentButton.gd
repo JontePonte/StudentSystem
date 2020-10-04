@@ -21,3 +21,4 @@ func button_pressed():
 	
 	RootScene.get_node("StudentInfo").popup_centered()
 	RootScene.get_node("StudentInfo").show_info()
+	Log.debug("Student id %s pressed, popup window loaded" % student_id)

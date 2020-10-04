@@ -17,3 +17,4 @@ func button_pressed():
 	
 	RootScene.get_node("AssignmentInfo").popup_centered()
 	RootScene.get_node("AssignmentInfo").show_info()
+	Log.debug("Assignment id %s pressed, popup window loaded" % assignment_id)

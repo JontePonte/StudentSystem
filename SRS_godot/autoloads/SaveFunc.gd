@@ -4,7 +4,7 @@ extends Node
 # Save student active check from student info
 func save_student_info_active_check(student_dict, ActiveCheck):
 	student_dict["active"] = ActiveCheck.pressed
-	Log.debug("Student active checkbox status for %s %s collected" % [student_dict.first_name, student_dict.last_name])
+	Log.debug("Student active checkbox status for %s %s stored in student_dict" % [student_dict.first_name, student_dict.last_name])
 	return student_dict
 
 
@@ -15,7 +15,7 @@ func save_student_info_name(student_dict, FirstName, LastName):
 	
 	student_dict["first_name"] = first_name
 	student_dict["last_name"] = last_name
-	Log.debug("Student name %s %s in line edit collected" % [student_dict.first_name, student_dict.last_name])
+	Log.debug("Student name %s %s in line edit stored in student_dict" % [student_dict.first_name, student_dict.last_name])
 	return student_dict
 
 
@@ -31,7 +31,7 @@ func save_student_info_text(student_dict, InfoVariables, info_key_list):
 		for student_key in student_dict.keys():
 			if info_key == student_key:
 				student_dict[student_key] = info_edit_box_dict.get(info_key)
-	Log.debug("Student information from %s %s collected" % [student_dict.first_name, student_dict.last_name])
+	Log.debug("Student information from %s %s stored in student_dict" % [student_dict.first_name, student_dict.last_name])
 
 	return student_dict
 	
@@ -64,7 +64,7 @@ func save_student_info_test(student_dict, Tests):
 			if test_check_id == test_stored_id:
 				student_dict.get("tests").get(test_stored_id)["completed"] = test_check_box_dict[test_check_id]
 	
-	Log.debug("Test results collected from %s %s info" % [student_dict.first_name, student_dict.last_name])
+	Log.debug("Test results from %s %s info stored in student_dict" % [student_dict.first_name, student_dict.last_name])
 	return student_dict
 
 
@@ -105,7 +105,7 @@ func save_student_info_assignment(student_dict, Assignments):
 			if assignment_edited_id == assignment_stored_id:
 				student_dict.get("assignments").get(assignment_stored_id)["grade"] = assignment_grade_dict[assignment_edited_id]
 	
-	Log.debug("Assignment results collected from %s %s info" % [student_dict.first_name, student_dict.last_name])
+	Log.debug("Assignment results from %s %s info stored in student_dict" % [student_dict.first_name, student_dict.last_name])
 	return student_dict
 
 
@@ -131,7 +131,7 @@ func save_student_info_comments(student_dict, Comments):
 			if comment_id == comment_stored_id:
 				student_dict.get("comments")[comment_stored_id] = comment_edit_dict.get(comment_id)
 
-	Log.debug("Comments collected from %s %s info" % [student_dict.first_name, student_dict.last_name])
+	Log.debug("Comments from %s %s info stored in student_dict" % [student_dict.first_name, student_dict.last_name])
 	return student_dict
 
 
@@ -139,7 +139,7 @@ func save_student_info_comments(student_dict, Comments):
 func save_test_info_name(test_dict, TestName):
 	var name = TestName.text
 	test_dict.test_name = name
-	Log.debug("Test name '%s' collected" % name)
+	Log.debug("Test name '%s' saved in test_dict" % name)
 	return test_dict
 	
 
@@ -153,7 +153,7 @@ func save_test_info_max_points(test_dict, MaxPoints):
 
 	test_dict.max_points = max_points_edit
 
-	Log.debug("")
+	Log.debug("Max points %s from %s saved in test_dict" % [max_points_edit, test_dict.test_name])
 	return test_dict
 
 
@@ -170,7 +170,8 @@ func save_test_info_grade_limits(test_dict, TestProperties):
 			int(child.get_node("LineEditA").text)]
 
 		test_dict.get("grade_limits")[child.name] = grade_edit
-
+	
+	Log.debug("Grade limits from %s saved in test_dict" % test_dict.test_name)
 	return test_dict
 
 
@@ -179,7 +180,8 @@ func save_students_test_name(students_dict, TestName):
 	# Save the name of the test in all student test packages
 	for id_num in students_dict.keys():
 		students_dict.get(id_num).get("tests").get(str(GlobalVars.activeTestId)).test_name = TestName.text
-
+	
+	Log.debug("Test name saved in student info in students_dict")
 	return students_dict
 
 
@@ -192,7 +194,8 @@ func save_students_test_complete(students_dict, StudentResults):
 				var completed_status = child.get_node("Done").pressed
 				# Store checkbox status in students dictionary
 				students_dict.get(student_key).get("tests").get(str(GlobalVars.activeTestId)).completed = completed_status
-				
+	
+	Log.debug("Test completed status stored in students_dict")
 	return students_dict
 	
 
@@ -209,6 +212,7 @@ func save_students_test_results(students_dict, StudentResults):
 				# Store the new result in student_dict
 				students_dict.get(student_key).get("tests").get(str(GlobalVars.activeTestId)).result = student_result
 
+	Log.debug("Student results stored in students_dict")
 	return students_dict
 
 
@@ -216,7 +220,7 @@ func save_students_test_results(students_dict, StudentResults):
 func save_assignment_info_name(assignment_dict, AssignmentName):
 	var name_new = AssignmentName.text
 	assignment_dict.assignment_name = name_new
-	Log.debug("Assignment name '%s' collected" % name_new)
+	Log.debug("Assignment name '%s' stored in assignemnt_dict" % name_new)
 	return assignment_dict
 
 
@@ -224,6 +228,7 @@ func save_assignment_info_name(assignment_dict, AssignmentName):
 func save_assignment_info_description(assignment_dict, DescriptionTextEdit):
 	var description = DescriptionTextEdit.text
 	assignment_dict.description = description
+	Log.debug("Assignment description stored in assignment_dict")
 	return assignment_dict
 	
 
@@ -232,6 +237,7 @@ func save_students_assignment_name(students_dict, AssignmentName):
 	# Save the name of the assignment in all student test packages
 	for id_num in students_dict.keys():
 		students_dict.get(id_num).get("assignments").get(str(GlobalVars.activeAssignmentId)).assignment_name = AssignmentName.text
+	Log.debug("Assignment name %s stored in students_dict" % AssignmentName.text)
 	return students_dict
 
 
@@ -244,6 +250,7 @@ func save_students_assignment_complete(students_dict, StudentResults):
 				var completed_status = child.get_node("Done").pressed
 				# Store checkbox status in students dictionary
 				students_dict.get(student_key).get("assignments").get(str(GlobalVars.activeAssignmentId)).completed = completed_status
+	Log.debug("Assignment complete status stored in students_dict")
 	return students_dict
 
 
@@ -256,6 +263,7 @@ func save_students_assignment_comment(students_dict, StudentResults):
 				var comment_new = child.get_node("Comment").text
 				# Store comment in students dictionary
 				students_dict.get(student_key).get("assignments").get(str(GlobalVars.activeAssignmentId)).comment = comment_new
+	Log.debug("Assignmen student comments stored in students_dict")
 	return students_dict
 
 
@@ -268,4 +276,5 @@ func save_students_assignment_grade(students_dict, StudentResults):
 				var grade_new = child.get_node("Grade").text
 				# Store grade in students dictionary
 				students_dict.get(student_key).get("assignments").get(str(GlobalVars.activeAssignmentId)).grade = grade_new
+	Log.debug("Assignment grades stored in students_dict")
 	return students_dict

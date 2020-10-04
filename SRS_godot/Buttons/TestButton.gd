@@ -17,3 +17,4 @@ func button_pressed():
 	
 	RootScene.get_node("TestInfo").popup_centered()
 	RootScene.get_node("TestInfo").show_info()
+	Log.debug("Test id %s pressed, popup window loaded" % test_id)

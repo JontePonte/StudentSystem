@@ -16,3 +16,4 @@ func button_pressed():
 
 	var path = "res://Classes/ClassScene.tscn"
 	var _is_class_scene = get_tree().change_scene(path)
+	Log.debug("Class pressed, scene changed to " + path)
