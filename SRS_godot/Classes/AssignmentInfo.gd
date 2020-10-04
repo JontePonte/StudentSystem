@@ -59,6 +59,7 @@ func print_student_results(data_dict):
 			student_result.get_node("NameScroll/NameHbox/LabelName").add_color_override("font_color", VisualVars.ColorTextAlt)
 			inactive_students.append(student_result)
 			inactive_id_num[sort_name] = student_result.key_name # This dict is used for sorting
+		Log.debug("Assignment result from student named " + student.first_name + student.last_name + " loaded")
 
 	# Collect arrays of sorted keys
 	var active_keys_sorted = AuxFunc.sort_students_by_name(active_id_num)
@@ -73,7 +74,7 @@ func print_student_results(data_dict):
 		for student_result in inactive_students:
 			if student_result.key_name == key:
 				StudentResults.add_child(student_result)
-	Log.debug("Student results loaded")
+	Log.debug("All student assignment results loaded, sorted by " + FileSys.app_data_load().sort_students_by + "and printed")
 
 func print_assignment_description(assignment_dict):
 	var description = assignment_dict.description

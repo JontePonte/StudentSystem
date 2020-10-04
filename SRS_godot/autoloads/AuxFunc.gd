@@ -11,7 +11,8 @@ func sort_students_by_name(students:Dictionary):
 	var sorted_keys = []
 	for key in names:
 		sorted_keys.append(students[key])
-
+	
+	Log.debug("Dictionary sorted " + str(names))
 	return sorted_keys
 
 	
@@ -45,7 +46,8 @@ func calculate_grade(res_points, limits, completed):
 	
 	if not completed:
 		grade = "-"
-
+	
+	Log.debug("Grade %s calculated" % grade)
 	return grade
 
 
@@ -59,6 +61,7 @@ func create_unfinished_tests(data_dict):
 			"result": [0,0,0],
 			"test_name": tests_from_file[key]["test_name"]}
 
+	Log.debug("Unfinished test created")
 	return tests_output
 
 
@@ -73,6 +76,7 @@ func create_unfinished_assignments(data_dict):
 			"completed": false,
 			"grade": "-"}
 
+	Log.debug("Unfinished assignment created")
 	return assignments_output
 
 
@@ -89,4 +93,5 @@ func create_new_key_number(in_dict):
 		if int(key) > highest_num:
 			highest_num = int(key)
 	
+	Log.debug("New dictionary with id %s key created" % str(highest_num + 1))
 	return str(highest_num + 1)

@@ -6,6 +6,7 @@ onready var TestProperties = get_node("Menu/Center/TestProperties/TestPropertySc
 onready var StudentResults = get_node("Menu/Center/StudentResults/StudentsScroll/Students")
 onready var MaxPoints = get_node("Menu/Center/TestProperties/MaxPoints")
 
+
 func show_info():
 	Log.debug("Test id %s in class %s info window loading" % [str(GlobalVars.activeTestId), str(GlobalVars.activeClass)])
 	var data_dict = FileSys.student_data_load()
@@ -84,6 +85,7 @@ func print_student_results(data_dict):
 			student_result.get_node("NameScroll/NameHbox/LabelName").add_color_override("font_color", VisualVars.ColorTextAlt)
 			inactive_students.append(student_result)
 			inactive_id_num[sort_name] = student_result.key_name # This dict is used for sorting
+		Log.debug("Test result from student named " + student.first_name + student.last_name + " loaded")
 
 
 	# Collect arrays of sorted keys
@@ -99,8 +101,7 @@ func print_student_results(data_dict):
 		for student_result in inactive_students:
 			if student_result.key_name == key:
 				StudentResults.add_child(student_result)
-	Log.debug("Student result loaded and printed in test id %s in class %s" % [str(GlobalVars.activeTestId), GlobalVars.activeClass])
-
+	Log.debug("All student test results loaded, sorted by " + FileSys.app_data_load().sort_students_by + "and printed")
 
 func print_test_properties(test_dict):
 
