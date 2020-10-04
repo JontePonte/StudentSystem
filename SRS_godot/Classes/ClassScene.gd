@@ -243,3 +243,8 @@ func _on_Add_Assignments_pressed():
 	create_assignment_buttons()
 	Log.info("New assignment with id %s created" % new_assignment_key)
 	
+
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		Log.close_log_file()
+		get_tree().quit() # default behavior

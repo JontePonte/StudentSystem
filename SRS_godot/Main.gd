@@ -52,3 +52,9 @@ func _on_LoadDataPopup_file_selected(path):
 	create_classes_buttons()
 	Log.info("New data file selected")
 	Log.debug("New data file path: " + path)
+
+
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		Log.close_log_file()
+		get_tree().quit() # default behavior
