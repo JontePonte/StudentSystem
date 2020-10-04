@@ -39,14 +39,11 @@ func error(message):
 
 # Log message to output terminal and/or file
 func log_message(text):
-	if GlobalVars.log_enable_terminal:
-		print(text)
-	if GlobalVars.log_enable_file:
-		pass
-
-
-func open_log_file():
-	var file = File.new()
+    if GlobalVars.log_enable_terminal:
+        print(text)
+    if GlobalVars.log_enable_file:
+        var file = File.new()
+        file.open(path, File.WRITE)
 
 
 func close_log_file():
