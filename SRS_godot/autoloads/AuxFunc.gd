@@ -79,7 +79,7 @@ func create_unfinished_assignments(data_dict):
 	Log.debug("Unfinished assignment created")
 	return assignments_output
 
-
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> NEEDS ERROR CODE ON INPUT
 func create_new_key_number(in_dict):
 	var key_list = in_dict.keys()
 	
