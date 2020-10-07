@@ -41,3 +41,10 @@ func test_student_data_load__last_has_tests():
 
 	assert_has(data[last_key], "tests")
 
+
+# ------------------------------------ app_data_load ------------------------------------
+
+func test_app_data_load_correct_type():
+	var data = FileSys.app_data_load()
+
+	assert_typeof(data, TYPE_DICTIONARY)
