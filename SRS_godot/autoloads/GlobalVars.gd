@@ -10,7 +10,7 @@ var activeTestId = 0
 var activeAssignmentId = 0
 
 var log_file_path = "user://logs/"
-var log_enable_terminal = true
+var log_enable_terminal = false
 var log_enable_file = true
 var log_debug_mode = true
 

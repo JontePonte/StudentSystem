@@ -282,3 +282,17 @@ func remove_student():
 	get_parent().create_student_buttons()
 	hide()
 	Log.info("Student id %s removed from %s" % [str(GlobalVars.activeStudentId), str(GlobalVars.activeClass)])
+
+
+func _on_FirstName_text_entered(input_text):
+	if not input_text.is_valid_filename():
+		# Instance warning scene
+		var scene = load("res://warnigs/wrongText.tscn")
+		var warning = scene.instance()
+
+		var warning_text = "Bad characters in first name"
+
+		warning.get_node("Text").set_text(warning_text)
+		self.add_child(warning)
+		warning.popup_centered()
+		
