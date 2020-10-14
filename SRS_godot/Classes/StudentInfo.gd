@@ -287,6 +287,6 @@ func remove_student():
 # Remove invalid characters from first name input
 func _on_FirstName_text_changed(text_input):
 	if not text_input.is_valid_filename():
-		var text_corrected = AuxFunc.remove_invalid_characters(text_input)
+		var text_corrected = AuxFunc.remove_invalid_characters_from_names(text_input)
 		FirstName.set_text(text_corrected)
 

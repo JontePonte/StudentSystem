@@ -83,8 +83,16 @@ func create_unfinished_assignments(data_dict):
 func create_new_key_number(in_dict):
 	var key_list = in_dict.keys()
 	
+	# return first value if no values exists
 	if key_list.empty():
+		Log.info("Created first key in dictionary")
 		return "0"
+
+	# return null if some value is'nt an integer
+	for key in key_list:
+		if not key.is_valid_integer():
+			Log.warning("Tried to create new dictionary key but dictionary included " + str(key))
+			return null
 
 	var highest_num = 0
 

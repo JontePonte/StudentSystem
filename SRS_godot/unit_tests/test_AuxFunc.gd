@@ -82,7 +82,7 @@ func test_create_new_key_number_1():
 	var new_key_correct = "7"
 	var new_key_test = AuxFunc.create_new_key_number(in_dict)
 
-	assert(new_key_test, new_key_correct)
+	assert_eq(new_key_test, new_key_correct)
 
 func test_create_new_key_number_2():
 	var in_dict = {
@@ -101,5 +101,17 @@ func test_create_new_key_number_2():
 	var new_key_correct = "12"
 	var new_key_test = AuxFunc.create_new_key_number(in_dict)
 
-	assert(new_key_test, new_key_correct)
+	assert_eq(new_key_test, new_key_correct)
+
+func test_create_new_key_number_error():
+	var in_dict = {
+		"1": "a",
+		"2": "b",
+		"3": "c",
+		"john": "d",
+		"5": "e",
+		"6": "f"
+	}
+	var new_key_test = AuxFunc.create_new_key_number(in_dict)
+	assert_null(new_key_test)
 	
