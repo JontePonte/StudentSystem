@@ -145,7 +145,14 @@ func remove_invalid_characters_from_name(text_input):
 	text_edited = text_edited.replace('^', "")
 	text_edited = text_edited.replace('§', "")
 	
-	if text_input != text_edited:
-		Log.info("Invalid character removed from text")
+	return text_edited
 
+
+func remove_invalid_characters_from_text(text_input):
+	var text_edited = text_input
+	
+	# Only the string markers are not allowed in comments
+	text_edited = text_edited.replace('"', "")
+	text_edited = text_edited.replace("'", "")
+	
 	return text_edited

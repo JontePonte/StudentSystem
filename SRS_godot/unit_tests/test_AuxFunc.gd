@@ -147,3 +147,28 @@ func test_remove_invalid_characters_from_name_every_character():
 
 	var text_correct = "p"
 	assert_eq(text_edited, text_correct)
+
+
+# ----------------------------- remove invalid characters from text -----------------------
+func remove_invalid_characters_from_text_correct():
+	var text_input = "John0123!?"
+	var text_edited = AuxFunc.remove_invalid_characters_from_text(text_input)
+
+	var text_correct = text_input
+	assert_eq(text_edited, text_correct)
+
+
+func remove_invalid_characters_from_text_string_marker_1():
+	var text_input = "John'"
+	var text_edited = AuxFunc.remove_invalid_characters_from_text(text_input)
+
+	var text_correct = "John"
+	assert_eq(text_edited, text_correct)
+
+
+func remove_invalid_characters_from_text_string_marker_2():
+	var text_input = 'John"'
+	var text_edited = AuxFunc.remove_invalid_characters_from_text(text_input)
+
+	var text_correct = "John"
+	assert_eq(text_edited, text_correct)

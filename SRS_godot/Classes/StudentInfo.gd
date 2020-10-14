@@ -284,9 +284,15 @@ func remove_student():
 	Log.info("Student id %s removed from %s" % [str(GlobalVars.activeStudentId), str(GlobalVars.activeClass)])
 
 
-# Remove invalid characters from first name input
+# Remove invalid characters from first and last name input
 func _on_FirstName_text_changed(text_input):
 	var text_corrected = AuxFunc.remove_invalid_characters_from_name(text_input)
 	if text_input != text_corrected:
+		Log.info("Removed invalid character(s) %s --> %s" % [text_input, text_corrected])	
 		FirstName.set_text(text_corrected)
 
+func _on_LastName_text_changed(text_input):
+	var text_corrected = AuxFunc.remove_invalid_characters_from_name(text_input)
+	if text_input != text_corrected:
+		Log.info("Removed invalid character(s) %s --> %s" % [text_input, text_corrected])
+		FirstName.set_text(text_corrected)
