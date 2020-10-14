@@ -114,4 +114,36 @@ func test_create_new_key_number_error():
 	}
 	var new_key_test = AuxFunc.create_new_key_number(in_dict)
 	assert_null(new_key_test)
-	
+
+
+# ----------------------------- remove invalid characters from names -----------------------
+func test_remove_invalid_characters_from_name_correct():
+	var text_input = "John0123!?"
+	var text_edited = AuxFunc.remove_invalid_characters_from_name(text_input)
+
+	var text_correct = text_input
+	assert_eq(text_edited, text_correct)
+
+
+func test_remove_invalid_characters_from_name_string_markers_1():
+	var text_input = "pppp'"
+	var text_edited = AuxFunc.remove_invalid_characters_from_name(text_input)
+
+	var text_correct = "pppp"
+	assert_eq(text_edited, text_correct)
+
+
+func test_remove_invalid_characters_from_name_string_markers_2():
+	var text_input = 'pp"""pp"'
+	var text_edited = AuxFunc.remove_invalid_characters_from_name(text_input)
+
+	var text_correct = "pppp"
+	assert_eq(text_edited, text_correct)
+
+
+func test_remove_invalid_characters_from_name_every_character():
+	var text_input = "p()[]{}.,:;/*+><~½%|&$¤#@´^§"
+	var text_edited = AuxFunc.remove_invalid_characters_from_name(text_input)
+
+	var text_correct = "p"
+	assert_eq(text_edited, text_correct)

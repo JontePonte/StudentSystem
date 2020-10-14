@@ -106,5 +106,46 @@ func create_new_key_number(in_dict):
 	return str(highest_num + 1)
 
 
-func remove_invalid_characters_from_names(text_input):
-	return text_input
+func remove_invalid_characters_from_name(text_input):
+	var text_edited = text_input
+	
+	# This is done the hard way. Could probably be done better
+	# string markers
+	text_edited = text_edited.replace('"', "")
+	text_edited = text_edited.replace("'", "")
+	# parentheses
+	text_edited = text_edited.replace('(', "")
+	text_edited = text_edited.replace(')', "")
+	text_edited = text_edited.replace('[', "")
+	text_edited = text_edited.replace(']', "")
+	text_edited = text_edited.replace('{', "")
+	text_edited = text_edited.replace('}', "")
+	# stops and commas
+	text_edited = text_edited.replace('.', "")
+	text_edited = text_edited.replace(',', "")
+	text_edited = text_edited.replace(':', "")
+	text_edited = text_edited.replace(';', "")
+	# math stuff
+	text_edited = text_edited.replace('/', "")
+	text_edited = text_edited.replace('*', "")
+	text_edited = text_edited.replace('+', "")
+	text_edited = text_edited.replace('>', "")
+	text_edited = text_edited.replace('<', "")
+	text_edited = text_edited.replace('~', "")
+	text_edited = text_edited.replace('½', "")
+	text_edited = text_edited.replace('%', "")
+	# misc
+	text_edited = text_edited.replace('|', "")
+	text_edited = text_edited.replace('&', "")
+	text_edited = text_edited.replace('$', "")
+	text_edited = text_edited.replace('¤', "")
+	text_edited = text_edited.replace('#', "")
+	text_edited = text_edited.replace('@', "")
+	text_edited = text_edited.replace('´', "")
+	text_edited = text_edited.replace('^', "")
+	text_edited = text_edited.replace('§', "")
+	
+	if text_input != text_edited:
+		Log.info("Invalid character removed from text")
+
+	return text_edited
