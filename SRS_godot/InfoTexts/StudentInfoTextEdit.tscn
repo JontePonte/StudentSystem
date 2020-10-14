@@ -3,8 +3,6 @@
 [ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=1]
 [ext_resource path="res://InfoTexts/StudentInfoTextEdit.gd" type="Script" id=2]
 
-
-
 [node name="StudentInfoText" type="VBoxContainer"]
 margin_right = 248.0
 margin_bottom = 27.0

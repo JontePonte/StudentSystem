@@ -8,7 +8,6 @@
 [ext_resource path="res://assets/FontsDF/CommentsText.tres" type="DynamicFont" id=6]
 
 [node name="StudentInfo" type="WindowDialog"]
-visible = true
 margin_top = 30.0
 margin_right = 800.0
 margin_bottom = 730.0
@@ -270,6 +269,7 @@ text = "Are you sure you want to remove the student?"
 align = 1
 autowrap = true
 [connection signal="text_changed" from="Menu/NameHeader/FirstName" to="." method="_on_FirstName_text_changed"]
+[connection signal="text_changed" from="Menu/NameHeader/LastName" to="." method="_on_LastName_text_changed"]
 [connection signal="pressed" from="Menu/InfoHBox/CommentsCont/HeaderHBox/AddComment" to="." method="_on_AddComment_pressed"]
 [connection signal="pressed" from="Menu/BottomButtons/SaveButton" to="." method="_on_SaveButton_pressed"]
 [connection signal="pressed" from="Menu/BottomButtons/ExitButton" to="." method="_on_ExitButton_pressed"]
