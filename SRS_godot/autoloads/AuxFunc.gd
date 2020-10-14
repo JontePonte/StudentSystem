@@ -79,7 +79,7 @@ func create_unfinished_assignments(data_dict):
 	Log.debug("Unfinished assignment created")
 	return assignments_output
 
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> NEEDS ERROR CODE ON INPUT
+
 func create_new_key_number(in_dict):
 	var key_list = in_dict.keys()
 	
@@ -88,10 +88,15 @@ func create_new_key_number(in_dict):
 
 	var highest_num = 0
 
-	# return a string 1 higher than the highest id in the dict
+	# get the highest number in the key_list
 	for key in key_list:
 		if int(key) > highest_num:
 			highest_num = int(key)
 	
+	# Output the a string 1 higher than the highest number
 	Log.debug("New dictionary with id %s key created" % str(highest_num + 1))
 	return str(highest_num + 1)
+
+
+func remove_invalid_characters_from_names(text_input):
+	return text_input

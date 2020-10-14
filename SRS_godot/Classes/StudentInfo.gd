@@ -284,15 +284,9 @@ func remove_student():
 	Log.info("Student id %s removed from %s" % [str(GlobalVars.activeStudentId), str(GlobalVars.activeClass)])
 
 
-func _on_FirstName_text_entered(input_text):
-	if not input_text.is_valid_filename():
-		# Instance warning scene
-		var scene = load("res://warnigs/wrongText.tscn")
-		var warning = scene.instance()
+# Remove invalid characters from first name input
+func _on_FirstName_text_changed(text_input):
+	if not text_input.is_valid_filename():
+		var text_corrected = AuxFunc.remove_invalid_characters(text_input)
+		FirstName.set_text(text_corrected)
 
-		var warning_text = "Bad characters in first name"
-
-		warning.get_node("Text").set_text(warning_text)
-		self.add_child(warning)
-		warning.popup_centered()
-		
