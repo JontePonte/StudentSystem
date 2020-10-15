@@ -28,4 +28,5 @@ margin_right = 1280.0
 margin_bottom = 27.0
 custom_fonts/font = ExtResource( 1 )
 text = "Remove"
+[connection signal="text_changed" from="CommentHBox/Comment" to="." method="_on_Comment_text_changed"]
 [connection signal="pressed" from="CommentHBox/RemoveComment" to="." method="_on_RemoveComment_pressed"]

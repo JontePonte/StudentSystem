@@ -76,10 +76,30 @@ func print_student_results(data_dict):
 				StudentResults.add_child(student_result)
 	Log.debug("All student assignment results loaded, sorted by " + FileSys.app_data_load().sort_students_by + "and printed")
 
+
 func print_assignment_description(assignment_dict):
 	var description = assignment_dict.description
 	DescriptionTextEdit.text = description
 	Log.debug("Assignment description loaded")
+
+
+func _on_AssignmentName_text_changed(text_input):
+    var text_corrected = AuxFunc.remove_invalid_characters_from_text(text_input)
+    if text_input != text_corrected:
+        Log.info("Removed invalid character(s) %s --> %s" % [text_input, text_corrected])
+        $Menu/TopVbox/TopHbox/AssignmentName.set_text(text_corrected)
+
+
+func _on_TextEdit_text_changed():
+	# TextEdit signal does not include input text variable
+	var text_input_field = $Menu/Center/AssignmentDescription/AssignmentDescriptionScroll/AssignmentDescription/TextEdit
+	var text_input = text_input_field.get_text()
+	
+	var text_corrected = AuxFunc.remove_invalid_characters_from_text(text_input)
+	if text_input != text_corrected:
+		Log.info("Removed invalid character(s) %s --> %s" % [text_input, text_corrected])
+		print("p")
+		$Menu/Center/AssignmentDescription/AssignmentDescriptionScroll/AssignmentDescription/TextEdit.set_text(text_corrected)
 
 
 func _on_Save_pressed():

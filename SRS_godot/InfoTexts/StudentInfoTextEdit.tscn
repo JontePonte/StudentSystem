@@ -25,3 +25,4 @@ margin_bottom = 37.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="text_changed" from="Label" to="." method="_on_Label_text_changed"]

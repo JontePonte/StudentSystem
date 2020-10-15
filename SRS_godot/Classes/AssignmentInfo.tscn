@@ -190,6 +190,8 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="text_changed" from="Menu/TopVbox/TopHbox/AssignmentName" to="." method="_on_AssignmentName_text_changed"]
+[connection signal="text_changed" from="Menu/Center/AssignmentDescription/AssignmentDescriptionScroll/AssignmentDescription/TextEdit" to="." method="_on_TextEdit_text_changed"]
 [connection signal="pressed" from="Menu/LowerBUttons/Save" to="." method="_on_Save_pressed"]
 [connection signal="pressed" from="Menu/LowerBUttons/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="Menu/LowerBUttons/Remove" to="." method="_on_Remove_pressed"]
