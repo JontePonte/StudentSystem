@@ -129,4 +129,5 @@ size_flags_horizontal = 0
 custom_fonts/font = ExtResource( 1 )
 text = "P"
 max_length = 2
+[connection signal="text_changed" from="AssignmentInfo/CommentScroll/CommentHBox/Comment" to="." method="_on_Comment_text_changed"]
 [connection signal="text_changed" from="AssignmentInfo/GradeHBox/GradeLetter" to="." method="_on_GradeLetter_text_changed"]

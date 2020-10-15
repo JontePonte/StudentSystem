@@ -93,4 +93,5 @@ custom_constants/minimum_spaces = 5
 text = "A"
 align = 2
 max_length = 2
+[connection signal="text_changed" from="Comment" to="." method="_on_Comment_text_changed"]
 [connection signal="text_changed" from="Grade" to="." method="_on_Grade_text_changed"]
