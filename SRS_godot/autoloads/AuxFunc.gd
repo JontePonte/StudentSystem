@@ -163,12 +163,31 @@ func remove_invalid_characters_from_number(text_input):
 	
 	# Spril string int first and second characters
 	var character_1 = text_input.substr(0,1)
-	var character_2 = text_input.substr(1,-1)
+	var character_2 = text_input.substr(1,-1)	# second should only have lenght 1
 
 	# Check if characters are integers and remove then if they are'nt
 	if not character_1.is_valid_integer():
 		text_edited = text_edited.replace(character_1,"")
 	if not character_2.is_valid_integer():
+		text_edited = text_edited.replace(character_2,"")
+	
+	return text_edited
+
+
+func remove_invalid_characters_from_grade(text_input):
+	var text_edited = text_input
+	
+	var allowed_characters = [
+		"-","f","F","e","E","d","D","c","C","b","B","a","A","g","G","v","V","+","-"]
+
+	# Spril string int first and second characters
+	var character_1 = text_input.substr(0,1)
+	var character_2 = text_input.substr(1,-1)	# second should only have lenght 1
+
+	# Check if characters are integers and remove then if they are'nt
+	if not character_1 in allowed_characters:
+		text_edited = text_edited.replace(character_1,"")
+	if not character_2 in allowed_characters:
 		text_edited = text_edited.replace(character_2,"")
 	
 	return text_edited

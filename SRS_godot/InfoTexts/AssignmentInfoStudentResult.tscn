@@ -85,11 +85,12 @@ text = "Grade:"
 
 [node name="Grade" type="LineEdit" parent="."]
 margin_left = 479.0
-margin_right = 509.0
+margin_right = 513.0
 margin_bottom = 29.0
-rect_min_size = Vector2( 15, 0 )
+rect_min_size = Vector2( 34, 0 )
 custom_fonts/font = ExtResource( 1 )
 custom_constants/minimum_spaces = 5
 text = "A"
 align = 2
-max_length = 1
+max_length = 2
+[connection signal="text_changed" from="Grade" to="." method="_on_Grade_text_changed"]

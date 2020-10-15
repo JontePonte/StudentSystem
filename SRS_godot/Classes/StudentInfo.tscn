@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/FontsDF/CommentsText.tres" type="DynamicFont" id=6]
 
 [node name="StudentInfo" type="WindowDialog"]
+visible = true
 margin_top = 30.0
 margin_right = 800.0
 margin_bottom = 730.0
