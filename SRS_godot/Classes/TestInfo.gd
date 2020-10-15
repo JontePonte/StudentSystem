@@ -194,3 +194,9 @@ func _on_RemoveConfirm_confirmed():
 	hide()
 	Log.info("Test %s removed from class %s" % [str(GlobalVars.activeTestId), GlobalVars.activeClass])
 
+
+func _on_TestName_text_changed(text_input):
+	var text_corrected = AuxFunc.remove_invalid_characters_from_text(text_input)
+	if text_input != text_corrected:
+		Log.info("Removed invalid character(s) %s --> %s" % [text_input, text_corrected])
+		$Menu/TopVbox/TopHbox/TestName.set_text(text_corrected)

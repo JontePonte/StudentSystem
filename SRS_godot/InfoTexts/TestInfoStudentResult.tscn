@@ -147,3 +147,5 @@ custom_fonts/font = ExtResource( 1 )
 text = "A"
 align = 2
 [connection signal="text_changed" from="LineEditE" to="." method="_on_LineEditE_text_changed"]
+[connection signal="text_changed" from="LineEditC" to="." method="_on_LineEditC_text_changed"]
+[connection signal="text_changed" from="LineEditA" to="." method="_on_LineEditA_text_changed"]

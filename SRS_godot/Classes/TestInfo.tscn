@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=8]
 
 [node name="TestInfo" type="WindowDialog"]
+visible = true
 margin_right = 800.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 600, 400 )
@@ -203,6 +204,7 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="text_changed" from="Menu/TopVbox/TopHbox/TestName" to="." method="_on_TestName_text_changed"]
 [connection signal="pressed" from="Menu/LowerBUttons/Save" to="." method="_on_Save_pressed"]
 [connection signal="pressed" from="Menu/LowerBUttons/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="Menu/LowerBUttons/Remove" to="." method="_on_Remove_pressed"]

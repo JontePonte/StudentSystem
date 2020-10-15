@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/FontsDF/VerySmallText.tres" type="DynamicFont" id=1]
+[ext_resource path="res://InfoTexts/TestProperty.gd" type="Script" id=2]
 
 [node name="TestProperty" type="HBoxContainer"]
 margin_right = 346.0
 margin_bottom = 29.0
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -39,6 +41,7 @@ margin_bottom = 29.0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 1 )
 custom_constants/minimum_spaces = 5
+max_length = 2
 
 [node name="VSeparator2" type="VSeparator" parent="."]
 margin_left = 143.0
@@ -63,6 +66,7 @@ margin_bottom = 29.0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 1 )
 custom_constants/minimum_spaces = 5
+max_length = 2
 
 [node name="VSeparator3" type="VSeparator" parent="."]
 margin_left = 204.0
@@ -87,3 +91,7 @@ margin_bottom = 29.0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 1 )
 custom_constants/minimum_spaces = 5
+max_length = 2
+[connection signal="text_changed" from="LineEditE" to="." method="_on_LineEditE_text_changed"]
+[connection signal="text_changed" from="LineEditC" to="." method="_on_LineEditC_text_changed"]
+[connection signal="text_changed" from="LineEditA" to="." method="_on_LineEditA_text_changed"]
