@@ -172,3 +172,27 @@ func test_remove_invalid_characters_from_text_string_marker_2():
 
 	var text_correct = "John"
 	assert_eq(text_edited, text_correct)
+
+
+# ----------------------------- remove invalid characters from number -----------------------
+func test_remove_invalid_characters_from_number_correct():
+	var text_input = "9"
+	var text_edited = AuxFunc.remove_invalid_characters_from_number(text_input)
+
+	var text_correct = "9"
+	assert_eq(text_edited, text_correct)
+
+func test_remove_invalid_characters_from_number_letter():
+	var text_input = "g"
+	var text_edited = AuxFunc.remove_invalid_characters_from_number(text_input)
+
+	var text_correct = ""
+	assert_eq(text_edited, text_correct)
+	
+func test_remove_invalid_characters_from_number_number_letter():
+	var text_input = "4b"
+	var text_edited = AuxFunc.remove_invalid_characters_from_number(text_input)
+
+	var text_correct = "4"
+	assert_eq(text_edited, text_correct)
+	
