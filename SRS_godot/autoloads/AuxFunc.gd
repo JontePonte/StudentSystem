@@ -156,3 +156,19 @@ func remove_invalid_characters_from_text(text_input):
 	text_edited = text_edited.replace("'", "")
 	
 	return text_edited
+
+
+func remove_invalid_characters_from_number(text_input):
+	var text_edited = text_input
+	
+	# Spril string int first and second characters
+	var character_1 = text_input.substr(0,1)
+	var character_2 = text_input.substr(1,-1)
+
+	# Check if characters are integers and remove then if they are'nt
+	if not character_1.is_valid_integer():
+		text_edited = text_edited.replace(character_1,"")
+	if not character_2.is_valid_integer():
+		text_edited = text_edited.replace(character_2,"")
+	
+	return text_edited
