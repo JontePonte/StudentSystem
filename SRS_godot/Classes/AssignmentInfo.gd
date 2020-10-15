@@ -98,7 +98,6 @@ func _on_TextEdit_text_changed():
 	var text_corrected = AuxFunc.remove_invalid_characters_from_text(text_input)
 	if text_input != text_corrected:
 		Log.info("Removed invalid character(s) %s --> %s" % [text_input, text_corrected])
-		print("p")
 		$Menu/Center/AssignmentDescription/AssignmentDescriptionScroll/AssignmentDescription/TextEdit.set_text(text_corrected)
 
 
