@@ -1,7 +1,7 @@
 extends Node
 # All global variables
 
-var version = 0.2
+var version = 0.3
 
 var activeDataFile = ""
 var activeClass = ""
