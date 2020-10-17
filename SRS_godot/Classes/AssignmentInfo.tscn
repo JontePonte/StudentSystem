@@ -11,6 +11,7 @@ visible = true
 margin_right = 800.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 600, 400 )
+custom_colors/title_color = Color( 0.768627, 0.870588, 0.882353, 1 )
 window_title = "Test Info"
 resizable = true
 script = ExtResource( 1 )

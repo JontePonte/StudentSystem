@@ -3,11 +3,11 @@ extends Node
 
 # Color palet
 var ColorWhite = Color(1,1,1)
-var ColorText = Color("C4DEE1")
-var ColorTextAlt = Color("808E59")
-var ColorBackgroundAlt = Color("97c6cb")
-var ColorBackground = Color("72606e")
-var ColorDark = Color("292F34")
+var ColorText = Color("FDFDFD")
+var ColorTextAlt = Color("D7D6A6")
+var ColorBackgroundAlt = Color("91A580")
+var ColorBackground = Color("365C53")
+var ColorDark = Color("121614")
 
 
 
