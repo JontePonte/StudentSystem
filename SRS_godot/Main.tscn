@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://assets/FontsDF/Header.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/theme/main_theme.tres" type="Theme" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=6]
 [ext_resource path="res://assets/FontsDF/SmallText.tres" type="DynamicFont" id=7]
 [ext_resource path="res://SelectDataButton.gd" type="Script" id=8]
@@ -9,6 +10,7 @@
 [node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 3 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -29,7 +31,6 @@ __meta__ = {
 margin_right = 1040.0
 margin_bottom = 81.0
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_shadow = Color( 0.2, 0.235294, 0.2, 1 )
 custom_constants/shadow_offset_x = 2
 text = "Student Result Saver"
 align = 1
@@ -103,9 +104,6 @@ size_flags_vertical = 3
 margin_right = 518.0
 margin_bottom = 29.0
 custom_fonts/font = ExtResource( 7 )
-custom_colors/font_color = Color( 0.992157, 0.992157, 0.992157, 1 )
-custom_colors/font_outline_modulate = Color( 0.0705882, 0.0862745, 0.0784314, 1 )
-custom_colors/font_color_shadow = Color( 0.568627, 0.647059, 0.501961, 1 )
 text = "Active Data file:"
 align = 2
 
